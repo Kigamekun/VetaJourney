@@ -301,7 +301,7 @@
             <br>
             <br>
 
-            <img src="img/veta.png" alt="">
+            <!-- <img src="img/veta.png" alt=""> -->
 
 
 
@@ -595,6 +595,70 @@
 
                     boxCount++;
                 }
+            }
+        });
+
+
+
+        document.addEventListener("touchstart", (event) => {
+            const currentTime = new Date().getTime();
+
+            if (currentTime - lastTapTime < 300) { // Double tap threshold: 300ms
+                if (boxCount === 5) {
+                    smoothScrollToElement("#main");
+                } else {
+                    const newBox = document.createElement("div");
+
+                    switch (boxCount) {
+                        case 0:
+                            newBox.classList.add("box");
+                            newBox.style.top = `120px`;
+                            newBox.style.left = `20px`;
+                            newBox.style.opacity = 0;
+
+                            const video = document.createElement("video");
+                            video.autoplay = true;
+                            video.loop = true;
+                            video.muted = true;
+                            video.playsInline = true;
+
+                            const source = document.createElement("source");
+                            source.src = "video/paper1.mp4";
+                            source.type = "video/mp4";
+
+                            video.appendChild(source);
+                            newBox.appendChild(video);
+
+                            storyboard.appendChild(newBox);
+
+                            // Trigger reflow to force CSS transition on opacity
+                            newBox.getBoundingClientRect();
+
+                            newBox.style.transform = `rotate(${5*boxCount}deg)`;
+                            newBox.style.opacity = 1;
+                            break;
+
+                        default:
+                            newBox.classList.add("box");
+                            newBox.style.top = `120px`;
+                            newBox.style.left = `20px`;
+                            newBox.style.opacity = 0;
+
+                            storyboard.appendChild(newBox);
+
+                            // Trigger reflow to force CSS transition on opacity
+                            newBox.getBoundingClientRect();
+
+                            newBox.style.transform = `rotate(${5*boxCount}deg)`;
+                            newBox.style.opacity = 1;
+                            break;
+                    }
+
+                    boxCount++;
+                }
+                lastTapTime = 0; // Reset the tap time
+            } else {
+                lastTapTime = currentTime;
             }
         });
     </script>
