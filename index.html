@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veta Journey</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Poppins';
+            overflow-x: hidden;
+        }
+
+        .storyboard {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            position: absolute;
+            width: 80%;
+            height: 600px;
+
+            border: 5px solid black;
+            background-color: #3498db;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        .text-story {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-left: 30px;
+            margin-right: auto;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+
+
+        .content.gallery-content {
+            background-color: #fff;
+            color: #35373a;
+            min-height: 100vh;
+            padding: 30px 50px;
+            width: 75%;
+            margin: auto;
+        }
+
+        .gallery-content h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-family: 'Droid Sans', sans-serif;
+            font-weight: bold;
+        }
+
+        .gallery-content p.page-description {
+            text-align: center;
+            margin: 25px auto;
+            font-size: 18px;
+            color: #999;
+        }
+
+        .tz-gallery {
+            padding: 40px;
+        }
+
+        /* Override bootstrap column paddings */
+        .tz-gallery .row>div {
+            padding: 2px;
+        }
+
+        .tz-gallery .lightbox img {
+            width: 100%;
+            border-radius: 0;
+            position: relative;
+        }
+
+        .tz-gallery .lightbox:before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -13px;
+            margin-left: -13px;
+            opacity: 0;
+            color: #fff;
+            font-size: 26px;
+            font-family: 'Glyphicons Halflings';
+            content: '\e003';
+            pointer-events: none;
+            z-index: 9000;
+            transition: 0.4s;
+        }
+
+
+        .tz-gallery .lightbox:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background-color: rgba(46, 132, 206, 0.7);
+            content: '';
+            transition: 0.4s;
+        }
+
+        .tz-gallery .lightbox:hover:after,
+        .tz-gallery .lightbox:hover:before {
+            opacity: 1;
+        }
+
+        .baguetteBox-button {
+            background-color: transparent !important;
+        }
+
+
+
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s, background-color 1s;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide1 {
+            background-color: black;
+            color: white;
+        }
+
+        .slide2 {
+            background-color: white;
+            color: black;
+        }
+
+
+        .slide2.active .box-container {
+            transform: translateY(0);
+        }
+
+        .text {
+            text-align: center;
+            font-size: 24px;
+            padding: 20px;
+            max-width: 80%;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .thought {
+            display: flex;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 30px;
+            min-width: 40px;
+            max-width: 220px;
+            min-height: 40px;
+            margin: 20px;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .thought:before,
+        .thought:after {
+            content: "";
+            background-color: #fff;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .thought:before {
+            width: 44px;
+            height: 44px;
+            top: -12px;
+            left: 28px;
+            box-shadow: -50px 30px 0 -12px #fff;
+        }
+
+        .thought:after {
+            bottom: -10px;
+            right: 26px;
+            width: 30px;
+            height: 30px;
+            box-shadow: 40px -34px 0 0 #fff,
+                -28px -6px 0 -2px #fff,
+                -24px 17px 0 -6px #fff,
+                -5px 25px 0 -10px #fff;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="storyboard">
+    </div>
+
+    <div>
+
+
+        <div class="slide slide1 active">
+            <div class="text">Pada suatu hari di negara vetaria yang cerah ada seorang anak bernama Veti, ia sedang
+                menjalani hari harinya seperti biasa</div>
+        </div>
+        <div class="slide slide2">
+            <div class="text">Namun tiba tiba .....</div>
+
+        </div>
+        <div class="slide slide3">
+            <div class="text">BRAKKKK ...... </div>
+
+        </div>
+        <div class="slide slide4">
+            <div class="container">
+
+
+                <p class="text-story">Tekan tombol N untuk melanjutkan petualangan veta</p>
+            </div>
+        </div>
+
+
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="container" id="main">
+
+            <center>
+                <h3>Anesthesia Machine</h3>
+            </center>
+            <br>
+
+
+            <center>
+                <div class="d-flex" style="width: 70%;flex-direction: row; gap: 10px;">
+                    <div style="flex: 1;">
+                        <img style="width: 100%;height: 100%;border-radius: 5px;"
+                            src="https://www.wemed1.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/a/n/anesthesia_1.jpg"
+                            alt="">
+                    </div>
+                    <div style="flex: 1;display: flex;flex-direction: column; gap:10px;">
+
+                        <img style="width: 100%;height: 100%;border-radius: 5px;"
+                            src="https://www.wemed1.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/w/a/wallmount.jpg"
+                            alt="">
+                        <img style="width: 100%;height: 100%;border-radius: 5px;"
+                            src="https://www.ezsystemsinc.com/wp-content/uploads/2018/12/EZ-RB-1000.jpg" alt="">
+
+                    </div>
+                </div>
+            </center>
+            <br>
+            <br>
+            <br>
+
+            <img src="img/veta.png" alt="">
+
+
+
+
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Definisi
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nobis debitis explicabo
+                            expedita praesentium. Laborum deleniti dolorem omnis nam a, vel eos? Asperiores quaerat,
+                            suscipit est dolorum magni a dicta natus animi ducimus obcaecati! Sint delectus fugit
+                            expedita accusantium ea ullam pariatur officia doloribus deserunt impedit, vel, nemo
+                            consequuntur repellat corrupti eius labore. Molestiae, hic qui? Saepe incidunt facere
+                            maxime, quidem consequuntur quisquam quibusdam quas veniam alias ut laudantium sint et
+                            doloribus eveniet ex tenetur in nisi reiciendis eum quia. Sit, aperiam nobis. Soluta ratione
+                            sed deleniti perferendis beatae, quis perspiciatis mollitia eius! Nesciunt autem, aliquam
+                            facere odio amet consequuntur.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Cara Penggunaan
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div>
+                                <img src="" alt="">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quidem ab dignissimos
+                                    hic
+                                    eligendi cupiditate possimus maxime saepe consequatur accusantium aperiam alias quod
+                                    deserunt fugiat aut mollitia adipisci perferendis dolores, aliquam aliquid ipsa
+                                    illum
+                                    soluta! Nam earum atque numquam blanditiis officiis doloribus facilis, nostrum
+                                    asperiores error, possimus accusamus debitis eius laudantium inventore ullam
+                                    explicabo
+                                    alias fuga distinctio quod quae repellendus perspiciatis quibusdam repellat sequi!
+                                    Ab
+                                    minima laudantium minus rerum exercitationem non molestiae quaerat, delectus ducimus
+                                    tempora mollitia ea dicta eligendi iure autem, pariatur accusantium necessitatibus
+                                    voluptas ipsum aut voluptatum officia expedita? Maiores, laudantium! Dolorum minus
+                                    eaque
+                                    maiores ducimus illo magni.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Accordion Item #3
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                            until
+                            the
+                            collapse plugin adds the appropriate classes that we use to style each element.
+                            These
+                            classes
+                            control the overall appearance, as well as the showing and hiding via CSS
+                            transitions.
+                            You
+                            can
+                            modify any of this with custom CSS or overriding our default variables. It's also
+                            worth
+                            noting
+                            that just about any HTML can go within the <code>.accordion-body</code>, though the
+                            transition
+                            does limit overflow.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <center>
+                <h3>3D Models</h3>
+            </center>
+            <br>
+            <br>
+            <div class="sketchfab-embed-wrapper"> <iframe style="width: 100%;height: 600px;border-radius: 10px;"
+                    title="Anesthesia Machine" frameborder="0" allowfullscreen mozallowfullscreen="true"
+                    webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                    execution-while-out-of-viewport execution-while-not-rendered web-share
+                    src="https://sketchfab.com/models/5d54144ed10146798a91ae88cd911266/embed?camera=0"> </iframe> </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <footer style="width: 100%;background: #2f3236; display: flex;color: #fff;padding:50px">
+            <div style="flex: 2;">
+                <h4>PVT</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore iusto sunt, iure corporis aperiam
+                    quisquam commodi ea reiciendis assumenda vel impedit ullam reprehenderit, vero optio.</p>
+            </div>
+            <div style="flex: 1;">
+                <h5>Useful Links</h5>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Faq</li>
+                    <li>Contact Us</li>
+                    <li>Get Started</li>
+                </ul>
+            </div>
+            <div style="flex: 1;">
+                <h5>Useful Links</h5>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Faq</li>
+                    <li>Contact Us</li>
+                    <li>Get Started</li>
+                </ul>
+            </div>
+            <div style="flex: 1;">
+                <h5>Useful Links</h5>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Faq</li>
+                    <li>Contact Us</li>
+                    <li>Get Started</li>
+                </ul>
+            </div>
+        </footer>
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+        <script>
+            baguetteBox.run('.tz-gallery');
+        </script>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
+
+    <script>
+        let boxCount = 0;
+
+
+        const slides = document.querySelectorAll('.slide');
+        let currentSlideIndex = 0;
+        let intervalId;
+
+        function showNextSlide() {
+            slides[currentSlideIndex].classList.remove('active');
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            slides[currentSlideIndex].classList.add('active');
+
+            if (currentSlideIndex === slides.length - 1) {
+                const newBox = document.createElement("div");
+                newBox.classList.add("box");
+                newBox.style.top = `120px`;
+                newBox.style.left = `20px`;
+                newBox.style.opacity = 0;
+
+                const video = document.createElement("video");
+                video.autoplay = true;
+                video.loop = true;
+                video.muted = true;
+                video.playsInline = true;
+
+                const source = document.createElement("source");
+                source.src = "video/paper1.mp4";
+                source.type = "video/mp4";
+
+                video.appendChild(source);
+                newBox.appendChild(video);
+
+                storyboard.appendChild(newBox);
+
+                video.style.width = "100%";
+                video.style.height = "100%";
+                video.style.objectFit = "cover";
+                // Trigger reflow to force CSS transition on opacity
+                newBox.getBoundingClientRect();
+
+                newBox.style.transform = `rotate(${5*boxCount}deg)`;
+                newBox.style.opacity = 1;
+
+                boxCount++;
+                clearInterval(intervalId);
+            }
+        }
+
+        intervalId = setInterval(showNextSlide, 4000);
+
+
+        const storyboard = document.querySelector(".storyboard");
+        const addButton = document.getElementById("addBox");
+
+        function smoothScrollToElement(selector) {
+            const element = document.querySelector(selector);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        }
+
+        // <div class="box" style="top: 120px; left: 20px; opacity: 1; transform: rotate(0deg);">
+        // <video autoplay loop muted plays-inline>
+        //     <source src="video/paper1.mp4" type="video/mp4">
+        // </video>
+        // </div>
+
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "n" || event.key === "N") {
+                if (boxCount === 5) {
+                    smoothScrollToElement("#main");
+                } else {
+                    const newBox = document.createElement("div");
+
+                    switch (boxCount) {
+                        case 0:
+                            newBox.classList.add("box");
+                            newBox.style.top = `120px`;
+                            newBox.style.left = `20px`;
+                            newBox.style.opacity = 0;
+
+                            const video = document.createElement("video");
+                            video.autoplay = true;
+                            video.loop = true;
+                            video.muted = true;
+                            video.playsInline = true;
+
+                            const source = document.createElement("source");
+                            source.src = "video/paper1.mp4";
+                            source.type = "video/mp4";
+
+                            video.appendChild(source);
+                            newBox.appendChild(video);
+
+                            storyboard.appendChild(newBox);
+
+                            // Trigger reflow to force CSS transition on opacity
+                            newBox.getBoundingClientRect();
+
+                            newBox.style.transform = `rotate(${5*boxCount}deg)`;
+                            newBox.style.opacity = 1;
+                            break;
+
+                        default:
+                            newBox.classList.add("box");
+                            newBox.style.top = `120px`;
+                            newBox.style.left = `20px`;
+                            newBox.style.opacity = 0;
+
+                            storyboard.appendChild(newBox);
+
+                            // Trigger reflow to force CSS transition on opacity
+                            newBox.getBoundingClientRect();
+
+                            newBox.style.transform = `rotate(${5*boxCount}deg)`;
+                            newBox.style.opacity = 1;
+                            break;
+                    }
+
+                    boxCount++;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
