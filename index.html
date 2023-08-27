@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
     <title>Veta Journey</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -30,8 +30,7 @@
 
         .box {
             position: absolute;
-            width: 80%;
-            height: 600px;
+
             border: 5px solid black;
             background-color: #3498db;
             left: 0;
@@ -222,6 +221,20 @@
                 -5px 25px 0 -10px #fff;
 
         }
+
+        @media only screen and (min-width: 600px) {
+            .box {
+                width: 80%;
+                height: 700px;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .box {
+                width: 70%;
+                height: 150px;
+            }
+        }
     </style>
 </head>
 
@@ -407,7 +420,7 @@
         <br>
         <br>
 
-        <footer style="width: 100%;background: #2f3236; display: flex;color: #fff;padding:50px">
+        <footer style="width: 100%;background: #2f3236; display: flex;color: #fff;padding:50px;flex-wrap: wrap;">
             <div style="flex: 2;">
                 <h4>PVT</h4>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore iusto sunt, iure corporis aperiam
@@ -505,6 +518,7 @@
             newBox.style.left = `0`;
             newBox.style.right = `0`;
             newBox.style.bottom = `0`;
+            newBox.style.inset = `unset`;
             newBox.style.opacity = 0;
             const video = document.createElement("video");
             video.autoplay = true;
