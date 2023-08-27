@@ -36,8 +36,9 @@
             background-color: #3498db;
             left: 0;
             right: 0;
-            margin-left: auto;
-            margin-right: auto;
+            /* margin-left: auto;
+            margin-right: auto; */
+            margin: auto;
             transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
         }
 
@@ -500,8 +501,10 @@
         function addBox(url, rotate) {
             const newBox = document.createElement("div");
             newBox.classList.add("box");
-            newBox.style.top = `120px`;
-            newBox.style.left = `20px`;
+            newBox.style.top = `0`;
+            newBox.style.left = `0`;
+            newBox.style.right = `0`;
+            newBox.style.bottom = `0`;
             newBox.style.opacity = 0;
             const video = document.createElement("video");
             video.autoplay = true;
