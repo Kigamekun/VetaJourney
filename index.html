@@ -32,7 +32,6 @@
             position: absolute;
             width: 80%;
             height: 600px;
-
             border: 5px solid black;
             background-color: #3498db;
             left: 0;
@@ -51,8 +50,6 @@
             margin-right: auto;
             transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
         }
-
-
 
         .content.gallery-content {
             background-color: #fff;
@@ -108,7 +105,6 @@
             transition: 0.4s;
         }
 
-
         .tz-gallery .lightbox:after {
             position: absolute;
             top: 0;
@@ -129,9 +125,6 @@
         .baguetteBox-button {
             background-color: transparent !important;
         }
-
-
-
 
         .slide {
             position: absolute;
@@ -159,7 +152,6 @@
             background-color: white;
             color: black;
         }
-
 
         .slide2.active .box-container {
             transform: translateY(0);
@@ -255,7 +247,7 @@
             <div class="container">
 
 
-                <p class="text-story">Tekan tombol N untuk melanjutkan petualangan veta</p>
+                <p class="text-story">Tekan tombol N / double click untuk melanjutkan petualangan veta</p>
             </div>
         </div>
 
@@ -300,11 +292,6 @@
             <br>
             <br>
             <br>
-
-            <!-- <img src="img/veta.png" alt=""> -->
-
-
-
 
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
@@ -363,7 +350,7 @@
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Accordion Item #3
+                            Cara Perawatan
                         </button>
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -471,7 +458,11 @@
 
     <script>
         let boxCount = 0;
-
+        disableScroll();
+        window.addEventListener('load', () => {
+            // Gulirkan halaman ke paling atas
+            window.scrollTo(0, 0);
+        });
 
         const slides = document.querySelectorAll('.slide');
         let currentSlideIndex = 0;
@@ -483,35 +474,7 @@
             slides[currentSlideIndex].classList.add('active');
 
             if (currentSlideIndex === slides.length - 1) {
-                const newBox = document.createElement("div");
-                newBox.classList.add("box");
-                newBox.style.top = `120px`;
-                newBox.style.left = `20px`;
-                newBox.style.opacity = 0;
-
-                const video = document.createElement("video");
-                video.autoplay = true;
-                video.loop = true;
-                video.muted = true;
-                video.playsInline = true;
-
-                const source = document.createElement("source");
-                source.src = "video/paper1.mp4";
-                source.type = "video/mp4";
-
-                video.appendChild(source);
-                newBox.appendChild(video);
-
-                storyboard.appendChild(newBox);
-
-                video.style.width = "100%";
-                video.style.height = "100%";
-                video.style.objectFit = "cover";
-                // Trigger reflow to force CSS transition on opacity
-                newBox.getBoundingClientRect();
-
-                newBox.style.transform = `rotate(${5*boxCount}deg)`;
-                newBox.style.opacity = 1;
+                addBox('video/paper1.mp4', 0)
 
                 boxCount++;
                 clearInterval(intervalId);
@@ -534,123 +497,117 @@
             }
         }
 
-        // <div class="box" style="top: 120px; left: 20px; opacity: 1; transform: rotate(0deg);">
-        // <video autoplay loop muted plays-inline>
-        //     <source src="video/paper1.mp4" type="video/mp4">
-        // </video>
-        // </div>
+        function addBox(url, rotate) {
+            const newBox = document.createElement("div");
+            newBox.classList.add("box");
+            newBox.style.top = `120px`;
+            newBox.style.left = `20px`;
+            newBox.style.opacity = 0;
+            const video = document.createElement("video");
+            video.autoplay = true;
+            video.loop = true;
+            video.muted = true;
+            video.playsInline = true;
+            const source = document.createElement("source");
+            source.src = url;
+            source.type = "video/mp4";
+            video.appendChild(source);
+            newBox.appendChild(video);
+            storyboard.appendChild(newBox);
+
+
+            video.style.width = "100%";
+            video.style.height = "100%";
+            video.style.objectFit = "cover";
+            // Trigger reflow to force CSS transition on opacity
+            newBox.getBoundingClientRect();
+            newBox.style.transform = `rotate(${rotate}deg)`;
+            newBox.style.opacity = 1;
+        }
+
+
+
 
 
         document.addEventListener("keydown", (event) => {
             if (event.key === "n" || event.key === "N") {
                 if (boxCount === 5) {
+                    enableScroll();
                     smoothScrollToElement("#main");
                 } else {
                     const newBox = document.createElement("div");
-
                     switch (boxCount) {
-                        case 0:
-                            newBox.classList.add("box");
-                            newBox.style.top = `120px`;
-                            newBox.style.left = `20px`;
-                            newBox.style.opacity = 0;
-
-                            const video = document.createElement("video");
-                            video.autoplay = true;
-                            video.loop = true;
-                            video.muted = true;
-                            video.playsInline = true;
-
-                            const source = document.createElement("source");
-                            source.src = "video/paper1.mp4";
-                            source.type = "video/mp4";
-
-                            video.appendChild(source);
-                            newBox.appendChild(video);
-
-                            storyboard.appendChild(newBox);
-
-                            // Trigger reflow to force CSS transition on opacity
-                            newBox.getBoundingClientRect();
-
-                            newBox.style.transform = `rotate(${5*boxCount}deg)`;
-                            newBox.style.opacity = 1;
+                        case 1:
+                            addBox('', 2.5)
                             break;
-
+                        case 2:
+                            addBox('', 5)
+                            break;
+                        case 3:
+                            addBox('', -2.5)
+                            break;
+                        case 4:
+                            addBox('', -5)
+                            break;
                         default:
                             newBox.classList.add("box");
                             newBox.style.top = `120px`;
                             newBox.style.left = `20px`;
                             newBox.style.opacity = 0;
-
                             storyboard.appendChild(newBox);
-
-                            // Trigger reflow to force CSS transition on opacity
                             newBox.getBoundingClientRect();
-
                             newBox.style.transform = `rotate(${5*boxCount}deg)`;
                             newBox.style.opacity = 1;
                             break;
                     }
-
                     boxCount++;
                 }
             }
         });
 
+        function disableScroll() {
+            document.body.style.overflow = 'hidden';
+        }
+
+        function enableScroll() {
+            document.body.style.overflow = 'auto';
+        }
 
 
 
-        const st = document.getElementById("storyboard");
-        document.addEventListener("dblclick", () => {
-            const newBox = document.createElement("div");
 
-            switch (boxCount) {
-                case 0:
-                    newBox.classList.add("box");
-                    newBox.style.top = `120px`;
-                    newBox.style.left = `20px`;
-                    newBox.style.opacity = 0;
-
-                    const video = document.createElement("video");
-                    video.autoplay = true;
-                    video.loop = true;
-                    video.muted = true;
-                    video.playsInline = true;
-
-                    const source = document.createElement("source");
-                    source.src = "video/paper1.mp4";
-                    source.type = "video/mp4";
-
-                    video.appendChild(source);
-                    newBox.appendChild(video);
-
-                    storyboard.appendChild(newBox);
-
-                    // Trigger reflow to force CSS transition on opacity
-                    newBox.getBoundingClientRect();
-
-                    newBox.style.transform = `rotate(${5*boxCount}deg)`;
-                    newBox.style.opacity = 1;
-                    break;
-
-                default:
-                    newBox.classList.add("box");
-                    newBox.style.top = `120px`;
-                    newBox.style.left = `20px`;
-                    newBox.style.opacity = 0;
-
-                    storyboard.appendChild(newBox);
-
-                    // Trigger reflow to force CSS transition on opacity
-                    newBox.getBoundingClientRect();
-
-                    newBox.style.transform = `rotate(${5*boxCount}deg)`;
-                    newBox.style.opacity = 1;
-                    break;
+        document.addEventListener("dblclick", (event) => {
+            if (boxCount === 5) {
+                enableScroll();
+                smoothScrollToElement("#main");
+            } else {
+                const newBox = document.createElement("div");
+                switch (boxCount) {
+                    case 1:
+                        addBox('', 2.5)
+                        break;
+                    case 2:
+                        addBox('', 5)
+                        break;
+                    case 3:
+                        addBox('', -2.5)
+                        break;
+                    case 4:
+                        addBox('', -5)
+                        break;
+                    default:
+                        newBox.classList.add("box");
+                        newBox.style.top = `120px`;
+                        newBox.style.left = `20px`;
+                        newBox.style.opacity = 0;
+                        storyboard.appendChild(newBox);
+                        newBox.getBoundingClientRect();
+                        newBox.style.transform = `rotate(${5*boxCount}deg)`;
+                        newBox.style.opacity = 1;
+                        break;
+                }
+                boxCount++;
             }
-
-            boxCount++;
         });
     </script>
 </body>
