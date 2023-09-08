@@ -11,22 +11,36 @@
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
     <style>
+        @font-face {
+            font-family: sprinkle;
+            src: url(fonts/Sprinkle-Regular.ttf);
+        }
+
+
+
         body {
             margin: 0px;
             padding: 0px;
-            font-family: 'Poppins';
+            font-family: 'sprinkle';
             overflow-x: hidden;
+            background: #FFF0DB;
         }
 
         .storyboard {
             position: relative;
             width: 100%;
             height: 100vh;
+            background: #C6EBBE;
+            /* background: url(img/bg.png); */
+
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            animation: 1s;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
 
         .box {
             position: absolute;
@@ -153,6 +167,16 @@
             color: black;
         }
 
+        .slide3 {
+            background-color: white;
+            color: black;
+        }
+
+        .slide4 {
+            background: url(img/bg.png);
+            background-size: cover;
+        }
+
         .slide2.active .box-container {
             transform: translateY(0);
         }
@@ -235,11 +259,52 @@
                 height: 150px;
             }
         }
+
+        /* Remove background and blue color from accordion buttons */
+        .accordion-button {
+            background-color: transparent !important;
+            /* Remove the background color */
+            color: #A97555;
+
+            /* Change the text color */
+        }
+
+        /* Remove the blue focus state */
+        .accordion-button:not(.collapsed):focus {
+            box-shadow: none;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: #A97555;
+            /* Ganti dengan warna yang Anda inginkan */
+        }
+
+        /* Remove the background and border from accordion bodies */
+        .accordion-body {
+            background-color: transparent !important;
+            /* Remove the background color */
+            border: none;
+            /* Remove the border */
+        }
+
+        .accordion-item {
+            background-color: transparent !important;
+            /* Remove the background color */
+            border: none;
+            color: #A97555;
+            /* Remove the border */
+        }
     </style>
 </head>
 
 <body>
+    <audio id="myAudio" style="display: none;" controls autoplay>
+        <source src="sounds/base.mp3" id="audioSource" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <div class="storyboard" id="storyboard">
+        <!-- <center>Veta Journey</center> -->
     </div>
 
     <div>
@@ -254,7 +319,7 @@
 
         </div>
         <div class="slide slide3">
-            <div class="text">BRAKKKK ...... </div>
+            <div class="text">........ </div>
 
         </div>
         <div class="slide slide4">
@@ -266,204 +331,274 @@
         </div>
 
 
+        <img src="img/wave 4.png" style="width: 100%;" alt="">
 
 
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
-        <div class="container" id="main">
+        <div id="vetaSection">
 
             <center>
-                <h3>Anesthesia Machine</h3>
+                <img src="img/veta-question.png" alt="">
+                <br>
+                <h3 style="color: A97555;width: 80%;color: #A97555;text-align: justify;">
+                    apa kalian tau paramedik veteriner ? Paramedik Veteriner adalah tenaga ahli madya kesehatan yang
+                    mampu berperan sebagai
+                    asisten dokter hewan, laboran, tenaga paramedik veteriner dalam bidang pengendalian dan
+                    pengawasan lalu lintas hewan di stasiun karantina hewan, penyuluh kesehatan
+                    hewan secara langsung kepada masyarakat, dan asisten peneliti, dalam veteriner ada penggunaan alat
+                    alat medis juga kalian mau saya menunjukan bagian alat ini dalam bab apa ?
+                </h3>
             </center>
             <br>
 
-
-            <center>
-                <div class="d-flex" style="width: 70%;flex-direction: row; gap: 10px;">
-                    <div style="flex: 1;">
-                        <img style="width: 100%;height: 100%;border-radius: 5px;"
-                            src="https://www.wemed1.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/a/n/anesthesia_1.jpg"
-                            alt="">
-                    </div>
-                    <div style="flex: 1;display: flex;flex-direction: column; gap:10px;">
-
-                        <img style="width: 100%;height: 100%;border-radius: 5px;"
-                            src="https://www.wemed1.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/w/a/wallmount.jpg"
-                            alt="">
-                        <img style="width: 100%;height: 100%;border-radius: 5px;"
-                            src="https://www.ezsystemsinc.com/wp-content/uploads/2018/12/EZ-RB-1000.jpg" alt="">
-
-                    </div>
-                </div>
-            </center>
-            <br>
-            <br>
             <br>
 
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Definisi
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nobis debitis explicabo
-                            expedita praesentium. Laborum deleniti dolorem omnis nam a, vel eos? Asperiores quaerat,
-                            suscipit est dolorum magni a dicta natus animi ducimus obcaecati! Sint delectus fugit
-                            expedita accusantium ea ullam pariatur officia doloribus deserunt impedit, vel, nemo
-                            consequuntur repellat corrupti eius labore. Molestiae, hic qui? Saepe incidunt facere
-                            maxime, quidem consequuntur quisquam quibusdam quas veniam alias ut laudantium sint et
-                            doloribus eveniet ex tenetur in nisi reiciendis eum quia. Sit, aperiam nobis. Soluta ratione
-                            sed deleniti perferendis beatae, quis perspiciatis mollitia eius! Nesciunt autem, aliquam
-                            facere odio amet consequuntur.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Cara Penggunaan
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div>
-                                <img src="" alt="">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quidem ab dignissimos
-                                    hic
-                                    eligendi cupiditate possimus maxime saepe consequatur accusantium aperiam alias quod
-                                    deserunt fugiat aut mollitia adipisci perferendis dolores, aliquam aliquid ipsa
-                                    illum
-                                    soluta! Nam earum atque numquam blanditiis officiis doloribus facilis, nostrum
-                                    asperiores error, possimus accusamus debitis eius laudantium inventore ullam
-                                    explicabo
-                                    alias fuga distinctio quod quae repellendus perspiciatis quibusdam repellat sequi!
-                                    Ab
-                                    minima laudantium minus rerum exercitationem non molestiae quaerat, delectus ducimus
-                                    tempora mollitia ea dicta eligendi iure autem, pariatur accusantium necessitatibus
-                                    voluptas ipsum aut voluptatum officia expedita? Maiores, laudantium! Dolorum minus
-                                    eaque
-                                    maiores ducimus illo magni.</p>
-                            </div>
+            <br>
 
-                        </div>
-                    </div>
+
+            <div class="answer d-flex justify-content-center align-items-center" style="gap: 30px;">
+                <div style="display: flex;gap: 30px;flex-direction: column;">
+                    <button onclick="smoothScrollToElement('#main')" class="ans"
+                        style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
+                        <h6>
+                            A. Definisi Alat Veteriner
+                        </h6>
+                    </button>
+                    <button onclick="smoothScrollToElement('#main')" class="ans"
+                        style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
+                        <h6>
+                            B. Kegunaan Alat Veteriner
+                        </h6>
+                    </button>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Cara Perawatan
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default,
-                            until
-                            the
-                            collapse plugin adds the appropriate classes that we use to style each element.
-                            These
-                            classes
-                            control the overall appearance, as well as the showing and hiding via CSS
-                            transitions.
-                            You
-                            can
-                            modify any of this with custom CSS or overriding our default variables. It's also
-                            worth
-                            noting
-                            that just about any HTML can go within the <code>.accordion-body</code>, though the
-                            transition
-                            does limit overflow.
-                        </div>
-                    </div>
+                <div style="display: flex;gap: 30px;flex-direction: column;">
+                    <button onclick="smoothScrollToElement('#main')" class="ans"
+                        style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
+                        <h6>
+                            C. Cara perawatan alat veteriner
+                        </h6>
+                    </button>
+                    <button onclick="smoothScrollToElement('#main')" class="ans"
+                        style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
+                        <h6>
+                            D. Penggunaan alat veteriner
+                        </h6>
+                    </button>
                 </div>
+
             </div>
-
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <center>
-                <h3>3D Models</h3>
-            </center>
-            <br>
-            <br>
-            <div class="sketchfab-embed-wrapper"> <iframe style="width: 100%;height: 600px;border-radius: 10px;"
-                    title="Anesthesia Machine" frameborder="0" allowfullscreen mozallowfullscreen="true"
-                    webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
-                    execution-while-out-of-viewport execution-while-not-rendered web-share
-                    src="https://sketchfab.com/models/5d54144ed10146798a91ae88cd911266/embed?camera=0"> </iframe> </div>
         </div>
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <br>
         <br>
         <br>
         <br>
         <br>
 
-        <footer style="width: 100%;background: #2f3236; display: flex;color: #fff;padding:50px;flex-wrap: wrap;">
-            <div style="flex: 2;">
-                <h4>PVT</h4>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore iusto sunt, iure corporis aperiam
-                    quisquam commodi ea reiciendis assumenda vel impedit ullam reprehenderit, vero optio.</p>
+
+
+        <img src="img/wave3 1.png" style="width: 100%;" alt="">
+        <div style="background: #C6EBBE;">
+            <div class="container" id="main" style="position: relative;">
+
+                <center>
+                    <h3>Anesthesia Machine</h3>
+                </center>
+                <br>
+
+
+                <center>
+                    <div class="d-flex" style="width: 70%;flex-direction: row; gap: 10px;">
+                        <div style="flex: 1;">
+                            <img style="width: 100%;height: 100%;border-radius: 5px;"
+                                src="https://www.wemed1.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/a/n/anesthesia_1.jpg"
+                                alt="">
+                        </div>
+                        <div style="flex: 1;display: flex;flex-direction: column; gap:10px;">
+
+                            <img style="width: 100%;height: 100%;border-radius: 5px;"
+                                src="https://www.wemed1.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/w/a/wallmount.jpg"
+                                alt="">
+                            <img style="width: 100%;height: 100%;border-radius: 5px;"
+                                src="https://www.ezsystemsinc.com/wp-content/uploads/2018/12/EZ-RB-1000.jpg" alt="">
+
+                        </div>
+                    </div>
+                    <!-- <div
+                        style="position: absolute;bottom: 0;right: 2; width: 200px;height: 200px;background: url(img/veta-crop.png);background-size: cover;">
+                    </div> -->
+                </center>
+
+                <img src="img/veta-crop.png"
+                    style="width:20vw; position: absolute;bottom: -50px;right: 0; margin-right: 100px;" alt="">
             </div>
-            <div style="flex: 1;">
-                <h5>Useful Links</h5>
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Faq</li>
-                    <li>Contact Us</li>
-                    <li>Get Started</li>
-                </ul>
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="container">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Definisi
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nobis debitis explicabo
+                                expedita praesentium. Laborum deleniti dolorem omnis nam a, vel eos? Asperiores quaerat,
+                                suscipit est dolorum magni a dicta natus animi ducimus obcaecati! Sint delectus fugit
+                                expedita accusantium ea ullam pariatur officia doloribus deserunt impedit, vel, nemo
+                                consequuntur repellat corrupti eius labore. Molestiae, hic qui? Saepe incidunt facere
+                                maxime, quidem consequuntur quisquam quibusdam quas veniam alias ut laudantium sint et
+                                doloribus eveniet ex tenetur in nisi reiciendis eum quia. Sit, aperiam nobis. Soluta
+                                ratione
+                                sed deleniti perferendis beatae, quis perspiciatis mollitia eius! Nesciunt autem,
+                                aliquam
+                                facere odio amet consequuntur.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Cara Penggunaan
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div>
+                                    <img src="" alt="">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quidem ab
+                                        dignissimos
+                                        hic
+                                        eligendi cupiditate possimus maxime saepe consequatur accusantium aperiam alias
+                                        quod
+                                        deserunt fugiat aut mollitia adipisci perferendis dolores, aliquam aliquid ipsa
+                                        illum
+                                        soluta! Nam earum atque numquam blanditiis officiis doloribus facilis, nostrum
+                                        asperiores error, possimus accusamus debitis eius laudantium inventore ullam
+                                        explicabo
+                                        alias fuga distinctio quod quae repellendus perspiciatis quibusdam repellat
+                                        sequi!
+                                        Ab
+                                        minima laudantium minus rerum exercitationem non molestiae quaerat, delectus
+                                        ducimus
+                                        tempora mollitia ea dicta eligendi iure autem, pariatur accusantium
+                                        necessitatibus
+                                        voluptas ipsum aut voluptatum officia expedita? Maiores, laudantium! Dolorum
+                                        minus
+                                        eaque
+                                        maiores ducimus illo magni.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Cara Perawatan
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                                until
+                                the
+                                collapse plugin adds the appropriate classes that we use to style each element.
+                                These
+                                classes
+                                control the overall appearance, as well as the showing and hiding via CSS
+                                transitions.
+                                You
+                                can
+                                modify any of this with custom CSS or overriding our default variables. It's also
+                                worth
+                                noting
+                                that just about any HTML can go within the <code>.accordion-body</code>, though the
+                                transition
+                                does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div style="flex: 1;">
-                <h5>Useful Links</h5>
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Faq</li>
-                    <li>Contact Us</li>
-                    <li>Get Started</li>
-                </ul>
-            </div>
-            <div style="flex: 1;">
-                <h5>Useful Links</h5>
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Faq</li>
-                    <li>Contact Us</li>
-                    <li>Get Started</li>
-                </ul>
-            </div>
-        </footer>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+    <img src="img/wave 5.png" style="width: 100%;" alt="">
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-        <script>
-            baguetteBox.run('.tz-gallery');
-        </script>
+    <div class="container">
+        <center>
+            <h3>3D Models</h3>
+        </center>
+        <br>
+        <br>
+        <div class="sketchfab-embed-wrapper"> <iframe style="width: 100%;height: 600px;border-radius: 10px;"
+                title="Anesthesia Machine" frameborder="0" allowfullscreen mozallowfullscreen="true"
+                webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                execution-while-out-of-viewport execution-while-not-rendered web-share
+                src="https://sketchfab.com/models/5d54144ed10146798a91ae88cd911266/embed?camera=0"> </iframe>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer style="width: 100%;background: #C6EBBE; display: flex;color: #A97555;padding:50px;flex-wrap: wrap;">
+        <div style="flex: 2;">
+            <h4>PVT</h4>
+            <p>Cerita ini dibuat berdasarkan khayalan fiktif semata segala unsur dalam cerita ini tidak nyata dan tidak
+                benar benar terjadi, cerita ini ditulis untuk menambah wawasan tentang alat alat dalam paramedik
+                veteriner</p>
+        </div>
+        
+        <div style="flex: 1;">
+            <h5>Useful Links</h5>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Faq</li>
+                <li>Contact Us</li>
+                <li>Get Started</li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -487,15 +622,45 @@
             currentSlideIndex = (currentSlideIndex + 1) % slides.length;
             slides[currentSlideIndex].classList.add('active');
 
-            if (currentSlideIndex === slides.length - 1) {
-                addBox('video/paper1.mp4', 0)
+            if (currentSlideIndex === 2) {
+
+               
+            } else if (currentSlideIndex === slides.length - 1) {
+                const audio = document.getElementById('myAudio');
+                const audioSource = document.getElementById('audioSource');
+                audioSource.src = 'sounds/brak.mp3';
+                audio.load();
+                audio.play();
+                addBox('video/k-1.mp4', 0)
+                setTimeout(() => {
+                    addBox('video/k0.mp4', 0)
+                }, 3000);
+                
+                setTimeout(() => {
+                    addBox('video/crash.mp4', 0)
+
+                }, 5000);
+
+                setTimeout(() => {
+                    addBox('video/k1.mp4', 0)
+
+                }, 8000);
+
+                setTimeout(() => {
+                    const audio = document.getElementById('myAudio');
+                const audioSource = document.getElementById('audioSource');
+                audioSource.src = 'sounds/sad.mp3';
+
+                audio.load();
+                audio.play();
+                }, 9000);
 
                 boxCount++;
                 clearInterval(intervalId);
             }
         }
 
-        intervalId = setInterval(showNextSlide, 4000);
+        intervalId = setInterval(showNextSlide, 8000);
 
 
         const storyboard = document.querySelector(".storyboard");
@@ -536,11 +701,78 @@
             video.style.width = "100%";
             video.style.height = "100%";
             video.style.objectFit = "cover";
-            // Trigger reflow to force CSS transition on opacity
+            // Trigger reflow to force CSnS transition on opacity
             newBox.getBoundingClientRect();
             newBox.style.transform = `rotate(${rotate}deg)`;
             newBox.style.opacity = 1;
+
+
+            const customContent = document.createElement("div");
+            customContent.style.width = "400px";
+            customContent.style.height = "100px";
+            customContent.style.background = "white";
+            customContent.style.position = "absolute";
+            customContent.style.bottom = "100px";
+            customContent.style.right = "-100px";
+            customContent.style.background = "white";
+            customContent.style.borderRadius = "10px";
+            customContent.style.padding = "10px";
+            customContent.style.border = "5px solid black";
+            customContent.textContent =
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ex provident explicabo ducimus exercitationem.";
+            newBox.appendChild(customContent);
+
+
         }
+
+        // function addBox(url, rotate) {
+        //     const newBox = document.createElement("div");
+        //     newBox.classList.add("box");
+        //     newBox.style.top = `0`;
+        //     newBox.style.left = `0`;
+        //     newBox.style.right = `0`;
+        //     newBox.style.bottom = `0`;
+        //     newBox.style.inset = `unset`;
+        //     newBox.style.opacity = 0;
+        //     const video = document.createElement("video");
+        //     video.autoplay = true;
+        //     video.loop = true;
+        //     video.muted = true;
+        //     video.playsInline = true;
+        //     const source = document.createElement("source");
+        //     source.src = url;
+        //     source.type = "video/mp4";
+        //     video.appendChild(source);
+        //     newBox.appendChild(video);
+
+        //     storyboard.appendChild(newBox);
+
+
+        //     video.style.width = "100%";
+        //     video.style.height = "100%";
+        //     video.style.objectFit = "cover";
+
+        //     // Trigger reflow to force CSS transition on opacity
+        //     newBox.getBoundingClientRect();
+        //     newBox.style.transform = `rotate(${rotate}deg)`;
+        //     newBox.style.opacity = 1;
+
+        //     const customContent = document.createElement("div");
+        //     customContent.style.width = "400px";
+        //     customContent.style.height = "100px";
+        //     customContent.style.background = "white";
+        //     customContent.style.position = "absolute";
+        //     customContent.style.bottom = "100px";
+        //     customContent.style.right = "-100px";
+        //     customContent.style.background = "white";
+        //     customContent.style.borderRadius = "10px";
+        //     customContent.style.padding = "10px";
+        //     customContent.style.border = "5px solid black";
+        //     customContent.textContent = "Halo gais saya veta dan dia ketabrak";
+
+        //     newBox.appendChild(customContent);
+        //     storyboard.appendChild(newBox);
+        // }
 
 
 
@@ -548,33 +780,20 @@
 
         document.addEventListener("keydown", (event) => {
             if (event.key === "n" || event.key === "N") {
-                if (boxCount === 5) {
+                if (boxCount === 4) {
                     enableScroll();
-                    smoothScrollToElement("#main");
+                    smoothScrollToElement("#vetaSection");
                 } else {
                     const newBox = document.createElement("div");
                     switch (boxCount) {
                         case 1:
-                            addBox('', 2.5)
+                            addBox('video/k2.mp4', 2.5)
                             break;
                         case 2:
-                            addBox('', 5)
+                            addBox('video/k3.mp4', 5)
                             break;
                         case 3:
-                            addBox('', -2.5)
-                            break;
-                        case 4:
-                            addBox('', -5)
-                            break;
-                        default:
-                            newBox.classList.add("box");
-                            newBox.style.top = `120px`;
-                            newBox.style.left = `20px`;
-                            newBox.style.opacity = 0;
-                            storyboard.appendChild(newBox);
-                            newBox.getBoundingClientRect();
-                            newBox.style.transform = `rotate(${5*boxCount}deg)`;
-                            newBox.style.opacity = 1;
+                            addBox('video/k4.mp4', -2.5)
                             break;
                     }
                     boxCount++;
@@ -596,7 +815,7 @@
         document.addEventListener("dblclick", (event) => {
             if (boxCount === 5) {
                 enableScroll();
-                smoothScrollToElement("#main");
+                smoothScrollToElement("#vetaSection");
             } else {
                 const newBox = document.createElement("div");
                 switch (boxCount) {
@@ -612,16 +831,7 @@
                     case 4:
                         addBox('', -5)
                         break;
-                    default:
-                        newBox.classList.add("box");
-                        newBox.style.top = `120px`;
-                        newBox.style.left = `20px`;
-                        newBox.style.opacity = 0;
-                        storyboard.appendChild(newBox);
-                        newBox.getBoundingClientRect();
-                        newBox.style.transform = `rotate(${5*boxCount}deg)`;
-                        newBox.style.opacity = 1;
-                        break;
+
                 }
                 boxCount++;
             }
