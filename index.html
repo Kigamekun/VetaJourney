@@ -17,6 +17,9 @@
         }
 
 
+        .boxText {
+            width: 400px;
+        }
 
         body {
             margin: 0px;
@@ -63,6 +66,9 @@
             margin-left: 30px;
             margin-right: auto;
             transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            animation: resize .4s infinite alternate;
+            /* Mengatur animasi dengan nama "resize" selama 2 detik dan berulang-ulang dengan pola alternatif */
+
         }
 
         .content.gallery-content {
@@ -255,8 +261,29 @@
 
         @media only screen and (max-width: 600px) {
             .box {
-                width: 70%;
-                height: 150px;
+                width: 90%;
+                height: 200px;
+            }
+
+            .vetQ {
+                width: 100%;
+            }
+
+            .slide4 {
+                background: unset;
+                background-size: cover;
+            }
+
+            .ans {
+                width: 30vw !important;
+            }
+
+            .boxText {
+                width: 100% !important;
+                height: 170px !important;
+                bottom: unset !important;
+                right: unset !important;
+                font-size: 10px;
             }
         }
 
@@ -294,12 +321,30 @@
             color: #A97555;
             /* Remove the border */
         }
+
+        @keyframes resize {
+            0% {
+                font-size: 16px;
+                /* Ukuran awal */
+            }
+
+            100% {
+                font-size: 16.5px;
+                /* Ukuran akhir */
+            }
+        }
     </style>
 </head>
 
 <body>
     <audio id="myAudio" style="display: none;" controls autoplay>
-        <source src="sounds/base.mp3" id="audioSource" type="audio/mpeg">
+        <source src="sounds/base.mp3" volume="0.2" id="audioSource" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+
+    <audio id="voAudio" style="display: none;" controls autoplay>
+        <source src="sounds/sound5.mp3" id="audioSourceVo" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -311,17 +356,17 @@
 
 
         <div class="slide slide1 active">
-            <div class="text">Pada suatu hari di negara vetaria yang cerah ada seorang anak bernama Veti, ia sedang
-                menjalani hari harinya seperti biasa</div>
+            <div class="text">Pada suatu hari yang cerah, ditengah jalanan kota veterner, ada sebuah mobil dengan
+                kecepatan tinggi yang sedang melaju hingga tanpa sadar seekor kucing secara tiba – tiba melintas</div>
         </div>
         <div class="slide slide2">
-            <div class="text">Namun tiba tiba .....</div>
+            <div class="text">oh tidak! Apa yang terjadi ?!</div>
 
         </div>
-        <div class="slide slide3">
+        <!-- <div class="slide slide3">
             <div class="text">........ </div>
 
-        </div>
+        </div> -->
         <div class="slide slide4">
             <div class="container">
 
@@ -334,13 +379,23 @@
         <img src="img/wave 4.png" style="width: 100%;" alt="">
 
 
+        <!-- <center>
+            <div id="search"
+                style="width: 60%;margin-top: -300px;border: 3px solid black;border-radius: 10px;z-index: 999999;position: relative;">
+                <input style="background: #ECEDE1;height: 70px;" type="text" class="form-control"
+                    placeholder="Search ....">
+            </div>
+        </center> -->
         <br>
         <br>
         <br>
+
+
+
         <div id="vetaSection">
 
             <center>
-                <img src="img/veta-question.png" alt="">
+                <img src="img/veta-question.png" class="vetQ" alt="">
                 <br>
                 <h3 style="color: A97555;width: 80%;color: #A97555;text-align: justify;">
                     apa kalian tau paramedik veteriner ? Paramedik Veteriner adalah tenaga ahli madya kesehatan yang
@@ -360,32 +415,34 @@
 
             <div class="answer d-flex justify-content-center align-items-center" style="gap: 30px;">
                 <div style="display: flex;gap: 30px;flex-direction: column;">
-                    <button onclick="smoothScrollToElement('#main')" class="ans"
+                    <button onclick="scrollToElement('definisi','collapseOne')" class="ans"
                         style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
                         <h6>
                             A. Definisi Alat Veteriner
                         </h6>
                     </button>
-                    <button onclick="smoothScrollToElement('#main')" class="ans"
-                        style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
-                        <h6>
-                            B. Kegunaan Alat Veteriner
-                        </h6>
-                    </button>
-                </div>
-                <div style="display: flex;gap: 30px;flex-direction: column;">
-                    <button onclick="smoothScrollToElement('#main')" class="ans"
-                        style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
-                        <h6>
-                            C. Cara perawatan alat veteriner
-                        </h6>
-                    </button>
-                    <button onclick="smoothScrollToElement('#main')" class="ans"
+
+                    <button onclick="scrollToElement('penggunaan','collapseFour')" class="ans"
                         style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
                         <h6>
                             D. Penggunaan alat veteriner
                         </h6>
                     </button>
+                </div>
+                <div style="display: flex;gap: 30px;flex-direction: column;">
+                    <button onclick="scrollToElement('kegunaan','collapseTwo')" class="ans"
+                        style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
+                        <h6>
+                            B. Kegunaan Alat Veteriner
+                        </h6>
+                    </button>
+                    <button onclick="scrollToElement('cara_perawatan','collapseThree')" class="ans"
+                        style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
+                        <h6>
+                            C. Cara perawatan alat veteriner
+                        </h6>
+                    </button>
+
                 </div>
 
             </div>
@@ -403,7 +460,7 @@
             <div class="container" id="main" style="position: relative;">
 
                 <center>
-                    <h3>Anesthesia Machine</h3>
+                    <h3 style="color: #A97555;">Anesthesia Machine</h3>
                 </center>
                 <br>
 
@@ -441,7 +498,7 @@
 
             <div class="container">
                 <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
+                    <div class="accordion-item" id="definisi">
                         <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -465,7 +522,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item" id="penggunaan">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -475,34 +532,139 @@
                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div>
-                                    <img src="" alt="">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quidem ab
-                                        dignissimos
-                                        hic
-                                        eligendi cupiditate possimus maxime saepe consequatur accusantium aperiam alias
-                                        quod
-                                        deserunt fugiat aut mollitia adipisci perferendis dolores, aliquam aliquid ipsa
-                                        illum
-                                        soluta! Nam earum atque numquam blanditiis officiis doloribus facilis, nostrum
-                                        asperiores error, possimus accusamus debitis eius laudantium inventore ullam
-                                        explicabo
-                                        alias fuga distinctio quod quae repellendus perspiciatis quibusdam repellat
-                                        sequi!
-                                        Ab
-                                        minima laudantium minus rerum exercitationem non molestiae quaerat, delectus
-                                        ducimus
-                                        tempora mollitia ea dicta eligendi iure autem, pariatur accusantium
-                                        necessitatibus
-                                        voluptas ipsum aut voluptatum officia expedita? Maiores, laudantium! Dolorum
-                                        minus
-                                        eaque
-                                        maiores ducimus illo magni.</p>
-                                </div>
+                                    <div class="row">
+                                        <div class="d-flex gap-5">
+                                            <div
+                                                style="flex:2; width: 200px;height: 200px;background: url('img/car-1.jpeg');background-size:cover; border-radius: 10px;position: relative;">
+                                                <img src="img/cara_penggunaan.png" style="width: 150px;height: 150px; position:absolute;
+                                                bottom:-50px;
+                                                left:-50px;transform: scaleX(-1) ;" alt="">
+                                            </div>
+                                            <div style="flex: 4;padding: 10px;">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil,
+                                                    recusandae! Maiores dignissimos pariatur dolor, suscipit quis totam
+                                                    nihil aliquam animi provident! Vero, error minus. Sit nesciunt
+                                                    commodi veritatis vero obcaecati.</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <div class="row">
+                                        <div class="d-flex gap-5">
+                                            <div style="flex: 4;padding: 10px;">
+                                                <p style="text-align: right;">Lorem ipsum dolor, sit amet consectetur
+                                                    adipisicing elit. Facilis nemo nulla reprehenderit reiciendis.
+                                                    Distinctio odit, quia, eius, facilis architecto itaque ipsum
+                                                    veritatis unde possimus mollitia incidunt aperiam nesciunt
+                                                    consectetur tempora nisi corporis quae eligendi natus molestiae
+                                                    iure. Ipsam doloremque hic, iusto inventore quas voluptatibus, ut
+                                                    omnis nesciunt, non magni fuga.</p>
+                                            </div>
+                                            <div
+                                                style="flex:2; width: 200px;height: 200px;background: url('img/car-1.jpeg');background-size:cover; border-radius: 10px;position: relative;">
+
+                                                <!-- <img src="img/cara_penggunaan.png" style="width: 150px;height: 150px; position:absolute;
+                                                bottom:-50px;
+                                                right:-50px;" alt=""> -->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <div class="row">
+                                        <div class="d-flex gap-5">
+                                            <div
+                                                style="flex:2; width: 200px;height: 200px;background: url('img/car-1.jpeg');background-size:cover; border-radius: 10px;position: relative;">
+                                                <!-- <img src="img/cara_penggunaan.png" style="width: 150px;height: 150px; position:absolute;
+                                                bottom:-50px;
+                                                left:-50px;transform: scaleX(-1) ;" alt=""> -->
+                                            </div>
+                                            <div style="flex: 4;padding: 10px;">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ea
+                                                    quo magni tempore aliquid nihil consectetur nemo exercitationem.
+                                                    Consequatur quis sapiente voluptatibus eligendi eaque! Minima unde
+                                                    quia eos accusamus dolores tempora expedita illo quae quisquam, aut
+                                                    repudiandae odio voluptates corporis quos beatae nostrum a velit
+                                                    iure et praesentium doloremque sunt voluptatem voluptate quaerat.
+                                                    Deleniti molestias officiis ullam vel commodi voluptatibus doloribus
+                                                    atque dolor incidunt hic consequatur ut, eligendi soluta magni harum
+                                                    assumenda! Asperiores impedit libero odio iusto rerum vero sit,
+                                                    possimus natus laborum voluptates, accusantium sunt omnis magni
+                                                    aperiam voluptatem ad itaque laboriosam, fugit pariatur. Expedita
+                                                    dolorem minus officia cupiditate?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <div class="row">
+                                        <div class="d-flex gap-5">
+                                            <div style="flex: 4;padding: 10px;">
+                                                <p style="text-align: right;">Lorem ipsum dolor, sit amet consectetur
+                                                    adipisicing elit. Facilis nemo nulla reprehenderit reiciendis.
+                                                    Distinctio odit, quia, eius, facilis architecto itaque ipsum
+                                                    veritatis unde possimus mollitia incidunt aperiam nesciunt
+                                                    consectetur tempora nisi corporis quae eligendi natus molestiae
+                                                    iure. Ipsam doloremque hic, iusto inventore quas voluptatibus, ut
+                                                    omnis nesciunt, non magni fuga.</p>
+                                            </div>
+                                            <div
+                                                style="flex:2; width: 200px;height: 200px;background: url('img/car-1.jpeg');background-size:cover; border-radius: 10px;position: relative;">
+                                                <img src="img/cara_penggunaan.png" style="width: 150px;height: 150px; position:absolute;
+                                                bottom:-50px;
+                                                right:-50px;" alt="">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item" id="kegunaan">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                Kegunaan
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nobis debitis explicabo
+                                expedita praesentium. Laborum deleniti dolorem omnis nam a, vel eos? Asperiores quaerat,
+                                suscipit est dolorum magni a dicta natus animi ducimus obcaecati! Sint delectus fugit
+                                expedita accusantium ea ullam pariatur officia doloribus deserunt impedit, vel, nemo
+                                consequuntur repellat corrupti eius labore. Molestiae, hic qui? Saepe incidunt facere
+                                maxime, quidem consequuntur quisquam quibusdam quas veniam alias ut laudantium sint et
+                                doloribus eveniet ex tenetur in nisi reiciendis eum quia. Sit, aperiam nobis. Soluta
+                                ratione
+                                sed deleniti perferendis beatae, quis perspiciatis mollitia eius! Nesciunt autem,
+                                aliquam
+                                facere odio amet consequuntur.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item" id="cara_perawatan">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -532,6 +694,7 @@
                     </div>
                 </div>
 
+
             </div>
 
             <br>
@@ -552,7 +715,12 @@
 
 
     <div class="container">
-        <center>
+        <div
+            style="background: white;border-radius: 10px;width: 100%;height: 400px;color: #A97555;display: flex;justify-content: center;align-items: center;">
+            <h2>Whats Next ? </h2>
+
+        </div>
+        <!-- <center>
             <h3>3D Models</h3>
         </center>
         <br>
@@ -562,7 +730,7 @@
                 webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
                 execution-while-out-of-viewport execution-while-not-rendered web-share
                 src="https://sketchfab.com/models/5d54144ed10146798a91ae88cd911266/embed?camera=0"> </iframe>
-        </div>
+        </div> -->
     </div>
 
     <br>
@@ -570,26 +738,47 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-    <footer style="width: 100%;background: #C6EBBE; display: flex;color: #A97555;padding:50px;flex-wrap: wrap;">
+    <center>
+        <div style="color: #A97555;width: 60%;margin: auto;">
+            <h4>PVT</h4>
+            <p>Cerita ini dibuat berdasarkan khayalan fiktif semata segala unsur dalam cerita ini tidak nyata dan tidak
+                benar benar terjadi, cerita ini ditulis untuk menambah wawasan tentang alat alat dalam paramedik
+                veteriner</p>
+            <hr>
+            <br>
+            <br>
+            <br>
+            <br>
+            Copyright © 2023 - Kelompok 4
+            <br>
+
+            <br>
+            <br>
+            <br>
+
+        </div>
+
+    </center>
+
+    <!-- <footer style="width: 100%;background: #C6EBBE; display: flex;color: #A97555;padding:50px;flex-wrap: wrap;justify-content: center;">
         <div style="flex: 2;">
             <h4>PVT</h4>
             <p>Cerita ini dibuat berdasarkan khayalan fiktif semata segala unsur dalam cerita ini tidak nyata dan tidak
                 benar benar terjadi, cerita ini ditulis untuk menambah wawasan tentang alat alat dalam paramedik
                 veteriner</p>
         </div>
-        
-        <div style="flex: 1;">
-            <h5>Useful Links</h5>
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Faq</li>
-                <li>Contact Us</li>
-                <li>Get Started</li>
-            </ul>
-        </div>
-    </footer>
+
+      
+    </footer> -->
 
 
 
@@ -604,14 +793,53 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script>
+        function scrollToElement(elementId, dataCollapseValue) {
 
+            const targetElement = document.getElementById(elementId);
+
+            console.log(dataCollapseValue)
+            const buttonElement = document.querySelector(`button[data-bs-target="#${dataCollapseValue}"]`);
+            if (targetElement) {
+                const offset = 200; // Ubah offset sesuai dengan berapa banyak Anda ingin berhenti di atas elemen
+                const elementPosition = targetElement.offsetTop - offset;
+                window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth' // Untuk efek scroll yang halus, jika diperlukan
+                });
+            }
+
+            setTimeout(() => {
+                const collapseTwoElement = document.getElementById(dataCollapseValue);
+                if (collapseTwoElement) {
+                    const hasShowClass = collapseTwoElement.classList.contains('show');
+                    if (hasShowClass) {
+                        console.log('The element has the "show" class.');
+                    } else {
+                        buttonElement.click()
+                    }
+                } else {
+                    console.log('Element with ID "collapseTwo" not found.');
+                }
+
+            }, 1000);
+        }
+    </script>
     <script>
         let boxCount = 0;
         disableScroll();
         window.addEventListener('load', () => {
             // Gulirkan halaman ke paling atas
             window.scrollTo(0, 0);
+            var audio = document.getElementById("myAudio");
+            audio.volume = 0.3;
         });
+
+
+
+
 
         const slides = document.querySelectorAll('.slide');
         let currentSlideIndex = 0;
@@ -622,9 +850,14 @@
             currentSlideIndex = (currentSlideIndex + 1) % slides.length;
             slides[currentSlideIndex].classList.add('active');
 
-            if (currentSlideIndex === 2) {
+            if (currentSlideIndex == 1) {
+                let audio = document.getElementById('voAudio');
+                let audioSource = document.getElementById('audioSourceVo');
+                audioSource.src = 'sounds/sound2.mp3';
 
-               
+                audio.load();
+                audio.play();
+
             } else if (currentSlideIndex === slides.length - 1) {
                 const audio = document.getElementById('myAudio');
                 const audioSource = document.getElementById('audioSource');
@@ -635,7 +868,7 @@
                 setTimeout(() => {
                     addBox('video/k0.mp4', 0)
                 }, 3000);
-                
+
                 setTimeout(() => {
                     addBox('video/crash.mp4', 0)
 
@@ -643,16 +876,36 @@
 
                 setTimeout(() => {
                     addBox('video/k1.mp4', 0)
+                    // let audio = document.getElementById('voAudio');
+                    // let audioSource = document.getElementById('audioSourceVo');
+                    // audioSource.src = 'sounds/sound1.mp3';
 
+                    // audio.load();
+                    // audio.play();
                 }, 8000);
+
+
+                setTimeout(() => {
+                    addBox('video/k2.mp4', 0, 'Huhuhuu kucingnya berdarah… apakah dia kehilangan nyawanya?',
+                        true)
+                    let audio = document.getElementById('voAudio');
+                    let audioSource = document.getElementById('audioSourceVo');
+                    audioSource.src = 'sounds/sound1.mp3';
+
+                    audio.load();
+                    audio.play();
+                }, 12000);
+
+
+
 
                 setTimeout(() => {
                     const audio = document.getElementById('myAudio');
-                const audioSource = document.getElementById('audioSource');
-                audioSource.src = 'sounds/sad.mp3';
+                    const audioSource = document.getElementById('audioSource');
+                    audioSource.src = 'sounds/sad.mp3';
 
-                audio.load();
-                audio.play();
+                    audio.load();
+                    audio.play();
                 }, 9000);
 
                 boxCount++;
@@ -660,7 +913,7 @@
             }
         }
 
-        intervalId = setInterval(showNextSlide, 8000);
+        intervalId = setInterval(showNextSlide, 15000);
 
 
         const storyboard = document.querySelector(".storyboard");
@@ -676,7 +929,7 @@
             }
         }
 
-        function addBox(url, rotate) {
+        function addBox(url, rotate, content = '', useDivContext = false, height = 100) {
             const newBox = document.createElement("div");
             newBox.classList.add("box");
             newBox.style.top = `0`;
@@ -707,93 +960,66 @@
             newBox.style.opacity = 1;
 
 
-            const customContent = document.createElement("div");
-            customContent.style.width = "400px";
-            customContent.style.height = "100px";
-            customContent.style.background = "white";
-            customContent.style.position = "absolute";
-            customContent.style.bottom = "100px";
-            customContent.style.right = "-100px";
-            customContent.style.background = "white";
-            customContent.style.borderRadius = "10px";
-            customContent.style.padding = "10px";
-            customContent.style.border = "5px solid black";
-            customContent.textContent =
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ex provident explicabo ducimus exercitationem.";
-            newBox.appendChild(customContent);
+            if (useDivContext) {
+                const customContent = document.createElement("div");
+                customContent.style.height = `${height}px`;
+                customContent.style.background = "white";
+                customContent.style.position = "absolute";
+                customContent.style.bottom = "100px";
+                customContent.style.right = "-100px";
+                customContent.style.background = "white";
+                customContent.style.borderRadius = "10px";
+                customContent.style.padding = "10px";
+                customContent.style.border = "5px solid black";
+                customContent.textContent =
+                    content;
+                customContent.classList.add("boxText");
+
+                newBox.appendChild(customContent);
+            }
+
 
 
         }
 
-        // function addBox(url, rotate) {
-        //     const newBox = document.createElement("div");
-        //     newBox.classList.add("box");
-        //     newBox.style.top = `0`;
-        //     newBox.style.left = `0`;
-        //     newBox.style.right = `0`;
-        //     newBox.style.bottom = `0`;
-        //     newBox.style.inset = `unset`;
-        //     newBox.style.opacity = 0;
-        //     const video = document.createElement("video");
-        //     video.autoplay = true;
-        //     video.loop = true;
-        //     video.muted = true;
-        //     video.playsInline = true;
-        //     const source = document.createElement("source");
-        //     source.src = url;
-        //     source.type = "video/mp4";
-        //     video.appendChild(source);
-        //     newBox.appendChild(video);
-
-        //     storyboard.appendChild(newBox);
-
-
-        //     video.style.width = "100%";
-        //     video.style.height = "100%";
-        //     video.style.objectFit = "cover";
-
-        //     // Trigger reflow to force CSS transition on opacity
-        //     newBox.getBoundingClientRect();
-        //     newBox.style.transform = `rotate(${rotate}deg)`;
-        //     newBox.style.opacity = 1;
-
-        //     const customContent = document.createElement("div");
-        //     customContent.style.width = "400px";
-        //     customContent.style.height = "100px";
-        //     customContent.style.background = "white";
-        //     customContent.style.position = "absolute";
-        //     customContent.style.bottom = "100px";
-        //     customContent.style.right = "-100px";
-        //     customContent.style.background = "white";
-        //     customContent.style.borderRadius = "10px";
-        //     customContent.style.padding = "10px";
-        //     customContent.style.border = "5px solid black";
-        //     customContent.textContent = "Halo gais saya veta dan dia ketabrak";
-
-        //     newBox.appendChild(customContent);
-        //     storyboard.appendChild(newBox);
-        // }
-
-
-
-
 
         document.addEventListener("keydown", (event) => {
             if (event.key === "n" || event.key === "N") {
-                if (boxCount === 4) {
+                if (boxCount === 3) {
                     enableScroll();
                     smoothScrollToElement("#vetaSection");
                 } else {
                     const newBox = document.createElement("div");
+                    let audio = document.getElementById('voAudio');
+                    let audioSource = document.getElementById('audioSourceVo');
+
+                    const audioBase = document.getElementById('myAudio');
+                    const audioSourceBase = document.getElementById('audioSource');
+
+
                     switch (boxCount) {
+                        // case 1:
+                        //     addBox('video/k2.mp4', 2.5)
+                        //     break;
                         case 1:
-                            addBox('video/k2.mp4', 2.5)
+                            addBox('video/k3.mp4', 5,
+                                'Kita harus segera membawa kucing tersebut ke klinik hewan!', true)
+                            audioSource.src = 'sounds/sound3.mp3';
+
+                            audio.load();
+                            audio.play();
                             break;
                         case 2:
-                            addBox('video/k3.mp4', 5)
-                            break;
-                        case 3:
-                            addBox('video/k4.mp4', -2.5)
+                            audioSourceBase.src = 'sounds/happy.mp3';
+                            audioBase.load();
+                            audioBase.play();
+                            addBox('video/k4.mp4', -2.5,
+                                'Hai teman-teman aku Vetii sebagai pemandu kalian! By the way, kucing yang tadi ketabrak tu kira-kira diapain yaa setelah dibawa ke klinik? Hmm yang pasti sih ada serangkaian penanganan yang akan diberikan kepada kucing tersebut. Nah biar teman - teman ga bingung, disini aku dan teman ku akan menjelaskan Langkah-langkah penanganan kucing tersebut dengan salah satu alat yang penting nihh. So kalau kamu penasaran, ikutin terus aku dan temanku yaa!!',
+                                true, 300)
+                            audioSource.src = 'sounds/sound4.mp3';
+
+                            audio.load();
+                            audio.play();
                             break;
                     }
                     boxCount++;
@@ -802,7 +1028,7 @@
         });
 
         function disableScroll() {
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'auto';
         }
 
         function enableScroll() {
@@ -813,25 +1039,42 @@
 
 
         document.addEventListener("dblclick", (event) => {
-            if (boxCount === 5) {
+            if (boxCount === 3) {
                 enableScroll();
                 smoothScrollToElement("#vetaSection");
             } else {
                 const newBox = document.createElement("div");
+                let audio = document.getElementById('voAudio');
+                let audioSource = document.getElementById('audioSourceVo');
+
+                const audioBase = document.getElementById('myAudio');
+                const audioSourceBase = document.getElementById('audioSource');
+
+
                 switch (boxCount) {
+                    // case 1:
+                    //     addBox('video/k2.mp4', 2.5)
+                    //     break;
                     case 1:
-                        addBox('', 2.5)
+                        addBox('video/k3.mp4', 5,
+                            'Kita harus segera membawa kucing tersebut ke klinik hewan!', true)
+                        audioSource.src = 'sounds/sound3.mp3';
+
+                        audio.load();
+                        audio.play();
                         break;
                     case 2:
-                        addBox('', 5)
-                        break;
-                    case 3:
-                        addBox('', -2.5)
-                        break;
-                    case 4:
-                        addBox('', -5)
-                        break;
+                        audioSourceBase.src = 'sounds/happy.mp3';
+                        audioBase.load();
+                        audioBase.play();
+                        addBox('video/k4.mp4', -2.5,
+                            'Hai teman-teman aku Vetii sebagai pemandu kalian! By the way, kucing yang tadi ketabrak tu kira-kira diapain yaa setelah dibawa ke klinik? Hmm yang pasti sih ada serangkaian penanganan yang akan diberikan kepada kucing tersebut. Nah biar teman - teman ga bingung, disini aku dan teman ku akan menjelaskan Langkah-langkah penanganan kucing tersebut dengan salah satu alat yang penting nihh. So kalau kamu penasaran, ikutin terus aku dan temanku yaa!!',
+                            true, 300)
+                        audioSource.src = 'sounds/sound4.mp3';
 
+                        audio.load();
+                        audio.play();
+                        break;
                 }
                 boxCount++;
             }
