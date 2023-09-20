@@ -251,6 +251,14 @@
 
         }
 
+        .accordion-button {
+            font-size: 2rem !important;
+        }
+
+        .accordion-body {
+            font-size: 18px !important;
+        }
+
         @media only screen and (min-width: 600px) {
             .box {
                 width: 65%;
@@ -262,6 +270,15 @@
             .box {
                 width: 90%;
                 height: 200px;
+            }
+
+            .vet {
+                font-size: 18px !important;
+            }
+
+            .storyboard {
+                align-items: unset !important;
+                padding-top:50% !important;
             }
 
             .vetQ {
@@ -342,7 +359,7 @@
     </audio>
 
 
-    <audio id="voAudio" style="display: none;" controls autoplay>
+    <audio id="voAudio" style="display: none;" controls autoplay > 
         <source src="sounds/sound5.mp3" id="audioSourceVo" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -396,7 +413,7 @@
             <center>
                 <img src="img/veta-question.png" class="vetQ" alt="">
                 <br>
-                <h3 style="color: A97555;width: 80%;color: #A97555;text-align: justify;">
+                <h3 style="color: A97555;width: 80%;color: #A97555;text-align: justify;" class="vet">
                     apa kalian tau paramedik veteriner ? Paramedik Veteriner adalah tenaga ahli madya kesehatan yang
                     mampu berperan sebagai
                     asisten dokter hewan, laboran, tenaga paramedik veteriner dalam bidang pengendalian dan
@@ -508,17 +525,21 @@
                         <div id="collapseOne" class="accordion-collapse collapse show"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nobis debitis explicabo
-                                expedita praesentium. Laborum deleniti dolorem omnis nam a, vel eos? Asperiores quaerat,
-                                suscipit est dolorum magni a dicta natus animi ducimus obcaecati! Sint delectus fugit
-                                expedita accusantium ea ullam pariatur officia doloribus deserunt impedit, vel, nemo
-                                consequuntur repellat corrupti eius labore. Molestiae, hic qui? Saepe incidunt facere
-                                maxime, quidem consequuntur quisquam quibusdam quas veniam alias ut laudantium sint et
-                                doloribus eveniet ex tenetur in nisi reiciendis eum quia. Sit, aperiam nobis. Soluta
-                                ratione
-                                sed deleniti perferendis beatae, quis perspiciatis mollitia eius! Nesciunt autem,
-                                aliquam
-                                facere odio amet consequuntur.
+                                Anastesi Inhalasi merupakan salah satu teknik anastesi umum yang dilakukan dengan cara memberikan kombinasi obat yang berupa gas atau cairan volatile (mudah menguap) melalui alat atau mesin anastesi langsung ke udara inspirasi. Obat Anastesi Inhalasi
+
+<ol>
+    <li>1.	Nitrous oxide</li>
+    <li>2.	Halothane</li>
+    <li>3.	Isoflurane</li>
+    <li>4.	Sevoflurane</li>
+    <li>5.	Desfluran</li>
+</ol>
+
+
+
+
+
+
                             </div>
                         </div>
                     </div>
@@ -532,7 +553,7 @@
                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div>
-                                    <div class="row">
+                                    <!-- <div class="row">
                                         <div class="d-flex gap-5">
                                             <div
                                                 style="flex:2; width: 200px;height: 200px;background: url('img/car-1.jpeg');background-size:cover; border-radius: 10px;position: relative;">
@@ -541,10 +562,7 @@
                                                 left:-50px;transform: scaleX(-1) ;" alt="">
                                             </div>
                                             <div style="flex: 4;padding: 10px;">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil,
-                                                    recusandae! Maiores dignissimos pariatur dolor, suscipit quis totam
-                                                    nihil aliquam animi provident! Vero, error minus. Sit nesciunt
-                                                    commodi veritatis vero obcaecati.</p>
+                                                <p>1.	Sambungkan tabung oksigen dengan alat anastesi inhalasi menggunakan selang yang tersedia.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -556,20 +574,11 @@
                                     <div class="row">
                                         <div class="d-flex gap-5">
                                             <div style="flex: 4;padding: 10px;">
-                                                <p style="text-align: right;">Lorem ipsum dolor, sit amet consectetur
-                                                    adipisicing elit. Facilis nemo nulla reprehenderit reiciendis.
-                                                    Distinctio odit, quia, eius, facilis architecto itaque ipsum
-                                                    veritatis unde possimus mollitia incidunt aperiam nesciunt
-                                                    consectetur tempora nisi corporis quae eligendi natus molestiae
-                                                    iure. Ipsam doloremque hic, iusto inventore quas voluptatibus, ut
-                                                    omnis nesciunt, non magni fuga.</p>
+                                                <p style="text-align: right;">2.	Untuk mengisi isoflurane pada mesin anastesi RWD gunakan conector ungu, buka penutup tempat pengisian isoflurane. Tuangkan isoflurane menggunankan conector yang sudah tersambung dengan tempat pengisian isoflurane hingga isoflurane terisi sampai garis batas. </p>
                                             </div>
                                             <div
                                                 style="flex:2; width: 200px;height: 200px;background: url('img/car-1.jpeg');background-size:cover; border-radius: 10px;position: relative;">
 
-                                                <!-- <img src="img/cara_penggunaan.png" style="width: 150px;height: 150px; position:absolute;
-                                                bottom:-50px;
-                                                right:-50px;" alt=""> -->
                                             </div>
 
                                         </div>
@@ -581,9 +590,6 @@
                                         <div class="d-flex gap-5">
                                             <div
                                                 style="flex:2; width: 200px;height: 200px;background: url('img/car-1.jpeg');background-size:cover; border-radius: 10px;position: relative;">
-                                                <!-- <img src="img/cara_penggunaan.png" style="width: 150px;height: 150px; position:absolute;
-                                                bottom:-50px;
-                                                left:-50px;transform: scaleX(-1) ;" alt=""> -->
                                             </div>
                                             <div style="flex: 4;padding: 10px;">
                                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ea
@@ -625,18 +631,32 @@
                                             </div>
 
                                         </div>
-                                    </div>
+                                    </div> -->
+
+
+                                    
+
+ 
+
+
+
+
+
+
+                                    <p >1. Sambungkan tabung oksigen dengan alat anastesi inhalasi menggunakan selang yang tersedia.</p>
+                                    <p >2. Untuk mengisi isoflurane pada mesin anastesi RWD gunakan conector ungu, buka penutup tempat pengisian isoflurane. Tuangkan isoflurane menggunankan conector yang sudah tersambung dengan tempat pengisian isoflurane hingga isoflurane terisi sampai garis batas.</p>
+                                    <p >3. Lepaskan conector dan tutup penutup tempat pengisian isoflurane, kembalikan botol ke posisi semula, lepas conector.</p>
+                                    <p >4. Putar OPEN tabung oksigen, atur tekanan ke 50mmHg, atur kebutuhan oksigen untuk pasien melalui mesin anastesi, pastikan tidak ada keboocran.</p>
+                                    <p >5. Pilih system Nn-Rebreathing Circuit untuk pasien dengan berat badan < 7 KG dan rebreathing Circuit untuk pasien dngan BB > 7 KG</p>
+                                    <p >6. Pasang masker oksigen ke hewan</p>
+                                    <p>7. Tekan tombol kunci, putar kenob untuk membuka dan menutup pengaturan konsentrasi isoflurane yang dikeluarkan</p>
+                                    <p>8. Sesuaikan pemberian anatesi inhalasi menggunakan isoflurane dengan kondisi hewan saat operasi</p>
+                                    <p>9. Setelah selesai, kembalikan semua pengaturan ke “0” untuk isoflurane, kemudian baru oksigen.</p>
+                                    <p>10. Putar CLOSED regulator oksigen Kembali</p>
+                                    <p>11. Bersih dan rapihkan Kembali alat anastesi inhalasi</p>
+
 
                                 </div>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
                                 <br>
                             </div>
                         </div>
@@ -650,17 +670,7 @@
                         </h2>
                         <div id="collapseFour" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nobis debitis explicabo
-                                expedita praesentium. Laborum deleniti dolorem omnis nam a, vel eos? Asperiores quaerat,
-                                suscipit est dolorum magni a dicta natus animi ducimus obcaecati! Sint delectus fugit
-                                expedita accusantium ea ullam pariatur officia doloribus deserunt impedit, vel, nemo
-                                consequuntur repellat corrupti eius labore. Molestiae, hic qui? Saepe incidunt facere
-                                maxime, quidem consequuntur quisquam quibusdam quas veniam alias ut laudantium sint et
-                                doloribus eveniet ex tenetur in nisi reiciendis eum quia. Sit, aperiam nobis. Soluta
-                                ratione
-                                sed deleniti perferendis beatae, quis perspiciatis mollitia eius! Nesciunt autem,
-                                aliquam
-                                facere odio amet consequuntur.
+                                Anestesi inhalasi digunakan dalam kedokteran hewan untuk memberikan anestesi kepada hewan selama prosedur medis atau pembedahan. Ini adalah metode umum dalam praktik hewan untuk mencapai anestesi yang mendalam dan aman.
                             </div>
                         </div>
                     </div>
@@ -798,52 +808,46 @@
     <script>
         $(document).ready(function () {
 
-            const sounds = {
-                sound1: 'sounds/sound1.mp3',
-                sound2: 'sounds/sound2.mp3',
-                sound3: 'sounds/sound3.mp3',
-                sound4: 'sounds/sound4.mp3',
-                sound4: 'sounds/sound5.mp3',
-                happy: 'sounds/happy.mp3',
-                sad: 'sounds/sad.mp3',
-                brak: 'sounds/brak.mp3',
-            };
+            // const sounds = {
+            //     sound1: 'sounds/sound1.mp3',
+            //     sound2: 'sounds/sound2.mp3',
+            //     sound3: 'sounds/sound3.mp3',
+            //     sound4: 'sounds/sound4.mp3',
+            //     sound4: 'sounds/sound5.mp3',
+            //     happy: 'sounds/happy.mp3',
+            //     sad: 'sounds/sad.mp3',
+            //     brak: 'sounds/brak.mp3',
+            // };
 
-            const videos = {
-                crash: 'video/crash.webm',
-                k1: 'video/k-1.webm',
-                kone: 'video/k1.webm',
-                k0: 'video/k0.webm',
-                k2: 'video/k2.webm',
-                k3: 'video/k3.webm',
-                panelterakhir: 'video/panel_terakhir.webm',
-                // Add more video sources as needed
-            };
+            // const videos = {
+            //     crash: 'video/crash.webm',
+            //     k1: 'video/k-1.webm',
+            //     kone: 'video/k1.webm',
+            //     k0: 'video/k0.webm',
+            //     k2: 'video/k2.webm',
+            //     k3: 'video/k3.webm',
+            //     panelterakhir: 'video/panel_terakhir.webm',
+            //     // Add more video sources as needed
+            // };
 
-            function preloadAssets() {
-                for (const key in sounds) {
-                    const audio = new Audio();
-                    audio.src = sounds[key];
-                    audio.load();
-                }
+            // function preloadAssets() {
+            //     for (const key in sounds) {
+            //         const audio = new Audio();
+            //         audio.src = sounds[key];
+            //         audio.load();
+            //     }
 
-                for (const key in videos) {
-                    const video = document.createElement('video');
-                    video.src = videos[key];
-                    video.preload = 'auto'; // Preload the video
-                    video.load();
-                }
-                console.log('preaload has been success')
-            }
+            //     for (const key in videos) {
+            //         const video = document.createElement('video');
+            //         video.src = videos[key];
+            //         video.preload = 'auto'; // Preload the video
+            //         video.load();
+            //     }
+            //     console.log('preaload has been success')
+            // }
 
-            preloadAssets();
+            // preloadAssets();
 
-            let audio = document.getElementById('voAudio');
-            let audioSource = document.getElementById('audioSourceVo');
-            audioSource.src = 'sounds/sound5.mp3';
-
-            audio.load();
-            audio.play();
 
             function scrollToElement(elementId, dataCollapseValue) {
 
@@ -1084,7 +1088,7 @@
             });
 
             function disableScroll() {
-                document.body.style.overflow = 'hidden';
+                document.body.style.overflow = 'unset';
             }
 
             function enableScroll() {
