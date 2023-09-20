@@ -838,6 +838,13 @@
 
             preloadAssets();
 
+            let audio = document.getElementById('voAudio');
+            let audioSource = document.getElementById('audioSourceVo');
+            audioSource.src = 'sounds/sound5.mp3';
+
+            audio.load();
+            audio.play();
+
             function scrollToElement(elementId, dataCollapseValue) {
 
                 const targetElement = document.getElementById(elementId);
