@@ -49,7 +49,6 @@
             position: absolute;
 
             border: 5px solid black;
-            background-color: #3498db;
             left: 0;
             right: 0;
             /* margin-left: auto;
@@ -797,36 +796,38 @@
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
         integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
     <script>
-        function scrollToElement(elementId, dataCollapseValue) {
+        $(document).ready(function () {
+                    function scrollToElement(elementId, dataCollapseValue) {
 
-            const targetElement = document.getElementById(elementId);
+                        const targetElement = document.getElementById(elementId);
 
-            console.log(dataCollapseValue)
-            const buttonElement = document.querySelector(`button[data-bs-target="#${dataCollapseValue}"]`);
-            if (targetElement) {
-                const offset = 200; // Ubah offset sesuai dengan berapa banyak Anda ingin berhenti di atas elemen
-                const elementPosition = targetElement.offsetTop - offset;
-                window.scrollTo({
-                    top: elementPosition,
-                    behavior: 'smooth' // Untuk efek scroll yang halus, jika diperlukan
-                });
-            }
+                        console.log(dataCollapseValue)
+                        const buttonElement = document.querySelector(`button[data-bs-target="#${dataCollapseValue}"]`);
+                        if (targetElement) {
+                            const offset =
+                            200; // Ubah offset sesuai dengan berapa banyak Anda ingin berhenti di atas elemen
+                            const elementPosition = targetElement.offsetTop - offset;
+                            window.scrollTo({
+                                top: elementPosition,
+                                behavior: 'smooth' // Untuk efek scroll yang halus, jika diperlukan
+                            });
+                        }
 
-            setTimeout(() => {
-                const collapseTwoElement = document.getElementById(dataCollapseValue);
-                if (collapseTwoElement) {
-                    const hasShowClass = collapseTwoElement.classList.contains('show');
-                    if (hasShowClass) {
-                        console.log('The element has the "show" class.');
-                    } else {
-                        buttonElement.click()
+                        setTimeout(() => {
+                            const collapseTwoElement = document.getElementById(dataCollapseValue);
+                            if (collapseTwoElement) {
+                                const hasShowClass = collapseTwoElement.classList.contains('show');
+                                if (hasShowClass) {
+                                    console.log('The element has the "show" class.');
+                                } else {
+                                    buttonElement.click()
+                                }
+                            } else {
+                                console.log('Element with ID "collapseTwo" not found.');
+                            }
+
+                        }, 1000);
                     }
-                } else {
-                    console.log('Element with ID "collapseTwo" not found.');
-                }
-
-            }, 1000);
-        }
     </script>
     <script>
         let boxCount = 0;
@@ -862,7 +863,7 @@
                 let audio = document.getElementById('voAudio');
                 let audioSource = document.getElementById('audioSourceVo');
                 audioSource.src = 'sounds/sound2.mp3';
-                
+
                 audio.load();
                 audio.play();
 
@@ -1050,46 +1051,48 @@
 
 
         document.addEventListener("dblclick", (event) => {
-            if (boxCount === 3) {
-                enableScroll();
-                smoothScrollToElement("#vetaSection");
-            } else {
-                const newBox = document.createElement("div");
-                let audio = document.getElementById('voAudio');
-                let audioSource = document.getElementById('audioSourceVo');
+        if (boxCount === 3) {
+            enableScroll();
+            smoothScrollToElement("#vetaSection");
+        } else {
+            const newBox = document.createElement("div");
+            let audio = document.getElementById('voAudio');
+            let audioSource = document.getElementById('audioSourceVo');
 
-                const audioBase = document.getElementById('myAudio');
-                const audioSourceBase = document.getElementById('audioSource');
+            const audioBase = document.getElementById('myAudio');
+            const audioSourceBase = document.getElementById('audioSource');
 
 
-                switch (boxCount) {
-                    // case 1:
-                    //     addBox('video/k2.webm', 2.5)
-                    //     break;
-                    case 1:
-                        addBox('video/k3.webm', 5,
-                            'Kita harus segera membawa kucing tersebut ke klinik hewan!', true)
-                        audioSource.src = 'sounds/sound3.mp3';
+            switch (boxCount) {
+                // case 1:
+                //     addBox('video/k2.webm', 2.5)
+                //     break;
+                case 1:
+                    addBox('video/k3.webm', 5,
+                        'Kita harus segera membawa kucing tersebut ke klinik hewan!', true)
+                    audioSource.src = 'sounds/sound3.mp3';
 
-                        audio.load();
-                        audio.play();
-                        break;
-                    case 2:
-                        audioSourceBase.src = 'sounds/happy.mp3';
-                        audioBase.load();
-                        audioBase.play();
-                        addBox('video/k4.webm', -2.5,
-                            'Hai teman-teman aku Vetii sebagai pemandu kalian! By the way, kucing yang tadi ketabrak tu kira-kira diapain yaa setelah dibawa ke klinik? Hmm yang pasti sih ada serangkaian penanganan yang akan diberikan kepada kucing tersebut. Nah biar teman - teman ga bingung, disini aku dan teman ku akan menjelaskan Langkah-langkah penanganan kucing tersebut dengan salah satu alat yang penting nihh. So kalau kamu penasaran, ikutin terus aku dan temanku yaa!!',
-                            true, 300)
-                        audioSource.src = 'sounds/sound4.mp3';
+                    audio.load();
+                    audio.play();
+                    break;
+                case 2:
+                    audioSourceBase.src = 'sounds/happy.mp3';
+                    audioBase.load();
+                    audioBase.play();
+                    addBox('video/k4.webm', -2.5,
+                        'Hai teman-teman aku Vetii sebagai pemandu kalian! By the way, kucing yang tadi ketabrak tu kira-kira diapain yaa setelah dibawa ke klinik? Hmm yang pasti sih ada serangkaian penanganan yang akan diberikan kepada kucing tersebut. Nah biar teman - teman ga bingung, disini aku dan teman ku akan menjelaskan Langkah-langkah penanganan kucing tersebut dengan salah satu alat yang penting nihh. So kalau kamu penasaran, ikutin terus aku dan temanku yaa!!',
+                        true, 300)
+                    audioSource.src = 'sounds/sound4.mp3';
 
-                        audio.load();
-                        audio.play();
-                        break;
-                }
-                boxCount++;
+                    audio.load();
+                    audio.play();
+                    break;
             }
+            boxCount++;
+        }
         });
+
+        })
     </script>
 </body>
 
