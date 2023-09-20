@@ -797,206 +797,261 @@
         integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
-                    function scrollToElement(elementId, dataCollapseValue) {
+            function scrollToElement(elementId, dataCollapseValue) {
 
-                        const targetElement = document.getElementById(elementId);
+                const targetElement = document.getElementById(elementId);
 
-                        console.log(dataCollapseValue)
-                        const buttonElement = document.querySelector(`button[data-bs-target="#${dataCollapseValue}"]`);
-                        if (targetElement) {
-                            const offset =
-                            200; // Ubah offset sesuai dengan berapa banyak Anda ingin berhenti di atas elemen
-                            const elementPosition = targetElement.offsetTop - offset;
-                            window.scrollTo({
-                                top: elementPosition,
-                                behavior: 'smooth' // Untuk efek scroll yang halus, jika diperlukan
-                            });
+                console.log(dataCollapseValue)
+                const buttonElement = document.querySelector(`button[data-bs-target="#${dataCollapseValue}"]`);
+                if (targetElement) {
+                    const offset =
+                    200; // Ubah offset sesuai dengan berapa banyak Anda ingin berhenti di atas elemen
+                    const elementPosition = targetElement.offsetTop - offset;
+                    window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth' // Untuk efek scroll yang halus, jika diperlukan
+                    });
+                }
+
+                setTimeout(() => {
+                    const collapseTwoElement = document.getElementById(dataCollapseValue);
+                    if (collapseTwoElement) {
+                        const hasShowClass = collapseTwoElement.classList.contains('show');
+                        if (hasShowClass) {
+                            console.log('The element has the "show" class.');
+                        } else {
+                            buttonElement.click()
                         }
-
-                        setTimeout(() => {
-                            const collapseTwoElement = document.getElementById(dataCollapseValue);
-                            if (collapseTwoElement) {
-                                const hasShowClass = collapseTwoElement.classList.contains('show');
-                                if (hasShowClass) {
-                                    console.log('The element has the "show" class.');
-                                } else {
-                                    buttonElement.click()
-                                }
-                            } else {
-                                console.log('Element with ID "collapseTwo" not found.');
-                            }
-
-                        }, 1000);
+                    } else {
+                        console.log('Element with ID "collapseTwo" not found.');
                     }
-    </script>
-    <script>
-        let boxCount = 0;
-        disableScroll();
-        window.addEventListener('load', () => {
-            // Gulirkan halaman ke paling atas
-            window.scrollTo(0, 0);
-            var audio = document.getElementById("myAudio");
-            audio.volume = 0.3;
-        });
 
-        function updateInterval() {
-            clearInterval(intervalId); // Clear the existing interval
-            intervalId = setInterval(showNextSlide, timer); //
-        }
+                }, 1000);
+            }
 
+            let boxCount = 0;
+            disableScroll();
+            window.addEventListener('load', () => {
+                // Gulirkan halaman ke paling atas
+                window.scrollTo(0, 0);
+                var audio = document.getElementById("myAudio");
+                audio.volume = 0.3;
+            });
 
-
-        let timer = 16000;
+            function updateInterval() {
+                clearInterval(intervalId); // Clear the existing interval
+                intervalId = setInterval(showNextSlide, timer); //
+            }
 
 
-        const slides = document.querySelectorAll('.slide');
-        let currentSlideIndex = 0;
-        let intervalId;
 
-        function showNextSlide() {
-            slides[currentSlideIndex].classList.remove('active');
-            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-            slides[currentSlideIndex].classList.add('active');
-
-            console.log(currentSlideIndex);
-            if (currentSlideIndex == 1) {
-                let audio = document.getElementById('voAudio');
-                let audioSource = document.getElementById('audioSourceVo');
-                audioSource.src = 'sounds/sound2.mp3';
-
-                audio.load();
-                audio.play();
-
-                timer = 5000;
-                updateInterval();
-
-            } else if (currentSlideIndex === slides.length - 1) {
-                const audio = document.getElementById('myAudio');
-                const audioSource = document.getElementById('audioSource');
-                audioSource.src = 'sounds/brak.mp3';
-                audio.load();
-                audio.play();
-                addBox('video/k-1.webm', 0)
-                setTimeout(() => {
-                    addBox('video/k0.webm', 0)
-                }, 3000);
-
-                setTimeout(() => {
-                    addBox('video/crash.webm', 0)
-
-                }, 5000);
-
-                setTimeout(() => {
-                    addBox('video/k1.webm', 0)
-                    // let audio = document.getElementById('voAudio');
-                    // let audioSource = document.getElementById('audioSourceVo');
-                    // audioSource.src = 'sounds/sound1.mp3';
-
-                    // audio.load();
-                    // audio.play();
-                }, 8000);
+            let timer = 16000;
 
 
-                setTimeout(() => {
-                    addBox('video/k2.webm', 0, 'Huhuhuu kucingnya berdarah… apakah dia kehilangan nyawanya?',
-                        true)
+            const slides = document.querySelectorAll('.slide');
+            let currentSlideIndex = 0;
+            let intervalId;
+
+            function showNextSlide() {
+                slides[currentSlideIndex].classList.remove('active');
+                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                slides[currentSlideIndex].classList.add('active');
+
+                console.log(currentSlideIndex);
+                if (currentSlideIndex == 1) {
                     let audio = document.getElementById('voAudio');
                     let audioSource = document.getElementById('audioSourceVo');
-                    audioSource.src = 'sounds/sound1.mp3';
+                    audioSource.src = 'sounds/sound2.mp3';
 
                     audio.load();
                     audio.play();
-                }, 12000);
 
+                    timer = 5000;
+                    updateInterval();
 
-
-
-                setTimeout(() => {
+                } else if (currentSlideIndex === slides.length - 1) {
                     const audio = document.getElementById('myAudio');
                     const audioSource = document.getElementById('audioSource');
-                    audioSource.src = 'sounds/sad.mp3';
-
+                    audioSource.src = 'sounds/brak.mp3';
                     audio.load();
                     audio.play();
-                }, 9000);
+                    addBox('video/k-1.webm', 0)
+                    setTimeout(() => {
+                        addBox('video/k0.webm', 0)
+                    }, 3000);
 
-                boxCount++;
-                clearInterval(intervalId);
-            }
-        }
+                    setTimeout(() => {
+                        addBox('video/crash.webm', 0)
 
-        intervalId = setInterval(showNextSlide, timer);
+                    }, 5000);
 
+                    setTimeout(() => {
+                        addBox('video/k1.webm', 0)
+                        // let audio = document.getElementById('voAudio');
+                        // let audioSource = document.getElementById('audioSourceVo');
+                        // audioSource.src = 'sounds/sound1.mp3';
 
-        const storyboard = document.querySelector(".storyboard");
-        const addButton = document.getElementById("addBox");
-
-        function smoothScrollToElement(selector) {
-            const element = document.querySelector(selector);
-            if (element) {
-                element.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }
-        }
-
-        function addBox(url, rotate, content = '', useDivContext = false, height = 100) {
-            const newBox = document.createElement("div");
-            newBox.classList.add("box");
-            newBox.style.top = `0`;
-            newBox.style.left = `0`;
-            newBox.style.right = `0`;
-            newBox.style.bottom = `0`;
-            newBox.style.inset = `unset`;
-            newBox.style.opacity = 0;
-            const video = document.createElement("video");
-            video.autoplay = true;
-            video.loop = true;
-            video.muted = true;
-            video.playsInline = true;
-            const source = document.createElement("source");
-            source.src = url;
-            source.type = "video/webm";
-            video.appendChild(source);
-            newBox.appendChild(video);
-            storyboard.appendChild(newBox);
+                        // audio.load();
+                        // audio.play();
+                    }, 8000);
 
 
-            video.style.width = "100%";
-            video.style.height = "100%";
-            video.style.objectFit = "cover";
-            // Trigger reflow to force CSnS transition on opacity
-            newBox.getBoundingClientRect();
-            newBox.style.transform = `rotate(${rotate}deg)`;
-            newBox.style.opacity = 1;
+                    setTimeout(() => {
+                        addBox('video/k2.webm', 0,
+                            'Huhuhuu kucingnya berdarah… apakah dia kehilangan nyawanya?',
+                            true)
+                        let audio = document.getElementById('voAudio');
+                        let audioSource = document.getElementById('audioSourceVo');
+                        audioSource.src = 'sounds/sound1.mp3';
+
+                        audio.load();
+                        audio.play();
+                    }, 12000);
 
 
-            if (useDivContext) {
-                const customContent = document.createElement("div");
-                customContent.style.height = `${height}px`;
-                customContent.style.background = "white";
-                customContent.style.position = "absolute";
-                customContent.style.bottom = "100px";
-                customContent.style.right = "-100px";
-                customContent.style.background = "white";
-                customContent.style.borderRadius = "10px";
-                customContent.style.padding = "10px";
-                customContent.style.border = "5px solid black";
-                customContent.textContent =
-                    content;
-                customContent.classList.add("boxText");
 
-                newBox.appendChild(customContent);
+
+                    setTimeout(() => {
+                        const audio = document.getElementById('myAudio');
+                        const audioSource = document.getElementById('audioSource');
+                        audioSource.src = 'sounds/sad.mp3';
+
+                        audio.load();
+                        audio.play();
+                    }, 9000);
+
+                    boxCount++;
+                    clearInterval(intervalId);
+                }
             }
 
+            intervalId = setInterval(showNextSlide, timer);
 
 
-        }
+            const storyboard = document.querySelector(".storyboard");
+            const addButton = document.getElementById("addBox");
+
+            function smoothScrollToElement(selector) {
+                const element = document.querySelector(selector);
+                if (element) {
+                    element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
+            }
+
+            function addBox(url, rotate, content = '', useDivContext = false, height = 100) {
+                const newBox = document.createElement("div");
+                newBox.classList.add("box");
+                newBox.style.top = `0`;
+                newBox.style.left = `0`;
+                newBox.style.right = `0`;
+                newBox.style.bottom = `0`;
+                newBox.style.inset = `unset`;
+                newBox.style.opacity = 0;
+                const video = document.createElement("video");
+                video.autoplay = true;
+                video.loop = true;
+                video.muted = true;
+                video.playsInline = true;
+                const source = document.createElement("source");
+                source.src = url;
+                source.type = "video/webm";
+                video.appendChild(source);
+                newBox.appendChild(video);
+                storyboard.appendChild(newBox);
 
 
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "n" || event.key === "N") {
+                video.style.width = "100%";
+                video.style.height = "100%";
+                video.style.objectFit = "cover";
+                // Trigger reflow to force CSnS transition on opacity
+                newBox.getBoundingClientRect();
+                newBox.style.transform = `rotate(${rotate}deg)`;
+                newBox.style.opacity = 1;
+
+
+                if (useDivContext) {
+                    const customContent = document.createElement("div");
+                    customContent.style.height = `${height}px`;
+                    customContent.style.background = "white";
+                    customContent.style.position = "absolute";
+                    customContent.style.bottom = "100px";
+                    customContent.style.right = "-100px";
+                    customContent.style.background = "white";
+                    customContent.style.borderRadius = "10px";
+                    customContent.style.padding = "10px";
+                    customContent.style.border = "5px solid black";
+                    customContent.textContent =
+                        content;
+                    customContent.classList.add("boxText");
+
+                    newBox.appendChild(customContent);
+                }
+
+
+
+            }
+
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "n" || event.key === "N") {
+                    if (boxCount === 3) {
+                        enableScroll();
+                        smoothScrollToElement("#vetaSection");
+                    } else {
+                        const newBox = document.createElement("div");
+                        let audio = document.getElementById('voAudio');
+                        let audioSource = document.getElementById('audioSourceVo');
+
+                        const audioBase = document.getElementById('myAudio');
+                        const audioSourceBase = document.getElementById('audioSource');
+
+
+                        switch (boxCount) {
+                            // case 1:
+                            //     addBox('video/k2.webm', 2.5)
+                            //     break;
+                            case 1:
+                                addBox('video/k3.webm', 5,
+                                    'Kita harus segera membawa kucing tersebut ke klinik hewan!',
+                                    true)
+                                audioSource.src = 'sounds/sound3.mp3';
+
+                                audio.load();
+                                audio.play();
+                                break;
+                            case 2:
+                                audioSourceBase.src = 'sounds/happy.mp3';
+                                audioBase.load();
+                                audioBase.play();
+                                addBox('video/k4.webm', -2.5,
+                                    'Hai teman-teman aku Vetii sebagai pemandu kalian! By the way, kucing yang tadi ketabrak tu kira-kira diapain yaa setelah dibawa ke klinik? Hmm yang pasti sih ada serangkaian penanganan yang akan diberikan kepada kucing tersebut. Nah biar teman - teman ga bingung, disini aku dan teman ku akan menjelaskan Langkah-langkah penanganan kucing tersebut dengan salah satu alat yang penting nihh. So kalau kamu penasaran, ikutin terus aku dan temanku yaa!!',
+                                    true, 300)
+                                audioSource.src = 'sounds/sound4.mp3';
+
+                                audio.load();
+                                audio.play();
+                                break;
+                        }
+                        boxCount++;
+                    }
+                }
+            });
+
+            function disableScroll() {
+                document.body.style.overflow = 'hidden';
+            }
+
+            function enableScroll() {
+                document.body.style.overflow = 'auto';
+            }
+
+
+
+
+            document.addEventListener("dblclick", (event) => {
                 if (boxCount === 3) {
                     enableScroll();
                     smoothScrollToElement("#vetaSection");
@@ -1036,61 +1091,7 @@
                     }
                     boxCount++;
                 }
-            }
-        });
-
-        function disableScroll() {
-            document.body.style.overflow = 'hidden';
-        }
-
-        function enableScroll() {
-            document.body.style.overflow = 'auto';
-        }
-
-
-
-
-        document.addEventListener("dblclick", (event) => {
-        if (boxCount === 3) {
-            enableScroll();
-            smoothScrollToElement("#vetaSection");
-        } else {
-            const newBox = document.createElement("div");
-            let audio = document.getElementById('voAudio');
-            let audioSource = document.getElementById('audioSourceVo');
-
-            const audioBase = document.getElementById('myAudio');
-            const audioSourceBase = document.getElementById('audioSource');
-
-
-            switch (boxCount) {
-                // case 1:
-                //     addBox('video/k2.webm', 2.5)
-                //     break;
-                case 1:
-                    addBox('video/k3.webm', 5,
-                        'Kita harus segera membawa kucing tersebut ke klinik hewan!', true)
-                    audioSource.src = 'sounds/sound3.mp3';
-
-                    audio.load();
-                    audio.play();
-                    break;
-                case 2:
-                    audioSourceBase.src = 'sounds/happy.mp3';
-                    audioBase.load();
-                    audioBase.play();
-                    addBox('video/k4.webm', -2.5,
-                        'Hai teman-teman aku Vetii sebagai pemandu kalian! By the way, kucing yang tadi ketabrak tu kira-kira diapain yaa setelah dibawa ke klinik? Hmm yang pasti sih ada serangkaian penanganan yang akan diberikan kepada kucing tersebut. Nah biar teman - teman ga bingung, disini aku dan teman ku akan menjelaskan Langkah-langkah penanganan kucing tersebut dengan salah satu alat yang penting nihh. So kalau kamu penasaran, ikutin terus aku dan temanku yaa!!',
-                        true, 300)
-                    audioSource.src = 'sounds/sound4.mp3';
-
-                    audio.load();
-                    audio.play();
-                    break;
-            }
-            boxCount++;
-        }
-        });
+            });
 
         })
     </script>
