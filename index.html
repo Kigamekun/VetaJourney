@@ -420,7 +420,7 @@
                         <h6>
                             A. Definisi Alat Veteriner
                         </h6>
-                        
+
                     </button>
 
                     <button onclick="scrollToElement('penggunaan','collapseFour')" class="ans"
@@ -838,8 +838,14 @@
             audio.volume = 0.3;
         });
 
+        function updateInterval() {
+            clearInterval(intervalId); // Clear the existing interval
+            intervalId = setInterval(showNextSlide, timer); //
+        }
 
 
+
+        let timer = 16000;
 
 
         const slides = document.querySelectorAll('.slide');
@@ -851,13 +857,17 @@
             currentSlideIndex = (currentSlideIndex + 1) % slides.length;
             slides[currentSlideIndex].classList.add('active');
 
+            console.log(currentSlideIndex);
             if (currentSlideIndex == 1) {
                 let audio = document.getElementById('voAudio');
                 let audioSource = document.getElementById('audioSourceVo');
                 audioSource.src = 'sounds/sound2.mp3';
-
+                
                 audio.load();
                 audio.play();
+
+                timer = 5000;
+                updateInterval();
 
             } else if (currentSlideIndex === slides.length - 1) {
                 const audio = document.getElementById('myAudio');
@@ -865,18 +875,18 @@
                 audioSource.src = 'sounds/brak.mp3';
                 audio.load();
                 audio.play();
-                addBox('video/k-1.mp4', 0)
+                addBox('video/k-1.webm', 0)
                 setTimeout(() => {
-                    addBox('video/k0.mp4', 0)
+                    addBox('video/k0.webm', 0)
                 }, 3000);
 
                 setTimeout(() => {
-                    addBox('video/crash.mp4', 0)
+                    addBox('video/crash.webm', 0)
 
                 }, 5000);
 
                 setTimeout(() => {
-                    addBox('video/k1.mp4', 0)
+                    addBox('video/k1.webm', 0)
                     // let audio = document.getElementById('voAudio');
                     // let audioSource = document.getElementById('audioSourceVo');
                     // audioSource.src = 'sounds/sound1.mp3';
@@ -887,7 +897,7 @@
 
 
                 setTimeout(() => {
-                    addBox('video/k2.mp4', 0, 'Huhuhuu kucingnya berdarah… apakah dia kehilangan nyawanya?',
+                    addBox('video/k2.webm', 0, 'Huhuhuu kucingnya berdarah… apakah dia kehilangan nyawanya?',
                         true)
                     let audio = document.getElementById('voAudio');
                     let audioSource = document.getElementById('audioSourceVo');
@@ -914,7 +924,7 @@
             }
         }
 
-        intervalId = setInterval(showNextSlide, 15000);
+        intervalId = setInterval(showNextSlide, timer);
 
 
         const storyboard = document.querySelector(".storyboard");
@@ -946,7 +956,7 @@
             video.playsInline = true;
             const source = document.createElement("source");
             source.src = url;
-            source.type = "video/mp4";
+            source.type = "video/webm";
             video.appendChild(source);
             newBox.appendChild(video);
             storyboard.appendChild(newBox);
@@ -1000,10 +1010,10 @@
 
                     switch (boxCount) {
                         // case 1:
-                        //     addBox('video/k2.mp4', 2.5)
+                        //     addBox('video/k2.webm', 2.5)
                         //     break;
                         case 1:
-                            addBox('video/k3.mp4', 5,
+                            addBox('video/k3.webm', 5,
                                 'Kita harus segera membawa kucing tersebut ke klinik hewan!', true)
                             audioSource.src = 'sounds/sound3.mp3';
 
@@ -1014,7 +1024,7 @@
                             audioSourceBase.src = 'sounds/happy.mp3';
                             audioBase.load();
                             audioBase.play();
-                            addBox('video/k4.mp4', -2.5,
+                            addBox('video/k4.webm', -2.5,
                                 'Hai teman-teman aku Vetii sebagai pemandu kalian! By the way, kucing yang tadi ketabrak tu kira-kira diapain yaa setelah dibawa ke klinik? Hmm yang pasti sih ada serangkaian penanganan yang akan diberikan kepada kucing tersebut. Nah biar teman - teman ga bingung, disini aku dan teman ku akan menjelaskan Langkah-langkah penanganan kucing tersebut dengan salah satu alat yang penting nihh. So kalau kamu penasaran, ikutin terus aku dan temanku yaa!!',
                                 true, 300)
                             audioSource.src = 'sounds/sound4.mp3';
@@ -1054,10 +1064,10 @@
 
                 switch (boxCount) {
                     // case 1:
-                    //     addBox('video/k2.mp4', 2.5)
+                    //     addBox('video/k2.webm', 2.5)
                     //     break;
                     case 1:
-                        addBox('video/k3.mp4', 5,
+                        addBox('video/k3.webm', 5,
                             'Kita harus segera membawa kucing tersebut ke klinik hewan!', true)
                         audioSource.src = 'sounds/sound3.mp3';
 
@@ -1068,7 +1078,7 @@
                         audioSourceBase.src = 'sounds/happy.mp3';
                         audioBase.load();
                         audioBase.play();
-                        addBox('video/k4.mp4', -2.5,
+                        addBox('video/k4.webm', -2.5,
                             'Hai teman-teman aku Vetii sebagai pemandu kalian! By the way, kucing yang tadi ketabrak tu kira-kira diapain yaa setelah dibawa ke klinik? Hmm yang pasti sih ada serangkaian penanganan yang akan diberikan kepada kucing tersebut. Nah biar teman - teman ga bingung, disini aku dan teman ku akan menjelaskan Langkah-langkah penanganan kucing tersebut dengan salah satu alat yang penting nihh. So kalau kamu penasaran, ikutin terus aku dan temanku yaa!!',
                             true, 300)
                         audioSource.src = 'sounds/sound4.mp3';
