@@ -10,10 +10,17 @@
 
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet"> -->
     <style>
         @font-face {
             font-family: sprinkle;
             src: url(fonts/Sprinkle-Regular.ttf);
+        }
+        @font-face {
+            font-family: mungil;
+            src: url(fonts/Mungil-Regular.ttf);
         }
 
 
@@ -25,6 +32,8 @@
             margin: 0px;
             padding: 0px;
             font-family: 'sprinkle';
+            /* font-family: 'mungil', cursive; */
+            /* font-family: 'mungil', cursive; */
             overflow-x: hidden;
             background: #FFF0DB;
         }
@@ -252,7 +261,7 @@
         }
 
         .accordion-button {
-            font-size: 2rem !important;
+            font-size: 1.7rem !important;
         }
 
         .accordion-body {
@@ -270,6 +279,11 @@
             .box {
                 width: 90%;
                 height: 200px;
+            }
+
+            .text-story {
+                width: 50%;
+                color: #A97555;
             }
 
             .vet {
@@ -291,7 +305,8 @@
             }
 
             .ans {
-                width: 30vw !important;
+                width: 40vw !important;
+                
             }
 
             .boxText {
@@ -434,7 +449,7 @@
                     <button onclick="scrollToElement('definisi','collapseOne')" class="ans"
                         style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
                         <h6>
-                            A. Definisi Alat Veteriner
+                            A. Definisi
                         </h6>
 
                     </button>
@@ -442,7 +457,7 @@
                     <button onclick="scrollToElement('penggunaan','collapseFour')" class="ans"
                         style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
                         <h6>
-                            D. Penggunaan alat veteriner
+                            D. Penggunaan
                         </h6>
                     </button>
                 </div>
@@ -450,13 +465,13 @@
                     <button onclick="scrollToElement('kegunaan','collapseTwo')" class="ans"
                         style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
                         <h6>
-                            B. Kegunaan Alat Veteriner
+                            B. Kegunaan
                         </h6>
                     </button>
                     <button onclick="scrollToElement('cara_perawatan','collapseThree')" class="ans"
                         style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
                         <h6>
-                            C. Cara perawatan Alat Veteriner
+                            C. Cara perawatan
                         </h6>
                     </button>
 
