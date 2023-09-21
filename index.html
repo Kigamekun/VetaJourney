@@ -10,30 +10,45 @@
 
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lemon&family=Montserrat:wght@600&display=swap');
+
         @font-face {
             font-family: sprinkle;
             src: url(fonts/Sprinkle-Regular.ttf);
         }
+
         @font-face {
             font-family: mungil;
             src: url(fonts/Mungil-Regular.ttf);
         }
 
+        @font-face {
+            font-family: coff;
+            src: url(fonts/Coffee\ Latte.ttf);
+        }
+
+        .vet {
+            font-family: 'sprinkle';
+
+        }
 
         .boxText {
+            font-family: 'Lemon';
             width: 400px;
         }
 
         body {
             margin: 0px;
             padding: 0px;
-            font-family: 'sprinkle';
+            font-family: 'Montserrat', sans-serif;
+
+            /* font-family: 'sprinkle'; */
             /* font-family: 'mungil', cursive; */
-            /* font-family: 'mungil', cursive; */
+            /* font-family: 'Lemon', cursive; */
             overflow-x: hidden;
             background: #FFF0DB;
         }
@@ -44,7 +59,6 @@
             height: 100vh;
             background: #C6EBBE;
             /* background: url(img/bg.png); */
-
             transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
             animation: 1s;
             overflow: hidden;
@@ -53,10 +67,8 @@
             align-items: center;
         }
 
-
         .box {
             position: absolute;
-
             border: 5px solid black;
             left: 0;
             right: 0;
@@ -71,8 +83,9 @@
             bottom: 0;
             left: 0;
             right: 0;
-            margin-left: 30px;
+            /* margin-left: 30px; */
             margin-right: auto;
+            font-size: 30px;
             transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
             animation: resize .4s infinite alternate;
             /* Mengatur animasi dengan nama "resize" selama 2 detik dan berulang-ulang dengan pola alternatif */
@@ -172,8 +185,8 @@
         }
 
         .slide1 {
-            background-color: black;
-            color: white;
+            background-color: white;
+            color: black;
         }
 
         .slide2 {
@@ -196,6 +209,7 @@
         }
 
         .text {
+            font-family: 'Lemon';
             text-align: center;
             font-size: 24px;
             padding: 20px;
@@ -268,6 +282,15 @@
             font-size: 18px !important;
         }
 
+        .text-story {
+            width: 100%;
+            color: #A97555;
+        }
+
+        .ans {
+            font-family: 'sprinkle';
+        }
+
         @media only screen and (min-width: 600px) {
             .box {
                 width: 65%;
@@ -292,7 +315,7 @@
 
             .storyboard {
                 align-items: unset !important;
-                padding-top:50% !important;
+                padding-top: 50% !important;
             }
 
             .vetQ {
@@ -306,7 +329,6 @@
 
             .ans {
                 width: 40vw !important;
-                
             }
 
             .boxText {
@@ -318,50 +340,298 @@
             }
         }
 
-        /* Remove background and blue color from accordion buttons */
         .accordion-button {
             background-color: transparent !important;
             /* Remove the background color */
+            text-decoration: underline;
+            font-family: Lemon;
             color: #A97555;
-
-            /* Change the text color */
         }
 
-        /* Remove the blue focus state */
         .accordion-button:not(.collapsed):focus {
             box-shadow: none;
         }
 
         .accordion-button:not(.collapsed) {
             color: #A97555;
-            /* Ganti dengan warna yang Anda inginkan */
         }
 
-        /* Remove the background and border from accordion bodies */
         .accordion-body {
             background-color: transparent !important;
-            /* Remove the background color */
             border: none;
-            /* Remove the border */
         }
 
         .accordion-item {
             background-color: transparent !important;
-            /* Remove the background color */
             border: none;
             color: #A97555;
-            /* Remove the border */
         }
+
+        .startJ {
+            z-index: 9999999999999999;
+
+            border-radius: 50%;
+            border: 2px solid rgb(255, 254, 250);
+            outline: rgb(14, 14, 14) solid 2px;
+            width: 6.25rem;
+            height: 6.25rem;
+            cursor: pointer;
+            background: black;
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            transition: .5s;
+
+        }
+
+        .startJ:hover {
+            transform: scale(1.1);
+
+        }
+
+        .skipJ {
+            transition: .5s;
+
+            z-index: 9999999999999999;
+            border-radius: 50%;
+            border: 2px solid rgb(255, 254, 250);
+            outline: rgb(14, 14, 14) solid 2px;
+            width: 6.25rem;
+            height: 6.25rem;
+            cursor: pointer;
+            background: black;
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+
+        }
+
+        .skipJ:hover {
+            transform: scale(1.1);
+        }
+
+        .skipJourn {
+            border-radius: 50%;
+            border: 2px solid rgb(255, 254, 250);
+            outline: rgb(14, 14, 14) solid 2px;
+            width: 3rem;
+            height: 3rem;
+            cursor: pointer;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            transition: .5s;
+
+        }
+
+        .skipJourn:hover {
+            transform: scale(1.1);
+        }
+
+
+        .card {
+            position: relative;
+            height: 440px;
+            box-shadow: 0px 0px 20px 1px #000c;
+            overflow: hidden;
+            border: 0px solid #000c;
+        }
+
+        .card:hover .card-body {
+            position: absolute;
+            z-index: 10;
+            bottom: 10px;
+        }
+
+        .card-head-1 {
+            height: 450px;
+            margin: 0px 0px;
+            border: 0px solid red;
+            background: url(https://www.rwdstco.com/wp-content/uploads/2022/10/R420-ventilator-03-1.jpg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.6s linear;
+        }
+        .card-head-2 {
+            height: 450px;
+            margin: 0px 0px;
+            border: 0px solid red;
+            background: url(https://www.rwdstco.com/wp-content/uploads/2020/04/%E7%AE%A1%E5%AD%90-%E8%93%9D%E8%89%B2-%E6%9C%80%E6%96%B0%E5%B8%A6%E5%B8%BD%E5%AD%90-%E5%89%AF%E6%9C%AC11.jpg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.6s linear;
+        }
+        .card-head-3 {
+            height: 450px;
+            margin: 0px 0px;
+            border: 0px solid red;
+            background: url(https://www.rwdstco.com/wp-content/uploads/2020/04/endotracheal-tubes.jpg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.6s linear;
+        }
+        .card-head-4 {
+            height: 450px;
+            margin: 0px 0px;
+            border: 0px solid red;
+            background: url(https://www.rwdstco.com/wp-content/uploads/2023/06/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D%E5%9B%BE-1.jpg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.6s linear;
+        }
+        .card-head-5 {
+            height: 450px;
+            margin: 0px 0px;
+            border: 0px solid red;
+            background: url(https://www.rwdstco.com/wp-content/uploads/2020/04/mask.jpg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.6s linear;
+        }
+
+        .card-head-6 {
+            height: 450px;
+            margin: 0px 0px;
+            border: 0px solid red;
+            background: url(https://www.rwdstco.com/wp-content/uploads/2020/04/r640Anesthesia-Machine-1.jpg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.6s linear;
+        }
+
+
+        .card-body {
+            display: none;
+            color: #eee;
+            transition: all 0.6s ease;
+        }
+
+        .card-body .btn-warning {
+            position: absolute;
+            bottom: -70px;
+        }
+
+        .card:hover .card-body .btn-warning {
+            position: relative;
+            bottom: 0px;
+        }
+
+        .card>div.pseudo1 {
+            content: "";
+            position: absolute;
+            background: rgba(0, 0, 0, 0.55);
+            left: -330px;
+            top: 0px;
+            height: 33.5%;
+            width: 100%;
+            z-index: 20;
+            transition: all 0.6s ease;
+        }
+
+        .card:hover>div.pseudo1 {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            height: 33.5%;
+            width: 100%;
+            /* From https://css.glass */
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 20;
+        }
+
+        .card>div.pseudo2 {
+            content: "";
+            position: absolute;
+            left: -330px;
+            top: 33.4%;
+            height: 33.6%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 20;
+            transition: all 0.6s ease;
+        }
+
+        .card:hover>div.pseudo2 {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 33.4%;
+            height: 33.6%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 20;
+        }
+
+        .card>div.pseudo3 {
+            content: "";
+            position: absolute;
+            left: -330px;
+            top: 66%;
+            height: 33.6%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 20;
+            transition: all 0.6s ease;
+        }
+
+        .card:hover>div.pseudo3 {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 67%;
+            height: 34%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 20;
+        }
+
+        .card-body .btn-warning {
+            position: absolute;
+            bottom: -70px;
+        }
+
+        .card:hover .card-body .btn-warning {
+            position: relative;
+            bottom: 0px;
+        }
+
+        .card:hover .card-body,
+        .card:hover .card-text {
+            opacity: 1;
+            z-index: 30;
+            display: block;
+        }
+
+        .card:hover .card-head {
+            margin: 0;
+            border: none;
+            background-position-y: bottom;
+            background-repeat: no-repeat;
+            transform: scale(1.5);
+        }
+
 
         @keyframes resize {
             0% {
                 font-size: 16px;
-                /* Ukuran awal */
             }
 
             100% {
                 font-size: 16.5px;
-                /* Ukuran akhir */
             }
         }
     </style>
@@ -369,62 +639,71 @@
 
 <body>
     <audio id="myAudio" style="display: none;" controls autoplay>
-        <source src="sounds/base.mp3" volume="0.2" id="audioSource" type="audio/mpeg">
+        <source src="" volume="0.2" id="audioSource" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-
-
-    <audio id="voAudio" style="display: none;" controls autoplay > 
-        <source src="sounds/sound5.mp3" id="audioSourceVo" type="audio/mpeg">
+    <audio id="voAudio" style="display: none;" controls autoplay>
+        <source src="" id="audioSourceVo" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-
     <div class="storyboard" id="storyboard">
         <!-- <center>Veta Journey</center> -->
     </div>
-
     <div>
 
-
         <div class="slide slide1 active">
+            <div class="d-flex gap-3 justify-content-center" style="flex-direction: column;">
+                <div>
+                    <h3 style="color: black;">Veterinary Anesthesia Machine</h3>
+
+                </div>
+                <div class="d-flex gap-3 justify-content-center">
+
+                    <button class="startJ d-flex justify-content-center align-content-center"
+                        onclick="startJourney()"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                            fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                            <path
+                                d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                        </svg></button>
+                    <button class="skipJ d-flex justify-content-center align-content-center"
+                        onclick="skipJourney()"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                            fill="currentColor" class="bi bi-skip-forward" viewBox="0 0 16 16">
+                            <path
+                                d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V8.752l-6.267 3.636c-.52.302-1.233-.043-1.233-.696v-2.94l-6.267 3.636C.713 12.69 0 12.345 0 11.692V4.308c0-.653.713-.998 1.233-.696L7.5 7.248v-2.94c0-.653.713-.998 1.233-.696L15 7.248V4a.5.5 0 0 1 .5-.5zM1 4.633v6.734L6.804 8 1 4.633zm7.5 0v6.734L14.304 8 8.5 4.633z" />
+                        </svg></button>
+                </div>
+            </div>
+        </div>
+        <div class="slide slide2">
             <div class="text">Pada suatu hari yang cerah, ditengah jalanan kota veterner, ada sebuah mobil dengan
                 kecepatan tinggi yang sedang melaju hingga tanpa sadar seekor kucing secara tiba – tiba melintas</div>
         </div>
-        <div class="slide slide2">
+        <div class="slide slide3">
             <div class="text">oh tidak! Apa yang terjadi ?!</div>
-
         </div>
         <!-- <div class="slide slide3">
             <div class="text">........ </div>
-
         </div> -->
         <div class="slide slide4">
             <div class="container">
-
-
-                <p class="text-story">Tekan tombol N / double click untuk melanjutkan petualangan veta</p>
+                <center>
+                    <p class="text-story">Tekan tombol N / double click untuk melanjutkan petualangan veta</p>
+                </center>
             </div>
         </div>
-
-
         <img src="img/wave 4.png" style="width: 100%;" alt="">
-
-
-        <!-- <center>
-            <div id="search"
-                style="width: 60%;margin-top: -300px;border: 3px solid black;border-radius: 10px;z-index: 999999;position: relative;">
-                <input style="background: #ECEDE1;height: 70px;" type="text" class="form-control"
-                    placeholder="Search ....">
-            </div>
-        </center> -->
+        <div
+            style="display: flex;justify-content: end; width: 100%;padding: 0px 100px 0px 100px; margin-top: -500px;z-index: 999999;position: relative; align-items: center;">
+            <button class="skipJourn" onclick="skipJourney()"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                    height="20" fill="currentColor" class="bi bi-skip-forward" viewBox="0 0 16 16">
+                    <path
+                        d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V8.752l-6.267 3.636c-.52.302-1.233-.043-1.233-.696v-2.94l-6.267 3.636C.713 12.69 0 12.345 0 11.692V4.308c0-.653.713-.998 1.233-.696L7.5 7.248v-2.94c0-.653.713-.998 1.233-.696L15 7.248V4a.5.5 0 0 1 .5-.5zM1 4.633v6.734L6.804 8 1 4.633zm7.5 0v6.734L14.304 8 8.5 4.633z" />
+                </svg></button>
+        </div>
         <br>
         <br>
         <br>
-
-
-
         <div id="vetaSection">
-
             <center>
                 <img src="img/veta-question.png" class="vetQ" alt="">
                 <br>
@@ -438,12 +717,8 @@
                 </h3>
             </center>
             <br>
-
             <br>
-
             <br>
-
-
             <div class="answer d-flex justify-content-center align-items-center" style="gap: 30px;">
                 <div style="display: flex;gap: 30px;flex-direction: column;">
                     <button onclick="scrollToElement('definisi','collapseOne')" class="ans"
@@ -451,9 +726,7 @@
                         <h6>
                             A. Definisi
                         </h6>
-
                     </button>
-
                     <button onclick="scrollToElement('penggunaan','collapseFour')" class="ans"
                         style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
                         <h6>
@@ -474,9 +747,7 @@
                             C. Cara perawatan
                         </h6>
                     </button>
-
                 </div>
-
             </div>
         </div>
         <br>
@@ -484,19 +755,13 @@
         <br>
         <br>
         <br>
-
-
-
         <img src="img/wave3 1.png" style="width: 100%;" alt="">
         <div style="background: #C6EBBE;">
             <div class="container" id="main" style="position: relative;">
-
                 <center>
                     <h3 style="color: #A97555;">Anesthesia Machine</h3>
                 </center>
                 <br>
-
-
                 <center>
                     <div class="d-flex" style="width: 70%;flex-direction: row; gap: 10px;">
                         <div style="flex: 1;">
@@ -505,29 +770,23 @@
                                 alt="">
                         </div>
                         <div style="flex: 1;display: flex;flex-direction: column; gap:10px;">
-
                             <img style="width: 100%;height: 100%;border-radius: 5px;"
                                 src="https://www.wemed1.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/w/a/wallmount.jpg"
                                 alt="">
                             <img style="width: 100%;height: 100%;border-radius: 5px;"
                                 src="https://www.ezsystemsinc.com/wp-content/uploads/2018/12/EZ-RB-1000.jpg" alt="">
-
                         </div>
                     </div>
                     <!-- <div
                         style="position: absolute;bottom: 0;right: 2; width: 200px;height: 200px;background: url(img/veta-crop.png);background-size: cover;">
                     </div> -->
                 </center>
-
                 <img src="img/veta-crop.png"
                     style="width:20vw; position: absolute;bottom: -50px;right: 0; margin-right: 100px;" alt="">
             </div>
-
-
             <br>
             <br>
             <br>
-
             <div class="container">
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item" id="definisi">
@@ -540,21 +799,16 @@
                         <div id="collapseOne" class="accordion-collapse collapse show"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Anastesi Inhalasi merupakan salah satu teknik anastesi umum yang dilakukan dengan cara memberikan kombinasi obat yang berupa gas atau cairan volatile (mudah menguap) melalui alat atau mesin anastesi langsung ke udara inspirasi. Obat Anastesi Inhalasi
-
-<ol>
-    <li>1.	Nitrous oxide</li>
-    <li>2.	Halothane</li>
-    <li>3.	Isoflurane</li>
-    <li>4.	Sevoflurane</li>
-    <li>5.	Desfluran</li>
-</ol>
-
-
-
-
-
-
+                                Anastesi Inhalasi merupakan salah satu teknik anastesi umum yang dilakukan dengan cara
+                                memberikan kombinasi obat yang berupa gas atau cairan volatile (mudah menguap) melalui
+                                alat atau mesin anastesi langsung ke udara inspirasi. Obat Anastesi Inhalasi
+                                <ol>
+                                    <li>1. Nitrous oxide</li>
+                                    <li>2. Halothane</li>
+                                    <li>3. Isoflurane</li>
+                                    <li>4. Sevoflurane</li>
+                                    <li>5. Desfluran</li>
+                                </ol>
                             </div>
                         </div>
                     </div>
@@ -581,11 +835,9 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <br>
                                     <br>
                                     <br>
-
                                     <div class="row">
                                         <div class="d-flex gap-5">
                                             <div style="flex: 4;padding: 10px;">
@@ -593,9 +845,7 @@
                                             </div>
                                             <div
                                                 style="flex:2; width: 200px;height: 200px;background: url('img/car-1.jpeg');background-size:cover; border-radius: 10px;position: relative;">
-
                                             </div>
-
                                         </div>
                                     </div>
                                     <br>
@@ -622,11 +872,9 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <br>
                                     <br>
                                     <br>
-
                                     <div class="row">
                                         <div class="d-flex gap-5">
                                             <div style="flex: 4;padding: 10px;">
@@ -644,33 +892,29 @@
                                                 bottom:-50px;
                                                 right:-50px;" alt="">
                                             </div>
-
                                         </div>
                                     </div> -->
-
-
-                                    
-
- 
-
-
-
-
-
-
-                                    <p >1. Sambungkan tabung oksigen dengan alat anastesi inhalasi menggunakan selang yang tersedia.</p>
-                                    <p >2. Untuk mengisi isoflurane pada mesin anastesi RWD gunakan conector ungu, buka penutup tempat pengisian isoflurane. Tuangkan isoflurane menggunankan conector yang sudah tersambung dengan tempat pengisian isoflurane hingga isoflurane terisi sampai garis batas.</p>
-                                    <p >3. Lepaskan conector dan tutup penutup tempat pengisian isoflurane, kembalikan botol ke posisi semula, lepas conector.</p>
-                                    <p >4. Putar OPEN tabung oksigen, atur tekanan ke 50mmHg, atur kebutuhan oksigen untuk pasien melalui mesin anastesi, pastikan tidak ada keboocran.</p>
-                                    <p >5. Pilih system Nn-Rebreathing Circuit untuk pasien dengan berat badan < 7 KG dan rebreathing Circuit untuk pasien dngan BB > 7 KG</p>
-                                    <p >6. Pasang masker oksigen ke hewan</p>
-                                    <p>7. Tekan tombol kunci, putar kenob untuk membuka dan menutup pengaturan konsentrasi isoflurane yang dikeluarkan</p>
-                                    <p>8. Sesuaikan pemberian anatesi inhalasi menggunakan isoflurane dengan kondisi hewan saat operasi</p>
-                                    <p>9. Setelah selesai, kembalikan semua pengaturan ke “0” untuk isoflurane, kemudian baru oksigen.</p>
+                                    <p>1. Sambungkan tabung oksigen dengan alat anastesi inhalasi menggunakan selang
+                                        yang tersedia.</p>
+                                    <p>2. Untuk mengisi isoflurane pada mesin anastesi RWD gunakan conector ungu, buka
+                                        penutup tempat pengisian isoflurane. Tuangkan isoflurane menggunankan conector
+                                        yang sudah tersambung dengan tempat pengisian isoflurane hingga isoflurane
+                                        terisi sampai garis batas.</p>
+                                    <p>3. Lepaskan conector dan tutup penutup tempat pengisian isoflurane, kembalikan
+                                        botol ke posisi semula, lepas conector.</p>
+                                    <p>4. Putar OPEN tabung oksigen, atur tekanan ke 50mmHg, atur kebutuhan oksigen
+                                        untuk pasien melalui mesin anastesi, pastikan tidak ada keboocran.</p>
+                                    <p>5. Pilih system Nn-Rebreathing Circuit untuk pasien dengan berat badan < 7 KG dan
+                                            rebreathing Circuit untuk pasien dngan BB> 7 KG</p>
+                                    <p>6. Pasang masker oksigen ke hewan</p>
+                                    <p>7. Tekan tombol kunci, putar kenob untuk membuka dan menutup pengaturan
+                                        konsentrasi isoflurane yang dikeluarkan</p>
+                                    <p>8. Sesuaikan pemberian anatesi inhalasi menggunakan isoflurane dengan kondisi
+                                        hewan saat operasi</p>
+                                    <p>9. Setelah selesai, kembalikan semua pengaturan ke “0” untuk isoflurane, kemudian
+                                        baru oksigen.</p>
                                     <p>10. Putar CLOSED regulator oksigen Kembali</p>
                                     <p>11. Bersih dan rapihkan Kembali alat anastesi inhalasi</p>
-
-
                                 </div>
                                 <br>
                             </div>
@@ -685,7 +929,9 @@
                         </h2>
                         <div id="collapseFour" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Anestesi inhalasi digunakan dalam kedokteran hewan untuk memberikan anestesi kepada hewan selama prosedur medis atau pembedahan. Ini adalah metode umum dalam praktik hewan untuk mencapai anestesi yang mendalam dan aman.
+                                Anestesi inhalasi digunakan dalam kedokteran hewan untuk memberikan anestesi kepada
+                                hewan selama prosedur medis atau pembedahan. Ini adalah metode umum dalam praktik hewan
+                                untuk mencapai anestesi yang mendalam dan aman.
                             </div>
                         </div>
                     </div>
@@ -718,10 +964,7 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
             <br>
             <br>
             <br>
@@ -730,20 +973,124 @@
         </div>
     </div>
     <img src="img/wave 5.png" style="width: 100%;" alt="">
+    <br>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <center>
+        <div id="search"
+            style="width: 60%;margin-top: -300px;border: 3px solid black;border-radius: 10px;z-index: 999999;position: relative;">
+            <input style="background: #ECEDE1;height: 70px;" type="text" class="form-control" placeholder="Search ....">
+        </div>
+    </center>
+
 
 
 
     <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="d-flex" style="width: 100%;flex-wrap: wrap;justify-content: space-around;gap: 12px;">
+            <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
+                <div class="pseudo1"></div>
+                <div class="pseudo2"></div>
+                <div class="pseudo3"></div>
+                <div class="card-head-1"></div>
+                <div class="card-body">
+                    <h5 class="card-title">- Center of Turkiye -</h5>
+                    <p class="card-text">Ankara is Turkiye's capital and second-largest city, while Istanbul
+                        is its largest city</p>
+                    <a href="#" class="btn btn-warning">Visit Turkiye</a>
+                </div>
+            </div>
+            <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
+                <div class="pseudo1"></div>
+                <div class="pseudo2"></div>
+                <div class="pseudo3"></div>
+                <div class="card-head-2"></div>
+                <div class="card-body">
+                    <h5 class="card-title">- Center of Turkiye -</h5>
+                    <p class="card-text">Ankara is Turkiye's capital and second-largest city, while Istanbul
+                        is its largest city</p>
+                    <a href="#" class="btn btn-warning">Visit Turkiye</a>
+                </div>
+            </div>
+            <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
+                <div class="pseudo1"></div>
+                <div class="pseudo2"></div>
+                <div class="pseudo3"></div>
+                <div class="card-head-3"></div>
+                <div class="card-body">
+                    <h5 class="card-title">- Center of Turkiye -</h5>
+                    <p class="card-text">Ankara is Turkiye's capital and second-largest city, while Istanbul
+                        is its largest city</p>
+                    <a href="#" class="btn btn-warning">Visit Turkiye</a>
+                </div>
+            </div>
+            <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
+                <div class="pseudo1"></div>
+                <div class="pseudo2"></div>
+                <div class="pseudo3"></div>
+                <div class="card-head-4"></div>
+                <div class="card-body">
+                    <h5 class="card-title">- Center of Turkiye -</h5>
+                    <p class="card-text">Ankara is Turkiye's capital and second-largest city, while Istanbul
+                        is its largest city</p>
+                    <a href="#" class="btn btn-warning">Visit Turkiye</a>
+                </div>
+            </div>
+            <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
+                <div class="pseudo1"></div>
+                <div class="pseudo2"></div>
+                <div class="pseudo3"></div>
+                <div class="card-head-5"></div>
+                <div class="card-body">
+                    <h5 class="card-title">- Center of Turkiye -</h5>
+                    <p class="card-text">Ankara is Turkiye's capital and second-largest city, while Istanbul
+                        is its largest city</p>
+                    <a href="#" class="btn btn-warning">Visit Turkiye</a>
+                </div>
+            </div>
+            <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
+                <div class="pseudo1"></div>
+                <div class="pseudo2"></div>
+                <div class="pseudo3"></div>
+                <div class="card-head-6"></div>
+                <div class="card-body">
+                    <h5 class="card-title">- Center of Turkiye -</h5>
+                    <p class="card-text">Ankara is Turkiye's capital and second-largest city, while Istanbul
+                        is its largest city</p>
+                    <a href="#" class="btn btn-warning">Visit Turkiye</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
         <div
             style="background: white;border-radius: 10px;width: 100%;height: 400px;color: #A97555;display: flex;justify-content: center;align-items: center;">
             <h2>Whats Next ? </h2>
-
         </div>
         <!-- <center>
             <h3>3D Models</h3>
@@ -757,7 +1104,6 @@
                 src="https://sketchfab.com/models/5d54144ed10146798a91ae88cd911266/embed?camera=0"> </iframe>
         </div> -->
     </div>
-
     <br>
     <br>
     <br>
@@ -771,7 +1117,6 @@
     <br>
     <br>
     <br>
-
     <center>
         <div style="color: #A97555;width: 60%;margin: auto;">
             <h4>PVT</h4>
@@ -785,15 +1130,11 @@
             <br>
             Copyright © 2023 - Kelompok 4
             <br>
-
             <br>
             <br>
             <br>
-
         </div>
-
     </center>
-
     <!-- <footer style="width: 100%;background: #C6EBBE; display: flex;color: #A97555;padding:50px;flex-wrap: wrap;justify-content: center;">
         <div style="flex: 2;">
             <h4>PVT</h4>
@@ -801,28 +1142,370 @@
                 benar benar terjadi, cerita ini ditulis untuk menambah wawasan tentang alat alat dalam paramedik
                 veteriner</p>
         </div>
-
-      
     </footer> -->
-
-
-
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
     <script>
         baguetteBox.run('.tz-gallery');
     </script>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
         integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function () {
+        function scrollToElement(elementId, dataCollapseValue) {
+            const targetElement = document.getElementById(elementId);
+            console.log(dataCollapseValue)
+            const buttonElement = document.querySelector(`button[data-bs-target="#${dataCollapseValue}"]`);
+            if (targetElement) {
+                const offset =
+                    200; // Ubah offset sesuai dengan berapa banyak Anda ingin berhenti di atas elemen
+                const elementPosition = targetElement.offsetTop - offset;
+                window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth' // Untuk efek scroll yang halus, jika diperlukan
+                });
+            }
+            setTimeout(() => {
+                const collapseTwoElement = document.getElementById(dataCollapseValue);
+                if (collapseTwoElement) {
+                    const hasShowClass = collapseTwoElement.classList.contains('show');
+                    if (hasShowClass) {
+                        console.log('The element has the "show" class.');
+                    } else {
+                        buttonElement.click()
+                    }
+                } else {
+                    console.log('Element with ID "collapseTwo" not found.');
+                }
+            }, 1000);
+        }
 
+        const element1 = document.querySelector(".pseudo1");
+        const element2 = document.querySelector(".pseudo2");
+        const element3 = document.querySelector(".pseudo3");
+
+        const cardText = document.querySelector(".card-text");
+        const cardTitle = document.querySelector(".card-title");
+        const cardBtn = document.querySelector(".btn-warning");
+
+        const card = document.querySelector(".card");
+        card.addEventListener("mouseover", (event) => {
+            //element.style.setProperty('left', '0px');
+            element1.classList.add("animate__animated", "animate__fadeInLeft");
+            element1.style.setProperty("--animate-duration", "2.0s");
+            element2.classList.add("animate__animated", "animate__fadeInLeft");
+            element2.style.setProperty("--animate-duration", "1.5s");
+            element3.classList.add("animate__animated", "animate__fadeInLeft");
+            element3.style.setProperty("--animate-duration", "0.6s");
+            cardTitle.classList.add("animate__animated", "animate__fadeInUp");
+            cardTitle.style.setProperty("--animate-duration", "1.0s");
+            cardText.classList.add("animate__animated", "animate__fadeInUp");
+            cardText.style.setProperty("--animate-duration", "1.4s");
+            cardBtn.classList.add("animate__animated", "animate__fadeInUp");
+            cardBtn.style.setProperty("--animate-duration", "2s");
+        });
+
+        card.addEventListener("mouseout", (event) => {
+            element1.classList.remove("animate__animated", "animate__fadeInLeft");
+            element2.classList.remove("animate__animated", "animate__fadeInLeft");
+            element3.classList.remove("animate__animated", "animate__fadeInLeft");
+            cardText.classList.remove("animate__animated", "animate__fadeInUp");
+            cardTitle.classList.remove("animate__animated", "animate__fadeInUp");
+            cardBtn.classList.remove("animate__animated", "animate__fadeInUp");
+            // element.style.setProperty('left', '-99px');
+        });
+
+
+        let boxCount = 0;
+        disableScroll();
+        window.addEventListener('load', () => {
+            // Gulirkan halaman ke paling atas
+            window.scrollTo(0, 0);
+            var audio = document.getElementById("myAudio");
+            audio.volume = 0.3;
+        });
+
+        function updateInterval() {
+            clearInterval(intervalId); // Clear the existing interval
+            intervalId = setInterval(showNextSlide, timer); //
+        }
+
+        let timer = 16000;
+        const slides = document.querySelectorAll('.slide');
+        let currentSlideIndex = 0;
+        let intervalId;
+
+        function showNextSlide() {
+            slides[currentSlideIndex].classList.remove('active');
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            slides[currentSlideIndex].classList.add('active');
+            console.log(currentSlideIndex);
+            if (currentSlideIndex == 2) {
+                let audio = document.getElementById('voAudio');
+                let audioSource = document.getElementById('audioSourceVo');
+                audioSource.src = 'sounds/sound2.mp3';
+                audio.load();
+                audio.play();
+                timer = 5000;
+                updateInterval();
+
+            } else if (currentSlideIndex === slides.length - 1) {
+                const audio = document.getElementById('myAudio');
+                const audioSource = document.getElementById('audioSource');
+                audioSource.src = 'sounds/brak.mp3';
+                audio.load();
+                audio.play();
+                addBox('video/k-1.webm', 0)
+                setTimeout(() => {
+                    addBox('video/k0.webm', 0)
+                }, 3000);
+                setTimeout(() => {
+                    addBox('video/crash.webm', 0)
+                }, 5000);
+                setTimeout(() => {
+                    addBox('video/k1.webm', 0)
+                    // let audio = document.getElementById('voAudio');
+                    // let audioSource = document.getElementById('audioSourceVo');
+                    // audioSource.src = 'sounds/sound1.mp3';
+                    // audio.load();
+                    // audio.play();
+                }, 8000);
+
+                setTimeout(() => {
+                    addBox('video/k2.webm', 0,
+                        'Huhuhuu kucingnya berdarah… apakah dia kehilangan nyawanya?',
+                        true)
+                    let audio = document.getElementById('voAudio');
+                    let audioSource = document.getElementById('audioSourceVo');
+                    audioSource.src = 'sounds/sound1.mp3';
+                    audio.load();
+                    audio.play();
+                }, 12000);
+
+                setTimeout(() => {
+                    const audio = document.getElementById('myAudio');
+                    const audioSource = document.getElementById('audioSource');
+                    audioSource.src = 'sounds/sad.mp3';
+                    audio.load();
+                    audio.play();
+                }, 9000);
+                boxCount++;
+                clearInterval(intervalId);
+            }
+        }
+
+
+
+
+        const storyboard = document.querySelector(".storyboard");
+        const addButton = document.getElementById("addBox");
+
+        function smoothScrollToElement(selector) {
+            const element = document.querySelector(selector);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        }
+
+        function addBox(url, rotate, content = '', useDivContext = false, height = 100) {
+            const newBox = document.createElement("div");
+            newBox.classList.add("box");
+            newBox.style.top = `0`;
+            newBox.style.left = `0`;
+            newBox.style.right = `0`;
+            newBox.style.bottom = `0`;
+            newBox.style.inset = `unset`;
+            newBox.style.opacity = 0;
+            const video = document.createElement("video");
+            video.autoplay = true;
+            video.loop = true;
+            video.muted = true;
+            video.playsInline = true;
+            const source = document.createElement("source");
+            source.src = url;
+            source.type = "video/webm";
+            video.appendChild(source);
+            newBox.appendChild(video);
+            storyboard.appendChild(newBox);
+
+            video.style.width = "100%";
+            video.style.height = "100%";
+            video.style.objectFit = "cover";
+            // Trigger reflow to force CSnS transition on opacity
+            newBox.getBoundingClientRect();
+            newBox.style.transform = `rotate(${rotate}deg)`;
+            newBox.style.opacity = 1;
+
+            if (useDivContext) {
+                const customContent = document.createElement("div");
+                customContent.style.height = `${height}px`;
+                customContent.style.background = "white";
+                customContent.style.position = "absolute";
+                customContent.style.bottom = "100px";
+                customContent.style.right = "-100px";
+                customContent.style.background = "white";
+                customContent.style.borderRadius = "10px";
+                customContent.style.padding = "10px";
+                customContent.style.border = "5px solid black";
+                customContent.textContent =
+                    content;
+                customContent.classList.add("boxText");
+                newBox.appendChild(customContent);
+            }
+
+
+
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "n" || event.key === "N") {
+                if (boxCount === 3) {
+                    enableScroll();
+                    smoothScrollToElement("#vetaSection");
+                } else {
+                    const newBox = document.createElement("div");
+                    let audio = document.getElementById('voAudio');
+                    let audioSource = document.getElementById('audioSourceVo');
+                    const audioBase = document.getElementById('myAudio');
+                    const audioSourceBase = document.getElementById('audioSource');
+                    switch (boxCount) {
+                        case 1:
+                            addBox('video/k3.webm', 5,
+                                'Kita harus segera membawa kucing tersebut ke klinik hewan!',
+                                true)
+                            audioSource.src = 'sounds/sound3.mp3';
+                            audio.load();
+                            audio.play();
+                            break;
+                        case 2:
+                            audioSourceBase.src = 'sounds/happy.mp3';
+                            audioBase.load();
+                            audioBase.play();
+                            addBox('video/panel_terakhir.webm', -2.5,
+                                'Hai teman-teman, Vetii di sini! Kalian penasaran kucing yang tertabrak tadi di klinik hewan gimana penanganannya?',
+                                true, 'unset')
+                            var elements = $('.boxText');
+                            var lastElement = elements.last();
+                            setTimeout(() => {
+                                lastElement.html(
+                                    'Tenang, aku dan temanku akan menjelaskannya. ');
+                            }, 8000);
+                            setTimeout(() => {
+                                lastElement.html(
+                                    'Nanti kita akan bahas langkah-langkah penanganan kucing tertabrak dengan salah satu alat yang penting. Yuk, kita pelajari alatnya!'
+                                );
+                            }, 10000);
+                            audioSource.src = 'sounds/sound4.mp3';
+                            audio.load();
+                            audio.play();
+                            break;
+                    }
+                    boxCount++;
+                }
+            }
+        });
+
+        function disableScroll() {
+            document.body.style.overflow = 'block';
+        }
+
+        function enableScroll() {
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener("dblclick", (event) => {
+            if (boxCount === 3) {
+                enableScroll();
+                smoothScrollToElement("#vetaSection");
+            } else {
+                const newBox = document.createElement("div");
+                let audio = document.getElementById('voAudio');
+                let audioSource = document.getElementById('audioSourceVo');
+
+                const audioBase = document.getElementById('myAudio');
+                const audioSourceBase = document.getElementById('audioSource');
+
+
+                switch (boxCount) {
+                    // case 1:
+                    //     addBox('video/k2.webm', 2.5)
+                    //     break;
+                    case 1:
+                        addBox('video/k3.webm', 5,
+                            'Kita harus segera membawa kucing tersebut ke klinik hewan!', true)
+                        audioSource.src = 'sounds/sound3.mp3';
+
+                        audio.load();
+                        audio.play();
+                        break;
+                    case 2:
+                        audioSourceBase.src = 'sounds/happy.mp3';
+                        audioBase.load();
+                        audioBase.play();
+                        addBox('video/panel_terakhir.webm', -2.5,
+                            'Hai teman-teman aku Vetii sebagai pemandu kalian! By the way, kucing yang tadi ketabrak tu kira-kira diapain yaa setelah dibawa ke klinik? Hmm yang pasti sih ada serangkaian penanganan yang akan diberikan kepada kucing tersebut. Nah biar teman - teman ga bingung, disini aku dan teman ku akan menjelaskan Langkah-langkah penanganan kucing tersebut dengan salah satu alat yang penting nihh. So kalau kamu penasaran, ikutin terus aku dan temanku yaa!!',
+                            true, 300)
+                        audioSource.src = 'sounds/sound4.mp3';
+
+                        audio.load();
+                        audio.play();
+                        break;
+                }
+                boxCount++;
+            }
+        });
+
+
+
+        function startJourney() {
+            let audio = document.getElementById('voAudio');
+            let audioSource = document.getElementById('audioSourceVo');
+            const audioBase = document.getElementById('myAudio');
+            const audioSourceBase = document.getElementById('audioSource');
+            audioSourceBase.src = 'sounds/base.mp3';
+            audioSource.src = 'sounds/sound5.mp3';
+
+            audio.load();
+            audio.play();
+            audioBase.load();
+            audioBase.play();
+            showNextSlide()
+            intervalId = setInterval(showNextSlide, timer);
+        }
+
+
+        function skipJourney() {
+            clearInterval(intervalId); // Clear the existing interval
+
+            let audio = document.getElementById('voAudio');
+            let audioSource = document.getElementById('audioSourceVo');
+            const audioBase = document.getElementById('myAudio');
+            const audioSourceBase = document.getElementById('audioSource');
+
+            audio.pause();
+            audioBase.pause();
+
+            $('.slide').removeClass('active');
+            $('.slide4').addClass('active');
+            addBox('video/k3.webm', 5,
+                'Kita harus segera membawa kucing tersebut ke klinik hewan!',
+                true)
+            addBox('video/panel_terakhir.webm', -2.5,
+                'Nanti kita akan bahas langkah-langkah penanganan kucing tertabrak dengan salah satu alat yang penting. Yuk, kita pelajari alatnya!',
+                true, 'unset')
+            setTimeout(() => {
+                enableScroll();
+                smoothScrollToElement("#vetaSection");
+            }, 2000);
+
+        }
+
+        $(document).ready(function () {
             const sounds = {
                 sound1: 'sounds/sound1.mp3',
                 sound2: 'sounds/sound2.mp3',
@@ -833,7 +1516,6 @@
                 sad: 'sounds/sad.mp3',
                 brak: 'sounds/brak.mp3',
             };
-
             const videos = {
                 crash: 'video/crash.webm',
                 k1: 'video/k-1.webm',
@@ -851,7 +1533,6 @@
                     audio.src = sounds[key];
                     audio.load();
                 }
-
                 for (const key in videos) {
                     const video = document.createElement('video');
                     video.src = videos[key];
@@ -860,300 +1541,8 @@
                 }
                 console.log('preaload has been success')
             }
-
             preloadAssets();
 
-
-            function scrollToElement(elementId, dataCollapseValue) {
-
-                const targetElement = document.getElementById(elementId);
-
-                console.log(dataCollapseValue)
-                const buttonElement = document.querySelector(`button[data-bs-target="#${dataCollapseValue}"]`);
-                if (targetElement) {
-                    const offset =
-                        200; // Ubah offset sesuai dengan berapa banyak Anda ingin berhenti di atas elemen
-                    const elementPosition = targetElement.offsetTop - offset;
-                    window.scrollTo({
-                        top: elementPosition,
-                        behavior: 'smooth' // Untuk efek scroll yang halus, jika diperlukan
-                    });
-                }
-
-                setTimeout(() => {
-                    const collapseTwoElement = document.getElementById(dataCollapseValue);
-                    if (collapseTwoElement) {
-                        const hasShowClass = collapseTwoElement.classList.contains('show');
-                        if (hasShowClass) {
-                            console.log('The element has the "show" class.');
-                        } else {
-                            buttonElement.click()
-                        }
-                    } else {
-                        console.log('Element with ID "collapseTwo" not found.');
-                    }
-
-                }, 1000);
-            }
-
-            let boxCount = 0;
-            disableScroll();
-            window.addEventListener('load', () => {
-                // Gulirkan halaman ke paling atas
-                window.scrollTo(0, 0);
-                var audio = document.getElementById("myAudio");
-                audio.volume = 0.3;
-            });
-
-            function updateInterval() {
-                clearInterval(intervalId); // Clear the existing interval
-                intervalId = setInterval(showNextSlide, timer); //
-            }
-
-            let timer = 16000;
-
-            const slides = document.querySelectorAll('.slide');
-            let currentSlideIndex = 0;
-            let intervalId;
-
-            function showNextSlide() {
-                slides[currentSlideIndex].classList.remove('active');
-                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-                slides[currentSlideIndex].classList.add('active');
-
-                console.log(currentSlideIndex);
-                if (currentSlideIndex == 1) {
-                    let audio = document.getElementById('voAudio');
-                    let audioSource = document.getElementById('audioSourceVo');
-                    audioSource.src = 'sounds/sound2.mp3';
-
-                    audio.load();
-                    audio.play();
-
-                    timer = 5000;
-                    updateInterval();
-
-                } else if (currentSlideIndex === slides.length - 1) {
-                    const audio = document.getElementById('myAudio');
-                    const audioSource = document.getElementById('audioSource');
-                    audioSource.src = 'sounds/brak.mp3';
-                    audio.load();
-                    audio.play();
-                    addBox('video/k-1.webm', 0)
-                    setTimeout(() => {
-                        addBox('video/k0.webm', 0)
-                    }, 3000);
-
-                    setTimeout(() => {
-                        addBox('video/crash.webm', 0)
-
-                    }, 5000);
-
-                    setTimeout(() => {
-                        addBox('video/k1.webm', 0)
-                        // let audio = document.getElementById('voAudio');
-                        // let audioSource = document.getElementById('audioSourceVo');
-                        // audioSource.src = 'sounds/sound1.mp3';
-
-                        // audio.load();
-                        // audio.play();
-                    }, 8000);
-
-
-                    setTimeout(() => {
-                        addBox('video/k2.webm', 0,
-                            'Huhuhuu kucingnya berdarah… apakah dia kehilangan nyawanya?',
-                            true)
-                        let audio = document.getElementById('voAudio');
-                        let audioSource = document.getElementById('audioSourceVo');
-                        audioSource.src = 'sounds/sound1.mp3';
-
-                        audio.load();
-                        audio.play();
-                    }, 12000);
-
-
-
-
-                    setTimeout(() => {
-                        const audio = document.getElementById('myAudio');
-                        const audioSource = document.getElementById('audioSource');
-                        audioSource.src = 'sounds/sad.mp3';
-
-                        audio.load();
-                        audio.play();
-                    }, 9000);
-
-                    boxCount++;
-                    clearInterval(intervalId);
-                }
-            }
-
-            intervalId = setInterval(showNextSlide, timer);
-
-            const storyboard = document.querySelector(".storyboard");
-            const addButton = document.getElementById("addBox");
-
-            function smoothScrollToElement(selector) {
-                const element = document.querySelector(selector);
-                if (element) {
-                    element.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-                }
-            }
-
-            function addBox(url, rotate, content = '', useDivContext = false, height = 100) {
-                const newBox = document.createElement("div");
-                newBox.classList.add("box");
-                newBox.style.top = `0`;
-                newBox.style.left = `0`;
-                newBox.style.right = `0`;
-                newBox.style.bottom = `0`;
-                newBox.style.inset = `unset`;
-                newBox.style.opacity = 0;
-                const video = document.createElement("video");
-                video.autoplay = true;
-                video.loop = true;
-                video.muted = true;
-                video.playsInline = true;
-                const source = document.createElement("source");
-                source.src = url;
-                source.type = "video/webm";
-                video.appendChild(source);
-                newBox.appendChild(video);
-                storyboard.appendChild(newBox);
-
-
-                video.style.width = "100%";
-                video.style.height = "100%";
-                video.style.objectFit = "cover";
-                // Trigger reflow to force CSnS transition on opacity
-                newBox.getBoundingClientRect();
-                newBox.style.transform = `rotate(${rotate}deg)`;
-                newBox.style.opacity = 1;
-
-
-                if (useDivContext) {
-                    const customContent = document.createElement("div");
-                    customContent.style.height = `${height}px`;
-                    customContent.style.background = "white";
-                    customContent.style.position = "absolute";
-                    customContent.style.bottom = "100px";
-                    customContent.style.right = "-100px";
-                    customContent.style.background = "white";
-                    customContent.style.borderRadius = "10px";
-                    customContent.style.padding = "10px";
-                    customContent.style.border = "5px solid black";
-                    customContent.textContent =
-                        content;
-                    customContent.classList.add("boxText");
-
-                    newBox.appendChild(customContent);
-                }
-
-
-
-            }
-
-            document.addEventListener("keydown", (event) => {
-                if (event.key === "n" || event.key === "N") {
-                    if (boxCount === 3) {
-                        enableScroll();
-                        smoothScrollToElement("#vetaSection");
-                    } else {
-                        const newBox = document.createElement("div");
-                        let audio = document.getElementById('voAudio');
-                        let audioSource = document.getElementById('audioSourceVo');
-
-                        const audioBase = document.getElementById('myAudio');
-                        const audioSourceBase = document.getElementById('audioSource');
-
-
-                        switch (boxCount) {
-                            // case 1:
-                            //     addBox('video/k2.webm', 2.5)
-                            //     break;
-                            case 1:
-                                addBox('video/k3.webm', 5,
-                                    'Kita harus segera membawa kucing tersebut ke klinik hewan!',
-                                    true)
-                                audioSource.src = 'sounds/sound3.mp3';
-
-                                audio.load();
-                                audio.play();
-                                break;
-                            case 2:
-                                audioSourceBase.src = 'sounds/happy.mp3';
-                                audioBase.load();
-                                audioBase.play();
-                                addBox('video/panel_terakhir.webm', -2.5,
-                                    'Hai teman-teman aku Vetii sebagai pemandu kalian! By the way, kucing yang tadi ketabrak tu kira-kira diapain yaa setelah dibawa ke klinik? Hmm yang pasti sih ada serangkaian penanganan yang akan diberikan kepada kucing tersebut. Nah biar teman - teman ga bingung, disini aku dan teman ku akan menjelaskan Langkah-langkah penanganan kucing tersebut dengan salah satu alat yang penting nihh. So kalau kamu penasaran, ikutin terus aku dan temanku yaa!!',
-                                    true, 300)
-                                audioSource.src = 'sounds/sound4.mp3';
-
-                                audio.load();
-                                audio.play();
-                                break;
-                        }
-                        boxCount++;
-                    }
-                }
-            });
-
-            function disableScroll() {
-                document.body.style.overflow = 'unset';
-            }
-
-            function enableScroll() {
-                document.body.style.overflow = 'auto';
-            }
-
-
-
-
-            document.addEventListener("dblclick", (event) => {
-                if (boxCount === 3) {
-                    enableScroll();
-                    smoothScrollToElement("#vetaSection");
-                } else {
-                    const newBox = document.createElement("div");
-                    let audio = document.getElementById('voAudio');
-                    let audioSource = document.getElementById('audioSourceVo');
-
-                    const audioBase = document.getElementById('myAudio');
-                    const audioSourceBase = document.getElementById('audioSource');
-
-
-                    switch (boxCount) {
-                        // case 1:
-                        //     addBox('video/k2.webm', 2.5)
-                        //     break;
-                        case 1:
-                            addBox('video/k3.webm', 5,
-                                'Kita harus segera membawa kucing tersebut ke klinik hewan!', true)
-                            audioSource.src = 'sounds/sound3.mp3';
-
-                            audio.load();
-                            audio.play();
-                            break;
-                        case 2:
-                            audioSourceBase.src = 'sounds/happy.mp3';
-                            audioBase.load();
-                            audioBase.play();
-                            addBox('video/panel_terakhir.webm', -2.5,
-                                'Hai teman-teman aku Vetii sebagai pemandu kalian! By the way, kucing yang tadi ketabrak tu kira-kira diapain yaa setelah dibawa ke klinik? Hmm yang pasti sih ada serangkaian penanganan yang akan diberikan kepada kucing tersebut. Nah biar teman - teman ga bingung, disini aku dan teman ku akan menjelaskan Langkah-langkah penanganan kucing tersebut dengan salah satu alat yang penting nihh. So kalau kamu penasaran, ikutin terus aku dan temanku yaa!!',
-                                true, 300)
-                            audioSource.src = 'sounds/sound4.mp3';
-
-                            audio.load();
-                            audio.play();
-                            break;
-                    }
-                    boxCount++;
-                }
-            });
 
         })
     </script>
