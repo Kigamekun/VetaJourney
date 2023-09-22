@@ -1127,6 +1127,15 @@
     <br>
     <br>
     <br>
+    <div style="display: none;">
+        <img src="img/comic1.svg" alt="">
+        <img src="img/comic2.svg" alt="">
+        <img src="img/comic3.svg" alt="">
+        <img src="img/comic4.svg" alt="">
+        <img src="img/comic5.svg" alt="">
+        <img src="img/comic6.svg" alt="">
+        <img src="img/comic7.svg" alt="">
+    </div>
     <br>
     <br>
     <center>
@@ -1541,30 +1550,6 @@
 
         }
 
-        $(document).ready(function () {
-            const svgs = {
-                comic1: 'img/comic1.svg',
-                comic2: 'img/comic2.svg',
-                comic3: 'img/comic3.svg',
-                comic4: 'img/comic4.svg',
-                comic5: 'img/comic5.svg',
-                comic6: 'img/comic6.svg',
-                comic7: 'img/comic7.svg',
-                // Add more SVG sources as needed
-            };
-
-            function preloadAssets() {
-                for (const key in svgs) {
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('GET', svgs[key], true);
-                    xhr.send();
-                }
-                console.log('preaload has been success')
-            }
-            preloadAssets();
-
-
-        })
     </script>
 </body>
 
