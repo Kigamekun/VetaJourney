@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lemon&family=Montserrat:wght@600&display=swap');
+       @import url('https://fonts.googleapis.com/css2?family=Lemon&family=Montserrat:wght@600&family=Poppins:wght@900&display=swap');
 
         @font-face {
             font-family: sprinkle;
@@ -284,6 +284,8 @@
         }
 
         .accordion-body {
+            font-family: 'Poppins';
+            font-weight:900;
             font-size: 24px !important;
         }
 
@@ -349,7 +351,8 @@
             background-color: transparent !important;
             /* Remove the background color */
             text-decoration: underline;
-            font-family: Lemon;
+            font-family: 'Poppins';
+            font-weight:900;
             color: #A97555;
         }
 
@@ -717,7 +720,11 @@
                 <img src="img/veta-question.png" class="vetQ" alt="">
                 <br>
                 <h3 style="color: A97555;width: 80%;color: #A97555;text-align: justify;" class="vet">
-                    Paramedik Veteriner adalah tenaga kesehatan yang sebagian besar berperan sebagai asisten dokter hewan. Mereka juga berperan dalam bidang pengendalian dan pengawasan lalu lintas hewan di stasiun karantina hewan, penyuluh kesehatan hewan secara langsung kepada masyarakat, dan asisten peneliti. Nah, ada salah satu alat penting yang dipakai oleh para tenaga paramedik veteriner yang akan kujelaskan disini. Klik topik yang akan kamu mau pelajari disini!
+                    Paramedik Veteriner adalah tenaga kesehatan yang sebagian besar berperan sebagai asisten dokter
+                    hewan. Mereka juga berperan dalam bidang pengendalian dan pengawasan lalu lintas hewan di stasiun
+                    karantina hewan, penyuluh kesehatan hewan secara langsung kepada masyarakat, dan asisten peneliti.
+                    Nah, ada salah satu alat penting yang dipakai oleh para tenaga paramedik veteriner yang akan
+                    kujelaskan disini. Klik topik yang akan kamu mau pelajari disini!
                 </h3>
             </center>
             <br>
@@ -1275,15 +1282,15 @@
                 audioSource.src = 'sounds/brak.mp3';
                 audio.load();
                 audio.play();
-                addBox('video/k-1.webm', 0)
+                addBox('img/comic2.svg', 0)
                 setTimeout(() => {
-                    addBox('video/k0.webm', 0)
+                    addBox('img/comic7.svg', 0)
                 }, 3000);
                 setTimeout(() => {
-                    addBox('video/crash.webm', 0)
+                    addBox('img/comic3.svg', 0)
                 }, 5000);
                 setTimeout(() => {
-                    addBox('video/k1.webm', 0)
+                    addBox('img/comic4.svg', 0)
                     // let audio = document.getElementById('voAudio');
                     // let audioSource = document.getElementById('audioSourceVo');
                     // audioSource.src = 'sounds/sound1.mp3';
@@ -1292,7 +1299,7 @@
                 }, 8000);
 
                 setTimeout(() => {
-                    addBox('video/k2.webm', 0,
+                    addBox('img/comic5.svg', 0,
                         'Huhuhuu kucingnya berdarah… apakah dia kehilangan nyawanya?',
                         true)
                     let audio = document.getElementById('voAudio');
@@ -1339,21 +1346,24 @@
             newBox.style.bottom = `0`;
             newBox.style.inset = `unset`;
             newBox.style.opacity = 0;
-            const video = document.createElement("video");
-            video.autoplay = true;
-            video.loop = true;
-            video.muted = true;
-            video.playsInline = true;
-            const source = document.createElement("source");
-            source.src = url;
-            source.type = "video/webm";
-            video.appendChild(source);
-            newBox.appendChild(video);
+            newBox.style.background = `url("${url}")`;
+            newBox.style.backgroundSize = 'cover';
+
+            // const video = document.createElement("video");
+            // video.autoplay = true;
+            // video.loop = true;
+            // video.muted = true;
+            // video.playsInline = true;
+            // const source = document.createElement("source");
+            // source.src = url;
+            // source.type = "video/webm";
+            // video.appendChild(source);
+            // newBox.appendChild(video);
             storyboard.appendChild(newBox);
 
-            video.style.width = "100%";
-            video.style.height = "100%";
-            video.style.objectFit = "cover";
+            // video.style.width = "100%";
+            // video.style.height = "100%";
+            // video.style.objectFit = "cover";
             // Trigger reflow to force CSnS transition on opacity
             newBox.getBoundingClientRect();
             newBox.style.transform = `rotate(${rotate}deg)`;
@@ -1393,7 +1403,7 @@
                     const audioSourceBase = document.getElementById('audioSource');
                     switch (boxCount) {
                         case 1:
-                            addBox('video/k3.webm', 5,
+                            addBox('img/comic6.svg', 5,
                                 'Kita harus segera membawa kucing tersebut ke klinik hewan!',
                                 true)
                             audioSource.src = 'sounds/sound3.mp3';
@@ -1404,7 +1414,7 @@
                             audioSourceBase.src = 'sounds/happy.mp3';
                             audioBase.load();
                             audioBase.play();
-                            addBox('video/panel_terakhir.webm', -2.5,
+                            addBox('img/comic1.svg', -2.5,
                                 'Hai teman-teman, Vetii di sini! Kalian penasaran kucing yang tertabrak tadi di klinik hewan gimana penanganannya?',
                                 true, 'unset')
                             var elements = $('.boxText');
@@ -1450,14 +1460,12 @@
 
 
                 switch (boxCount) {
-                    // case 1:
-                    //     addBox('video/k2.webm', 2.5)
-                    //     break;
-                    case 1:
-                        addBox('video/k3.webm', 5,
-                            'Kita harus segera membawa kucing tersebut ke klinik hewan!', true)
-                        audioSource.src = 'sounds/sound3.mp3';
 
+                    case 1:
+                        addBox('img/comic6.svg', 5,
+                            'Kita harus segera membawa kucing tersebut ke klinik hewan!',
+                            true)
+                        audioSource.src = 'sounds/sound3.mp3';
                         audio.load();
                         audio.play();
                         break;
@@ -1465,11 +1473,21 @@
                         audioSourceBase.src = 'sounds/happy.mp3';
                         audioBase.load();
                         audioBase.play();
-                        addBox('video/panel_terakhir.webm', -2.5,
-                            'Hai teman-teman aku Vetii sebagai pemandu kalian! By the way, kucing yang tadi ketabrak tu kira-kira diapain yaa setelah dibawa ke klinik? Hmm yang pasti sih ada serangkaian penanganan yang akan diberikan kepada kucing tersebut. Nah biar teman - teman ga bingung, disini aku dan teman ku akan menjelaskan Langkah-langkah penanganan kucing tersebut dengan salah satu alat yang penting nihh. So kalau kamu penasaran, ikutin terus aku dan temanku yaa!!',
-                            true, 300)
+                        addBox('img/comic1.svg', -2.5,
+                            'Hai teman-teman, Vetii di sini! Kalian penasaran kucing yang tertabrak tadi di klinik hewan gimana penanganannya?',
+                            true, 'unset')
+                        var elements = $('.boxText');
+                        var lastElement = elements.last();
+                        setTimeout(() => {
+                            lastElement.html(
+                                'Tenang, aku dan temanku akan menjelaskannya. ');
+                        }, 8000);
+                        setTimeout(() => {
+                            lastElement.html(
+                                'Nanti kita akan bahas langkah-langkah penanganan kucing tertabrak dengan salah satu alat yang penting. Yuk, kita pelajari alatnya!'
+                            );
+                        }, 10000);
                         audioSource.src = 'sounds/sound4.mp3';
-
                         audio.load();
                         audio.play();
                         break;
@@ -1510,10 +1528,10 @@
 
             $('.slide').removeClass('active');
             $('.slide4').addClass('active');
-            addBox('video/k3.webm', 5,
+            addBox('img/comic6.svg', 5,
                 'Kita harus segera membawa kucing tersebut ke klinik hewan!',
                 true)
-            addBox('video/panel_terakhir.webm', -2.5,
+            addBox('img/comic1.svg', -2.5,
                 'Nanti kita akan bahas langkah-langkah penanganan kucing tertabrak dengan salah satu alat yang penting. Yuk, kita pelajari alatnya!',
                 true, 'unset')
             setTimeout(() => {
@@ -1524,38 +1542,22 @@
         }
 
         $(document).ready(function () {
-            const sounds = {
-                sound1: 'sounds/sound1.mp3',
-                sound2: 'sounds/sound2.mp3',
-                sound3: 'sounds/sound3.mp3',
-                sound4: 'sounds/sound4.mp3',
-                sound4: 'sounds/sound5.mp3',
-                happy: 'sounds/happy.mp3',
-                sad: 'sounds/sad.mp3',
-                brak: 'sounds/brak.mp3',
-            };
-            const videos = {
-                crash: 'video/crash.webm',
-                k1: 'video/k-1.webm',
-                kone: 'video/k1.webm',
-                k0: 'video/k0.webm',
-                k2: 'video/k2.webm',
-                k3: 'video/k3.webm',
-                panelterakhir: 'video/panel_terakhir.webm',
-                // Add more video sources as needed
+            const svgs = {
+                comic1: 'images/comic1.svg',
+                comic2: 'images/comic2.svg',
+                comic3: 'images/comic3.svg',
+                comic4: 'images/comic4.svg',
+                comic5: 'images/comic5.svg',
+                comic6: 'images/comic6.svg',
+                comic7: 'images/comic7.svg',
+                // Add more SVG sources as needed
             };
 
             function preloadAssets() {
-                for (const key in sounds) {
-                    const audio = new Audio();
-                    audio.src = sounds[key];
-                    audio.load();
-                }
-                for (const key in videos) {
-                    const video = document.createElement('video');
-                    video.src = videos[key];
-                    video.preload = 'auto'; // Preload the video
-                    video.load();
+                for (const key in svgs) {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('GET', svgs[key], true);
+                    xhr.send();
                 }
                 console.log('preaload has been success')
             }
