@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
     <style>
-       @import url('https://fonts.googleapis.com/css2?family=Lemon&family=Montserrat:wght@600&family=Poppins:wght@900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lemon&family=Montserrat:wght@600&family=Poppins:wght@900&display=swap');
 
         @font-face {
             font-family: sprinkle;
@@ -285,7 +285,7 @@
 
         .accordion-body {
             font-family: 'Poppins';
-            font-weight:900;
+            font-weight: 900;
             font-size: 24px !important;
         }
 
@@ -298,6 +298,13 @@
             font-family: 'sprinkle';
         }
 
+        .parentSkip {
+            display: flex;justify-content: end; width: 100%;padding: 0px 100px 0px 100px; margin-top: -500px;z-index: 999999;position: relative; align-items: center;
+        }
+
+        .nextImag {
+            width: 500px;height: 500px;
+        }
         @media only screen and (min-width: 600px) {
             .box {
                 width: 65%;
@@ -311,9 +318,31 @@
                 height: 200px;
             }
 
+            .nextImag {
+            width: 400px;height: 400px;
+        }
+
+            .twoWhatnext {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .peralatan_paramedik {
+                display: none !important;
+            }
+
+            .accordion-body {
+                font-size: 13px !important;
+            }
+
+            .parentSkip {
+                margin-top: -300px;
+            }
+
             .text-story {
-                width: 50%;
-                color: #A97555;
+                width: 100%;
+                color: black;
             }
 
             .vet {
@@ -326,6 +355,7 @@
             }
 
             .vetQ {
+                margin-top: 300px;
                 width: 100%;
             }
 
@@ -341,9 +371,14 @@
             .boxText {
                 width: 100% !important;
                 height: 170px !important;
-                bottom: unset !important;
+                bottom: -200px !important;
                 right: unset !important;
                 font-size: 10px;
+            }
+
+            .skipJourn {
+                bottom: 0 !important;
+                bottom: 0 !important;
             }
         }
 
@@ -352,7 +387,7 @@
             /* Remove the background color */
             text-decoration: underline;
             font-family: 'Poppins';
-            font-weight:900;
+            font-weight: 900;
             color: #A97555;
         }
 
@@ -437,6 +472,9 @@
             text-align: center;
             transition: .5s;
 
+        }
+        .textFill {
+            text-align: justify;
         }
 
         .skipJourn:hover {
@@ -704,8 +742,7 @@
             </div>
         </div>
         <img src="img/wave 4.png" style="width: 100%;" alt="">
-        <div
-            style="display: flex;justify-content: end; width: 100%;padding: 0px 100px 0px 100px; margin-top: -500px;z-index: 999999;position: relative; align-items: center;">
+        <div class="parentSkip">
             <button class="skipJourn" onclick="skipJourney()"><svg xmlns="http://www.w3.org/2000/svg" width="20"
                     height="20" fill="currentColor" class="bi bi-skip-forward" viewBox="0 0 16 16">
                     <path
@@ -986,12 +1023,12 @@
     <img src="img/wave 5.png" style="width: 100%;" alt="">
     <br>
 
-    <center>
+    <!-- <center>
         <div id="search"
             style="width: 60%;margin-top: -300px;border: 3px solid black;border-radius: 10px;z-index: 999999;position: relative;">
             <input style="background: #ECEDE1;height: 70px;" type="text" class="form-control" placeholder="Search ....">
         </div>
-    </center>
+    </center> -->
 
 
 
@@ -1004,15 +1041,16 @@
         <br>
 
         <div class="d-flex" style="width: 100%;flex-wrap: wrap;justify-content: space-around;gap: 12px;">
+           
             <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
                 <div class="pseudo1"></div>
                 <div class="pseudo2"></div>
                 <div class="pseudo3"></div>
                 <div class="card-head-1"></div>
                 <div class="card-body">
-                    <h5 class="card-title">Veterinary Electric Turbo Ventilator</h5>
-                    <p class="card-text">R420 Veterinary Electric Turbo Ventilator</p>
-                    <a href="#" class="btn btn-warning">Go to Product</a>
+                    <h5 class="card-title">Turbo Ventilator Listrik Dokter Hewan</h5>
+                    <p class="card-text">R420 Turbo Ventilator Listrik Dokter Hewan</p>
+                    <a href="https://www.rwdstco.com/product-item/r420-veterinary-electric-turbo-ventilator/" class="btn btn-warning">Lihat Produk</a>
                 </div>
             </div>
             <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
@@ -1021,10 +1059,9 @@
                 <div class="pseudo3"></div>
                 <div class="card-head-2"></div>
                 <div class="card-body">
-                    <h5 class="card-title">- Center of Turkiye -</h5>
-                    <p class="card-text">Ankara is Turkiye's capital and second-largest city, while Istanbul
-                        is its largest city</p>
-                    <a href="#" class="btn btn-warning">Visit Turkiye</a>
+                    <h5 class="card-title">Rangkaian Pernapasan</h5>
+                    <p class="card-text">Rangkaian Pernapasan</p>
+                    <a href="https://www.rwdstco.com/product-item/breathing-circuits/" class="btn btn-warning">Lihat Produk</a>
                 </div>
             </div>
             <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
@@ -1033,10 +1070,9 @@
                 <div class="pseudo3"></div>
                 <div class="card-head-3"></div>
                 <div class="card-body">
-                    <h5 class="card-title">- Center of Turkiye -</h5>
-                    <p class="card-text">Ankara is Turkiye's capital and second-largest city, while Istanbul
-                        is its largest city</p>
-                    <a href="#" class="btn btn-warning">Visit Turkiye</a>
+                    <h5 class="card-title">Tabung Endotrakeal Hewan</h5>
+                    <p class="card-text">Menghubungkan hewan seperti tikus, mencit, anjing, kucing dengan tabung anestesi dan perangkat pasokan udara lainnya, setiap set berisi 17 spesifikasi intubasi trakea yang berbeda.</p>
+                    <a href="https://www.rwdstco.com/product-item/endotracheal-tubes/" class="btn btn-warning">Lihat Produk</a>
                 </div>
             </div>
             <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
@@ -1045,10 +1081,9 @@
                 <div class="pseudo3"></div>
                 <div class="card-head-4"></div>
                 <div class="card-body">
-                    <h5 class="card-title">- Center of Turkiye -</h5>
-                    <p class="card-text">Ankara is Turkiye's capital and second-largest city, while Istanbul
-                        is its largest city</p>
-                    <a href="#" class="btn btn-warning">Visit Turkiye</a>
+                    <h5 class="card-title">Monitor Veteriner RM700/RM800/RM800T</h5>
+                    <p class="card-text">Monitor Veteriner RM700/RM800/RM800T dilengkapi dengan algoritma khusus untuk dokter hewan dan desain yang kompak. Memenuhi persyaratan utama Anda dalam berbagai situasi pasien hewan. Parameter ganda termasuk SpO₂, EKG, NIBP, TEMP, RESP, ETCO₂ Microflow.</p>
+                    <a href="https://www.rwdstco.com/product-item/veterinary-monitor-2/" class="btn btn-warning">Lihat Produk</a>
                 </div>
             </div>
             <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
@@ -1057,10 +1092,9 @@
                 <div class="pseudo3"></div>
                 <div class="card-head-5"></div>
                 <div class="card-body">
-                    <h5 class="card-title">- Center of Turkiye -</h5>
-                    <p class="card-text">Ankara is Turkiye's capital and second-largest city, while Istanbul
-                        is its largest city</p>
-                    <a href="#" class="btn btn-warning">Visit Turkiye</a>
+                    <h5 class="card-title">Masker Anestesi untuk Tikus, Mencit, Hewan Kecil</h5>
+                    <p class="card-text">Digunakan untuk induksi anestesi, penyelamatan pernapasan kucing, anjing, dan hewan seukuran lainnya.</p>
+                    <a href="https://www.rwdstco.com/product-item/mask/" class="btn btn-warning">Lihat Produk</a>
                 </div>
             </div>
             <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
@@ -1069,12 +1103,12 @@
                 <div class="pseudo3"></div>
                 <div class="card-head-6"></div>
                 <div class="card-body">
-                    <h5 class="card-title">- Center of Turkiye -</h5>
-                    <p class="card-text">Ankara is Turkiye's capital and second-largest city, while Istanbul
-                        is its largest city</p>
-                    <a href="#" class="btn btn-warning">Visit Turkiye</a>
+                    <h5 class="card-title">Mesin Anestesi Fleksibel R640 Dokter Hewan - Wall Mount</h5>
+                    <p class="card-text">R640 hanya digunakan dalam penelitian hewan atau bidang kedokteran hewan, yang merupakan pilihan yang sangat baik untuk anestesi di luar ruangan, seperti Ruang Perawatan, Ruang Pencitraan, Ruang Persiapan Anestesi, dan Klinik Spesialis Kucing.</p>
+                    <a href="#" class="btn btn-warning">Lihat Produk</a>
                 </div>
             </div>
+            
         </div>
 
     </div>
@@ -1089,16 +1123,16 @@
     <br>
     <br>
     <br>
-    <div id="3dObject">
+    <!-- <div id="3dObject">
         <center>
             <h3>3D Models</h3>
         </center>
         <br>
         <br>
-        <div class="container d-flex justify-content-center " style="width: 40%; border:2px solid black">
+        <div class="container d-flex justify-content-center " style="width: 40%; ">
             <canvas style="width: 600px !important;" class="webgl"></canvas>
         </div>
-    </div>
+    </div> -->
 
     <br>
     <br>
@@ -1110,12 +1144,34 @@
     <br>
     <div class="container">
         <div
-            style="background: white;border-radius: 10px;width: 100%;height: 400px;color: #A97555;display: flex;justify-content: center;align-items: center;">
-            <h2>Whats Next ? </h2>
+            style="background-size:cover;border-radius: 10px;width: 90%;color: #A97555;display: flex;justify-content: center;align-items: center;gap: 70px;flex-wrap: wrap;">
+            <!-- <h2>Whats Next ? </h2> -->
+
+            <div style="flex: 3;">
+                <img src="img/next1.png" class="nextImag" style=" transform: scaleX(-1);margin-top:200px;" alt="">
+
+            </div>
+            <div style="flex:6" class="twoWhatnext">
+                <h6 style="display: flex;align-items: center;" class="peralatan_paramedik"><span><img src="img/nex2.png" alt="" style="width: 300px;margin-left: -100px;"></span><span style="margin-left: -40px;width: 10px;width: 400px;display: inline-block;font-size: 27px;">Peralatan Paramedik Veteriner Anastesi Inhalasi</span></h6>
+                <h2 style="font-size: 32px;">Whats Next ?</h2>
+                <br>
+                <p class="textFill" style="font-size: 24px;">Nah, sekarang kalian udah pada tahu kan apa itu alat anestesi inhalasi veteriner dan cara kerjanya? Singkatnya, alat ini digunakan untuk membuat hewan peliharaan kita nyaman selama operasi atau perawatan medis. </p>
+                <br>
+                
+                <p class="textFill" style="font-size: 24px;">Tapi, dunia paramedik veteriner juga punya banyak alat keren lainnya, nih. Contohnya, ada alat pemindai X-ray hewan, Roentgen, dan masih banyak lagi. Kalian bisa cek alat-alat itu lewat berbagai media pembelajaran lainnya, ya! Semangat terus dalam belajar, teman-teman! Veti disini undur diri, sampai jumpa!</p>
+                <!-- <br> -->
+                
+                <!-- <p class="textFill" style="font-size: 27px;">Thank you for your attention!</p> -->
+            </div>
         </div>
 
 
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>
@@ -1549,7 +1605,6 @@
             }, 2000);
 
         }
-
     </script>
 </body>
 
