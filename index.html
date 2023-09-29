@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lemon&family=Montserrat:wght@600&family=Poppins:wght@900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lemon&family=Montserrat:wght@600&family=Poppins:wght@500;700;900&display=swap');
 
         @font-face {
             font-family: sprinkle;
@@ -37,7 +37,7 @@
         }
 
         .vet {
-            font-family: 'sprinkle';
+            font-family: 'Poppins';
 
         }
 
@@ -280,12 +280,13 @@
         }
 
         .accordion-button {
+
             font-size: 36px !important;
         }
 
         .accordion-body {
             font-family: 'Poppins';
-            font-weight: 900;
+            font-weight: 500;
             font-size: 24px !important;
         }
 
@@ -295,16 +296,25 @@
         }
 
         .ans {
-            font-family: 'sprinkle';
+            font-family: 'Poppins';
         }
 
         .parentSkip {
-            display: flex;justify-content: end; width: 100%;padding: 0px 100px 0px 100px; margin-top: -500px;z-index: 999999;position: relative; align-items: center;
+            display: flex;
+            justify-content: end;
+            width: 100%;
+            padding: 0px 100px 0px 100px;
+            margin-top: -500px;
+            z-index: 999999;
+            position: relative;
+            align-items: center;
         }
 
         .nextImag {
-            width: 500px;height: 500px;
+            width: 500px;
+            height: 500px;
         }
+
         @media only screen and (min-width: 600px) {
             .box {
                 width: 65%;
@@ -319,8 +329,9 @@
             }
 
             .nextImag {
-            width: 400px;height: 400px;
-        }
+                width: 400px;
+                height: 400px;
+            }
 
             .twoWhatnext {
                 display: flex;
@@ -387,7 +398,7 @@
             /* Remove the background color */
             text-decoration: underline;
             font-family: 'Poppins';
-            font-weight: 900;
+            font-weight: 700;
             color: #A97555;
         }
 
@@ -473,7 +484,10 @@
             transition: .5s;
 
         }
+
         .textFill {
+            font-family: 'Poppins';
+            font-weight: 500;
             text-align: justify;
         }
 
@@ -775,24 +789,26 @@
                             A. Definisi
                         </h6>
                     </button>
-                    <button onclick="scrollToElement('penggunaan','collapseFour')" class="ans"
+                    <button onclick="scrollToElement('kegunaan','collapseFour')" class="ans"
                         style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
                         <h6>
-                            D. Penggunaan
+                            C. Kegunaan
+
                         </h6>
                     </button>
                 </div>
                 <div style="display: flex;gap: 30px;flex-direction: column;">
-                    <button onclick="scrollToElement('kegunaan','collapseTwo')" class="ans"
+                    <button onclick="scrollToElement('penggunaan','collapseTwo')" class="ans"
                         style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
                         <h6>
-                            B. Kegunaan
+                            B. Penggunaan
                         </h6>
                     </button>
                     <button onclick="scrollToElement('cara_perawatan','collapseThree')" class="ans"
                         style="width: 20vw;height: 10vh; background: white;border-radius: 10px; color: #A97555;">
                         <h6>
-                            C. Cara perawatan
+                            D. Cara perawatan
+                            
                         </h6>
                     </button>
                 </div>
@@ -870,7 +886,7 @@
                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div>
-                                    <!-- <div class="row">
+                                     <div class="row">
                                         <div class="d-flex gap-5">
                                             <div
                                                 style="flex:2; width: 200px;height: 200px;background: url('img/car-1.jpeg');background-size:cover; border-radius: 10px;position: relative;">
@@ -941,28 +957,89 @@
                                                 right:-50px;" alt="">
                                             </div>
                                         </div>
-                                    </div> -->
-                                    <p>1. Sambungkan tabung oksigen dengan alat anastesi inhalasi menggunakan selang
-                                        yang tersedia.</p>
-                                    <p>2. Untuk mengisi isoflurane pada mesin anastesi RWD gunakan conector ungu, buka
-                                        penutup tempat pengisian isoflurane. Tuangkan isoflurane menggunankan conector
-                                        yang sudah tersambung dengan tempat pengisian isoflurane hingga isoflurane
-                                        terisi sampai garis batas.</p>
-                                    <p>3. Lepaskan conector dan tutup penutup tempat pengisian isoflurane, kembalikan
-                                        botol ke posisi semula, lepas conector.</p>
-                                    <p>4. Putar OPEN tabung oksigen, atur tekanan ke 50mmHg, atur kebutuhan oksigen
-                                        untuk pasien melalui mesin anastesi, pastikan tidak ada keboocran.</p>
-                                    <p>5. Pilih system Nn-Rebreathing Circuit untuk pasien dengan berat badan < 7 KG dan
-                                            rebreathing Circuit untuk pasien dngan BB> 7 KG</p>
-                                    <p>6. Pasang masker oksigen ke hewan</p>
-                                    <p>7. Tekan tombol kunci, putar kenob untuk membuka dan menutup pengaturan
-                                        konsentrasi isoflurane yang dikeluarkan</p>
-                                    <p>8. Sesuaikan pemberian anatesi inhalasi menggunakan isoflurane dengan kondisi
-                                        hewan saat operasi</p>
-                                    <p>9. Setelah selesai, kembalikan semua pengaturan ke “0” untuk isoflurane, kemudian
-                                        baru oksigen.</p>
-                                    <p>10. Putar CLOSED regulator oksigen Kembali</p>
-                                    <p>11. Bersih dan rapihkan Kembali alat anastesi inhalasi</p>
+                                    </div>
+<!--                                     
+                                    <p>Anastesi Inhalasi memiliki banyak jenis alatnya dari berbagai macam merk. Pada pembahasan ini, kita akan mengambil salah satu contoh alat anastesi inhalasi ber merk RWD. </p>
+                                    <br>
+                                    <p>ATTENTION!</p>
+                                    <p>
+
+                                    Untuk kesehatan hewan, disarankan untuk menggunakan Rebreathing circuit ketika berat hewan lebih besar dari atau sama dengan 7 kg, dan Non-rebreathing circuit ketika beratnya kurang dari 7 kg. 
+
+                                    </p>
+                                    <br>
+                                    
+                                    <p>Cara Memasang Rebreathing circuit</p>
+                                    <br>
+                                    <br>
+                                    <br>
+                                   
+                                    <p>1. Sambungkan Non-rebreathing circuit port dan main circuit inlet dengan silica gel tube</p>
+                                    <p>2. Pilih  breathing bag sesuai dengan berat hewan dan dipasang di breathing bag mouth.</p>
+                                    <p>3. Sambungkan selang lain dari gas filter canister ke APL Valve</p>
+                                    <p>Pastikan APL Valve terbuka saat menggunakan rebreathing circuit. Dianjurkan untuk membuka APL Valve berlawanan arah jarum jam agar terbuka penuh. Pastikan APL Valve tertutup saat memeriksa bocornya mesin anastesi. </p>
+                                   
+                                    <br>
+                                    <br>
+                                    <br>
+                                   
+                                    <p>Cara Memasang Non-Rebreathing Circuit</p>
+                                   
+                                    <p>1. Sambungkan Non-rebreathing circuit ke Non rebreathing circuit port</p>
+                                    <p>2. Pilih breathing bag sesuai dengan berat hewan dan pasang ke circuit</p>
+                                    <p>3. Pada bagian gas filter canister port di circuit sambungkan ke gas filter canister</p>
+                                    <p>4. Untuk membuka dan menutup, Valve diputar. Putar arah jarum jam untuk membuka. Pastikan valve terbuka saat menggunakan Non-rebreathing circuit</p>
+                                    <br>
+                                    <br>
+                                    <br>
+                                  
+                                    <p>Menambahkan Anastesi </p>
+                                    <p>Hal hal yang harus di perhatikan : </p>
+                                    <br>
+                                    <br>
+                                    
+                                    <p>1. Hanya anastesi khusus yang dapat ditambahkan </p>
+                                    <p>2. Sebelum menambahkan anstesii, matikan oxygen flowmeter control valve sampai akhir ( closed)</p>
+                                    <p>3. Untuk penggunaan pertama atau jika evaporator sudah lama tidak digunakan setelah dikosongkan, Kita perlu mengisi botol penuh (100ml) anestesi dan menunggu  1 jam sebelum menggunakannya.</p>
+                                    <p>4. sebelum digunakan, perlu dipastikan bahwa level cairan anestesi berada di antara dua garis pada bagian transparan di vaporizer.</p>
+                                    <p>5. Pastikan tombol persen volume pada vaporizer anestesi ke posisi 0</p>
+                                    <p>6. Putar  oxygen flowmeter control valve searah jarum jam sampai akkhir (off)</p>
+                                    <p>7. Putar dan lepaskan penutup vaporizer. </p>
+                                    <p>8. Tuang isoflurine yang sesuai dengan hati-hati ke dalam port pengisi. Isi sampai batas. </p>
+                                    <p>9. Tutup dan kencangkan penutup vaporizer</p>
+                                    <p>10. Stiker di sisi kanan evaporator menunjukkan langkah untuk pemberian dosis</p>
+                                    <p>11. Pasang Selang Oksigen pada hewan yang akan dioperasi. </p>
+                                    <p>12. Tekan dial lock key untuk menyesuaikan konsentrasi gas anestesi dari skala 0</p>
+                                    <p>13. Putar dial dan sesuaikan dengan konsentrasi yang tepat</p>
+                                    <p>14. Ketika dial disesuaikan ke skala 0, kunci akan dikunci lagi.</p>
+                                    <p>15. Setelah selesai operasi, kembalikan semua ke pengaturan 0.</p>
+                                    <p>16. Bersihkan dan rapihkan kembali mesin anastesi inhalasi. </p>
+                                    
+
+ -->
+
+    <!-- 
+                                        <p>1. Sambungkan tabung oksigen dengan alat anastesi inhalasi menggunakan selang
+                                            yang tersedia.</p>
+                                        <p>2. Untuk mengisi isoflurane pada mesin anastesi RWD gunakan conector ungu, buka
+                                            penutup tempat pengisian isoflurane. Tuangkan isoflurane menggunankan conector
+                                            yang sudah tersambung dengan tempat pengisian isoflurane hingga isoflurane
+                                            terisi sampai garis batas.</p>
+                                        <p>3. Lepaskan conector dan tutup penutup tempat pengisian isoflurane, kembalikan
+                                            botol ke posisi semula, lepas conector.</p>
+                                        <p>4. Putar OPEN tabung oksigen, atur tekanan ke 50mmHg, atur kebutuhan oksigen
+                                            untuk pasien melalui mesin anastesi, pastikan tidak ada keboocran.</p>
+                                        <p>5. Pilih system Nn-Rebreathing Circuit untuk pasien dengan berat badan < 7 KG dan
+                                                rebreathing Circuit untuk pasien dngan BB> 7 KG</p>
+                                        <p>6. Pasang masker oksigen ke hewan</p>
+                                        <p>7. Tekan tombol kunci, putar kenob untuk membuka dan menutup pengaturan
+                                            konsentrasi isoflurane yang dikeluarkan</p>
+                                        <p>8. Sesuaikan pemberian anatesi inhalasi menggunakan isoflurane dengan kondisi
+                                            hewan saat operasi</p>
+                                        <p>9. Setelah selesai, kembalikan semua pengaturan ke “0” untuk isoflurane, kemudian
+                                            baru oksigen.</p>
+                                        <p>10. Putar CLOSED regulator oksigen Kembali</p>
+                                        <p>11. Bersih dan rapihkan Kembali alat anastesi inhalasi</p> -->
                                 </div>
                                 <br>
                             </div>
@@ -992,22 +1069,28 @@
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <strong>This is the third item's accordion body.</strong> It is hidden by default,
-                                until
-                                the
-                                collapse plugin adds the appropriate classes that we use to style each element.
-                                These
-                                classes
-                                control the overall appearance, as well as the showing and hiding via CSS
-                                transitions.
-                                You
-                                can
-                                modify any of this with custom CSS or overriding our default variables. It's also
-                                worth
-                                noting
-                                that just about any HTML can go within the <code>.accordion-body</code>, though the
-                                transition
-                                does limit overflow.
+                                <div>
+                                    <p>
+                                        Agar mesin anastesi inhalasi tidak cepat rusak, dibutuhkan perawatan yang baik.
+                                        Di sarankan untuk memperhatikan pemeliharaan alat perminggu. Yang harus
+                                        diperhatikan dalam pemeliharaan mingguan adalah :
+                                    </p>
+                                    <p>1. Gunakan kain pembersih yang bersih (dengan larutan pembersih netral) untuk
+                                        membersihkan permukaan mesin anastesi</p>
+                                    <p>2. Memberihkan debu dan kotoran lainnya pada permukaan evaporator, terutama
+                                        disekitar dial.</p>
+                                    <p>3. Harap mengecek kebocoran.</p>
+                                    <p>4. Periksa kebersihan dan stok sumber oksigen.</p>
+                                    <p>5. Periksa 02 absorber canister, apakah habis? Dan perlu diganti jika total waktu
+                                        penggunaan lebi dari 12 jam. Jika tidak digunakan selama 12 jam dalam 1 bulan,
+                                        maka perlu diganti juga.</p>
+                                    <p>6. Gas filter Canister perlu ditimbang dan diganti secara berkala. Ketika
+                                        beratnya mencapai 1000g, kapasitas adsorpsi gas akan berkurang dan gas filter
+                                        baru perlu diganti. </p>
+
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
@@ -1041,7 +1124,7 @@
         <br>
 
         <div class="d-flex" style="width: 100%;flex-wrap: wrap;justify-content: space-around;gap: 12px;">
-           
+
             <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
                 <div class="pseudo1"></div>
                 <div class="pseudo2"></div>
@@ -1050,7 +1133,8 @@
                 <div class="card-body">
                     <h5 class="card-title">Turbo Ventilator Listrik Dokter Hewan</h5>
                     <p class="card-text">R420 Turbo Ventilator Listrik Dokter Hewan</p>
-                    <a href="https://www.rwdstco.com/product-item/r420-veterinary-electric-turbo-ventilator/" class="btn btn-warning">Lihat Produk</a>
+                    <a href="https://www.rwdstco.com/product-item/r420-veterinary-electric-turbo-ventilator/"
+                        class="btn btn-warning">Lihat Produk</a>
                 </div>
             </div>
             <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
@@ -1061,7 +1145,8 @@
                 <div class="card-body">
                     <h5 class="card-title">Rangkaian Pernapasan</h5>
                     <p class="card-text">Rangkaian Pernapasan</p>
-                    <a href="https://www.rwdstco.com/product-item/breathing-circuits/" class="btn btn-warning">Lihat Produk</a>
+                    <a href="https://www.rwdstco.com/product-item/breathing-circuits/" class="btn btn-warning">Lihat
+                        Produk</a>
                 </div>
             </div>
             <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
@@ -1071,8 +1156,11 @@
                 <div class="card-head-3"></div>
                 <div class="card-body">
                     <h5 class="card-title">Tabung Endotrakeal Hewan</h5>
-                    <p class="card-text">Menghubungkan hewan seperti tikus, mencit, anjing, kucing dengan tabung anestesi dan perangkat pasokan udara lainnya, setiap set berisi 17 spesifikasi intubasi trakea yang berbeda.</p>
-                    <a href="https://www.rwdstco.com/product-item/endotracheal-tubes/" class="btn btn-warning">Lihat Produk</a>
+                    <p class="card-text">Menghubungkan hewan seperti tikus, mencit, anjing, kucing dengan tabung
+                        anestesi dan perangkat pasokan udara lainnya, setiap set berisi 17 spesifikasi intubasi trakea
+                        yang berbeda.</p>
+                    <a href="https://www.rwdstco.com/product-item/endotracheal-tubes/" class="btn btn-warning">Lihat
+                        Produk</a>
                 </div>
             </div>
             <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
@@ -1082,8 +1170,11 @@
                 <div class="card-head-4"></div>
                 <div class="card-body">
                     <h5 class="card-title">Monitor Veteriner RM700/RM800/RM800T</h5>
-                    <p class="card-text">Monitor Veteriner RM700/RM800/RM800T dilengkapi dengan algoritma khusus untuk dokter hewan dan desain yang kompak. Memenuhi persyaratan utama Anda dalam berbagai situasi pasien hewan. Parameter ganda termasuk SpO₂, EKG, NIBP, TEMP, RESP, ETCO₂ Microflow.</p>
-                    <a href="https://www.rwdstco.com/product-item/veterinary-monitor-2/" class="btn btn-warning">Lihat Produk</a>
+                    <p class="card-text">Monitor Veteriner RM700/RM800/RM800T dilengkapi dengan algoritma khusus untuk
+                        dokter hewan dan desain yang kompak. Memenuhi persyaratan utama Anda dalam berbagai situasi
+                        pasien hewan. Parameter ganda termasuk SpO₂, EKG, NIBP, TEMP, RESP, ETCO₂ Microflow.</p>
+                    <a href="https://www.rwdstco.com/product-item/veterinary-monitor-2/" class="btn btn-warning">Lihat
+                        Produk</a>
                 </div>
             </div>
             <div class="card m-auto" style="width: 20rem;margin-bottom:20px !important;">
@@ -1093,7 +1184,8 @@
                 <div class="card-head-5"></div>
                 <div class="card-body">
                     <h5 class="card-title">Masker Anestesi untuk Tikus, Mencit, Hewan Kecil</h5>
-                    <p class="card-text">Digunakan untuk induksi anestesi, penyelamatan pernapasan kucing, anjing, dan hewan seukuran lainnya.</p>
+                    <p class="card-text">Digunakan untuk induksi anestesi, penyelamatan pernapasan kucing, anjing, dan
+                        hewan seukuran lainnya.</p>
                     <a href="https://www.rwdstco.com/product-item/mask/" class="btn btn-warning">Lihat Produk</a>
                 </div>
             </div>
@@ -1104,11 +1196,13 @@
                 <div class="card-head-6"></div>
                 <div class="card-body">
                     <h5 class="card-title">Mesin Anestesi Fleksibel R640 Dokter Hewan - Wall Mount</h5>
-                    <p class="card-text">R640 hanya digunakan dalam penelitian hewan atau bidang kedokteran hewan, yang merupakan pilihan yang sangat baik untuk anestesi di luar ruangan, seperti Ruang Perawatan, Ruang Pencitraan, Ruang Persiapan Anestesi, dan Klinik Spesialis Kucing.</p>
+                    <p class="card-text">R640 hanya digunakan dalam penelitian hewan atau bidang kedokteran hewan, yang
+                        merupakan pilihan yang sangat baik untuk anestesi di luar ruangan, seperti Ruang Perawatan,
+                        Ruang Pencitraan, Ruang Persiapan Anestesi, dan Klinik Spesialis Kucing.</p>
                     <a href="#" class="btn btn-warning">Lihat Produk</a>
                 </div>
             </div>
-            
+
         </div>
 
     </div>
@@ -1152,15 +1246,23 @@
 
             </div>
             <div style="flex:6" class="twoWhatnext">
-                <h6 style="display: flex;align-items: center;" class="peralatan_paramedik"><span><img src="img/nex2.png" alt="" style="width: 300px;margin-left: -100px;"></span><span style="margin-left: -40px;width: 10px;width: 400px;display: inline-block;font-size: 27px;">Peralatan Paramedik Veteriner Anastesi Inhalasi</span></h6>
-                <h2 style="font-size: 32px;">Whats Next ?</h2>
+                <h6 style="display: flex;align-items: center;" class="peralatan_paramedik"><span><img src="img/nex2.png"
+                            alt="" style="width: 300px;margin-left: -100px;"></span><span
+                        style="margin-left: -40px;width: 10px;width: 400px;display: inline-block;font-size: 27px;font-weight: 700;font-family: 'Poppins';">Peralatan
+                        Paramedik Veteriner Anastesi Inhalasi</span></h6>
+                <h2 style="font-size: 32px;font-weight: 700;font-family: 'Poppins';">Whats Next ?</h2>
                 <br>
-                <p class="textFill" style="font-size: 24px;">Nah, sekarang kalian udah pada tahu kan apa itu alat anestesi inhalasi veteriner dan cara kerjanya? Singkatnya, alat ini digunakan untuk membuat hewan peliharaan kita nyaman selama operasi atau perawatan medis. </p>
+                <p class="textFill" style="font-size: 24px;">Nah, sekarang kalian udah pada tahu kan apa itu alat
+                    anestesi inhalasi veteriner dan cara kerjanya? Singkatnya, alat ini digunakan untuk membuat hewan
+                    peliharaan kita nyaman selama operasi atau perawatan medis. </p>
                 <br>
-                
-                <p class="textFill" style="font-size: 24px;">Tapi, dunia paramedik veteriner juga punya banyak alat keren lainnya, nih. Contohnya, ada alat pemindai X-ray hewan, Roentgen, dan masih banyak lagi. Kalian bisa cek alat-alat itu lewat berbagai media pembelajaran lainnya, ya! Semangat terus dalam belajar, teman-teman! Veti disini undur diri, sampai jumpa!</p>
+
+                <p class="textFill" style="font-size: 24px;">Tapi, dunia paramedik veteriner juga punya banyak alat
+                    keren lainnya, nih. Contohnya, ada alat pemindai X-ray hewan, Roentgen, dan masih banyak lagi.
+                    Kalian bisa cek alat-alat itu lewat berbagai media pembelajaran lainnya, ya! Semangat terus dalam
+                    belajar, teman-teman! Veti disini undur diri, sampai jumpa!</p>
                 <!-- <br> -->
-                
+
                 <!-- <p class="textFill" style="font-size: 27px;">Thank you for your attention!</p> -->
             </div>
         </div>
@@ -1205,7 +1307,7 @@
             <br>
             <br>
             <br>
-            Copyright © 2023 - Kelompok 4
+            Copyright © 2023 - Kelompok 2 TPL'60-A2
             <br>
             <br>
             <br>
@@ -1245,32 +1347,38 @@
 
     <script>
         function scrollToElement(elementId, dataCollapseValue) {
+
+            $('#collapseOne').removeClass('show')
+            $('#collapseTwo').removeClass('show')
+            $('#collapseThree').removeClass('show')
+            $('#collapseFour').removeClass('show')
             const targetElement = document.getElementById(elementId);
-            console.log(dataCollapseValue)
-            const buttonElement = document.querySelector(`button[data-bs-target="#${dataCollapseValue}"]`);
-            if (targetElement) {
-                const offset =
-                    200; // Ubah offset sesuai dengan berapa banyak Anda ingin berhenti di atas elemen
-                const elementPosition = targetElement.offsetTop - offset;
-                window.scrollTo({
-                    top: elementPosition,
-                    behavior: 'smooth' // Untuk efek scroll yang halus, jika diperlukan
-                });
-            }
-            setTimeout(() => {
-                const collapseTwoElement = document.getElementById(dataCollapseValue);
-                if (collapseTwoElement) {
-                    const hasShowClass = collapseTwoElement.classList.contains('show');
-                    if (hasShowClass) {
-                        console.log('The element has the "show" class.');
-                    } else {
-                        buttonElement.click()
-                    }
+            const collapseTwoElement = document.getElementById(dataCollapseValue);
+            if (collapseTwoElement) {
+                const hasShowClass = collapseTwoElement.classList.contains('show');
+                if (hasShowClass) {
+                    console.log('The element has the "show" class.');
                 } else {
-                    console.log('Element with ID "collapseTwo" not found.');
+                    $(`#${dataCollapseValue}`).addClass('show')
                 }
-            }, 1000);
+            } else {
+                console.log('Element with ID "collapseTwo" not found.');
+            }
+
+                const buttonElement = document.querySelector(`button[data-bs-target="#${dataCollapseValue}"]`);
+                if (targetElement) {
+                    const offset =
+                        200; // Ubah offset sesuai dengan berapa banyak Anda ingin berhenti di atas elemen
+                    const elementPosition = targetElement.offsetTop - offset;
+                    window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth' // Untuk efek scroll yang halus, jika diperlukan
+                    });
+                }
+
         }
+
+        let storyStart = false;
 
         const element1 = document.querySelector(".pseudo1");
         const element2 = document.querySelector(".pseudo2");
