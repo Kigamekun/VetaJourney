@@ -7,10 +7,10 @@ const sizes = {
 }
 
 // Base camera
-const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 100)
-camera.position.x = 0
-camera.position.y = 0
-camera.position.z = 0
+const camera = new THREE.PerspectiveCamera(70, sizes.width / sizes.height, .1, 100)
+camera.position.x = 10
+camera.position.y = 20
+camera.position.z = 50
 scene.add(camera)
 
 // Controls
@@ -36,29 +36,26 @@ renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.outputEncoding = THREE.sRGBEncoding
 
-// Materials
-// const bakedTexture = textureLoader.load('https://rawcdn.githack.com/ricardoolivaalonso/ThreeJS-Room05/ae27bdffd31dcc5cd5a919263f8f1c6874e05400/baked.jpg')
-// bakedTexture.flipY = false
-// bakedTexture.encoding = THREE.sRGBEncoding
-
-// const bakedMaterial = new THREE.MeshBasicMaterial({
-//     map: bakedTexture,
-//     side: THREE.DoubleSide,
-// })
-
 // Loader
 const loader = new THREE.GLTFLoader()
 let model
 
-loader.load('./3d/ew.glb',
+loader.load('./3d/vetsv3.glb',
     (gltf) => {
         model = gltf.scene
+        gltf.scene.traverse( child => {
+
+            if ( child.material ) child.material.metalness = .5;
+        
+        } );
         // model.traverse(child => child.material = bakedMaterial)
         model.position.set(0,0,0)
         scene.add(model)
 
         const light = new THREE.AmbientLight(0xffffff,1); // soft white light
         scene.add(light);
+        
+
         // Start the animation loop after the model is loaded
         animateModel()
     },
