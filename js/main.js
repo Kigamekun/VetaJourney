@@ -40,7 +40,7 @@ renderer.outputEncoding = THREE.sRGBEncoding
 const loader = new THREE.GLTFLoader()
 let model
 
-loader.load('./3d/vetsv3.glb',
+loader.load('./3d/veteriner3d.glb',
     (gltf) => {
         model = gltf.scene
         gltf.scene.traverse( child => {
@@ -75,12 +75,3 @@ function animateModel() {
     renderer.render(scene, camera)
     requestAnimationFrame(animateModel)
 }
-
-window.addEventListener('resize', () => {
-    sizes.width = window.innerWidth
-    sizes.height = window.innerHeight
-    camera.aspect = sizes.width / sizes.height
-    camera.updateProjectionMatrix()
-    renderer.setSize(sizes.width, sizes.height)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-})
